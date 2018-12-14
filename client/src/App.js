@@ -2,8 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import About from "./pages/About";
 import DM from "./pages/DM";
-import Monster from "./pages/Monster";
-import Spell from "./pages/Spell";
+import Monster from "./pages/Monsters";
+import Spell from "./pages/Spells";
 import Generators from "./pages/Generators";
 import Character from "./pages/Character";
 
