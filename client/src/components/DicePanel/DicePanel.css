@@ -1,0 +1,142 @@
+@font-face {
+    font-family: 'moria';
+    src: url(../../assets/fonts/Moria.ttf) format('truetype');    
+  }
+
+  @font-face {
+    font-family: 'magic';
+    src: url(../../assets/fonts/MagicMedieval.ttf) format('truetype');    
+  }
+
+@font-face {
+    font-family: dragon;
+    src: url(../../assets/fonts/Dragon.ttf);
+}
+
+/* Text style */
+h1 {
+    font-family: moria;
+    color: white;
+    font-size: 3rem;
+    text-align: center;
+    text-shadow: 3px 2px black;
+}
+
+h2 {
+    font-family: moria;
+    color: white;
+    font-size: 1.25rem;
+    text-align: center;
+    text-shadow: 2px 2px black;
+    margin-top: 0.5rem;
+}
+
+h3 {
+    font-family: magic;
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    text-shadow: 2px 2px black;
+}
+
+label {
+    color: white;
+    font-family: magic;
+}
+
+/* element styling */
+#diceRow {
+    background-color: #666;
+    opacity: 0.9;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;    
+    z-index: 10;
+    width: 91.5%;    
+    border-radius: 5px; 
+
+}
+
+#rollTotal {
+    font-family: dragon;
+    font-size: 3rem;
+    text-align: center;
+    background-color: white;
+    padding: 0.25rem;
+}
+
+#rolls {
+    font-family: dragon;
+    font-size: 2rem;
+    text-align: center;
+    background-color: white;
+    padding: 0.25rem;
+}
+
+.creator {
+    text-align: center;
+}
+
+.results {
+    margin-left: 0.75rem;
+}
+
+#multi {
+    margin: auto;
+    width: 75%;
+}
+
+form {
+    font-size: 1.5rem;
+    text-shadow: 2px 1px black;
+}
+
+.jumbotron {
+    padding: 0.25rem;
+    background-color: rgb(65, 40, 46);
+    opacity: 0.9;
+}
+
+/* Buttons */
+.btn {
+    margin: 0.25rem;
+    background: transparent;
+}
+
+.btn:hover {
+    text-shadow: 0rem 0rem 1rem white;
+    opacity: 0.9;
+    box-shadow: 1px 1px 2rem 0.1rem #666;
+}
+
+.create-btn {
+    background-color: maroon;
+    font-family: moria;
+    color: white;
+    text-shadow: 2px 1px #666;
+    font-size: 1.2rem;
+}
+
+#clear {
+    font-family: dragon;
+    font-size: 1.5rem;
+    margin-top: 5%;
+}
+
+.diceRoll {
+    padding: 0rem 1rem;
+    margin: -0.5rem 0rem;
+}
+
+.close{
+    font-family: magic;
+    color: white;
+    font-size: 1.5rem;    
+    text-shadow: 2px 2px black;
+}
+
+
+/* Char Sheet */
+img {
+    width: 100%;
+}

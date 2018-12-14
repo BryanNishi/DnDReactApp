@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'moria';
+    src: url(../../assets/fonts/Moria.ttf) format('truetype');    
+  }
+
+  @font-face {
+    font-family: 'magic';
+    src: url(../../assets/fonts/MagicMedieval.ttf) format('truetype');    
+  }
+
+.nav-icon {
+    width: 5rem;
+}
+
+.navbar {
+    font-family: moria;
+    text-align: center;
+    font-size: 1.3rem;    
+}
+
+.sl-btns {
+    margin: 0.25rem;
+}
+
+.dropdown-menu {
+    background-color: #33393f;
+}
+
+.dropdown-item {
+    color: #bbb;
+}
+
+.searchBar{
+    width: 100px;
+    padding: 5px;
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+#panel {
+    padding: 50px;
+    display: none; 
+    position: absolute;
+    
+    width: 100%; 
+   
+}
+
