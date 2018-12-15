@@ -1,0 +1,48 @@
+@font-face {
+    font-family: moria;
+    src: url(../../assets/fonts/Moria.TTF);
+}
+
+@font-face {
+    font-family: magic;
+    src: url(../../assets/fonts/MagicMedieval.ttf);
+}
+body, html {height: 100%; }
+
+html, body, .monsterBody {
+    background-image: url(../../assets/images/monsterBG.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100%;    
+}
+
+/* Navbar Styling */
+.nav-icon {
+    width: 5rem;
+}
+
+.navbar {
+    font-family: moria;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.sl-btns {
+    margin: 0.25rem;
+}
+
+.dropdown-menu {
+    background-color: #33393f;
+}
+
+.dropdown-item {
+    color: #bbb;
+}
+
+h1 {
+    font-family: moria;
+    color: white;
+    font-size: 3rem;
+    text-align: center;
+    text-shadow: 2px 2px black;
+}

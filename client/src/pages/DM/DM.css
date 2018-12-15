@@ -14,7 +14,7 @@
 }
 
 /* Body styling */
-body {
+.DM-Page {
     background-image: url(../../assets/images/screenBG.jpg);
     background-size: cover;
     background-attachment: fixed;
@@ -45,7 +45,7 @@ body {
 
 /* Text style */
 .DM_Screen{
-    width: 1000px;
+    width: 100%;
 }
 
 h1 {
@@ -94,9 +94,19 @@ p{
     background-color: #666;
     opacity: 0.9;
     padding: 1rem 1.5rem;
-    text-align: center;
-    margin-left: 0.75rem;
+    text-align: center; 
+    margin-left: 0.75rem; 
     position: fixed;
+}
+
+.DM-Notes{
+    
+    padding: 1.5rem;
+}
+
+.fixed-Notes{
+    position: fixed;
+    z-index: 9;
 }
 
 #rollTotal {
@@ -132,20 +142,25 @@ p{
 
 .abilityTitle{
     margin: 0.25rem 0.25rem;
+    background-color: #666;
+    text-align: center;
 }
 
-.dmTitle {
-    background-color: #666;
+.abilityRow{
+    padding-right: 1rem;
+    padding-left: 1rem;
 }
 
 #str {
     background-color: maroon;
     margin: 0.25rem;
+    
 }
 
 #strBody {
     background-color: rgb(128, 75, 75);
     font-family: magic;
+    width: 50px;
 }
 
 #dex {
