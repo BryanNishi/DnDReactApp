@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: moria;
     src: url(../../assets/fonts/Moria.TTF);
@@ -15,7 +16,7 @@
 
 /* Body styling */
 .generatorBody {
-    background-image: url(../../assets/images/createBG.jpg);
+    background-image: url(../../assets/images/loreBG.jpg);
     background-size: cover;
     background-attachment: fixed;
     top: 0;
@@ -96,4 +97,5 @@ h2 {
     text-shadow: 2px 1px #666;
     font-size: 1.5rem;
     box-shadow: 2px 2px black;
+
 }

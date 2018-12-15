@@ -1,5 +1,7 @@
 import React from "react";
+
 import "./style.css";
+
 import NavBar from '../../components/NavBar'
 
 const Generator = () => (
@@ -30,6 +32,7 @@ const Generator = () => (
     </div>
 
     </div>
+
 );
 
 export default Generator;
