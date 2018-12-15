@@ -1,9 +1,10 @@
 import React from "react";
 import "./style.css";
-import NavBar from "../../components/NavBar"
+import NavBar from '../../components/NavBar'
 
 
 const About = () => (
+    
     <div id="about">
     <NavBar />
         <h1>Welcome to the Dungeon Master's Database</h1>

@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'moria';
-    src: url(../../assets/fonts/Moria.ttf) format('truetype');    
+    src: url(../../assets/fonts/Moria.TTF) format('truetype');    
   }
 
   @font-face {
@@ -15,7 +15,8 @@
 .navbar {
     font-family: moria;
     text-align: center;
-    font-size: 1.3rem;    
+    font-size: 1.3rem; 
+       
 }
 
 .sl-btns {
