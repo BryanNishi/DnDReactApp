@@ -12,7 +12,7 @@ export default {
   getClass: function(classes) {
     return axios.get("http://dnd5eapi.co/api/classes/" + classes);
   },
-  getfeautre: function(features) {
+  getfeature: function(features) {
     return axios.get("http://dnd5eapi.co/api/features/" + features);
   },
   // Gets all character sheets

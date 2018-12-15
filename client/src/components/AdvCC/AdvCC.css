@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'moria';
+    src: url(../../assets/fonts/Moria.TTF) format('truetype');    
+  }
+
+  @font-face {
+    font-family: 'magic';
+    src: url(../../assets/fonts/MagicMedieval.ttf) format('truetype');    
+  }
