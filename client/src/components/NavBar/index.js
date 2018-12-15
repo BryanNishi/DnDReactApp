@@ -36,13 +36,13 @@ class NavBar extends Component {
                                 <a className="nav-link" href="/DM">DM Screen</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="monster.html">Monster Manual</a>
+                                <a className="nav-link" href="/monster">Monster Manual</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="create.html">Spells</a>
+                                <a className="nav-link" href="/Spells">Spells</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="lore.html">Generators</a>
+                                <a className="nav-link" href="/Generators">Generators</a>
                             </li>
 
                             <li className="nav-item dicePanel">

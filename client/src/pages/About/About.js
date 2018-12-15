@@ -4,7 +4,7 @@ import NavBar from '../../components/NavBar'
 
 const About = () => (
     
-    <div id="about">
+    <div className="about">
     <NavBar />
         <h1>Welcome to the Dungeon Master's Database</h1>
         <ul>
