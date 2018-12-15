@@ -1,10 +1,16 @@
 import React from "react";
-import "./style.css";
+
+// import "./style.css";
+import NavBar from '../../components/NavBar'
 
 const Generator = () => (
-    <div id="generator">
+    
+    <div className="about">
+    <NavBar />
+        <h1>Generator</h1>
 
-</div>
+    </div>
+
 );
 
 export default Generator;
