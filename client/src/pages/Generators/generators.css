@@ -1,0 +1,37 @@
+.generator{
+    background-image: url("../../assets/images/generatorsBG.jpg");
+    background-size: cover;
+    background-attachment: fixed;   
+    text-align: center;
+    overflow: hidden;
+    width: 100%;
+    min-height: 100vh;
+}
+
+@font-face {
+    font-family: 'moria';
+    src: url(../../assets/fonts/Moria.TTF) format('truetype');    
+  }
+
+.btn{
+    font-family: moria;
+    background-color: maroon;
+    color: white;
+    box-shadow: 1px 1px 10px black;
+    margin: 3%;
+}
+
+.jumbotron{
+    opacity: 0.9;
+    width: 75%;
+    margin: 5%;
+    background-color: #ccc;
+}
+
+.container {
+    width: 50%;
+}
+
+p{
+    font-size: 1.5rem;
+}
