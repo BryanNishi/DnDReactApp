@@ -5,7 +5,10 @@ import DM from "./pages/DM";
 import Monster from "./pages/Monsters";
 import Spell from "./pages/Spells";
 import Generators from "./pages/Generators";
-import Character from "./pages/Character";
+import AdvCharacter from "./pages/AdvCharacter";
+import Guided from "./pages/BasicCharacter";
+import NPC from "./pages/NPC";
+import Sheet from "./pages/CharacterSheets";
 
 const App = () => (
   <Router>
@@ -16,7 +19,10 @@ const App = () => (
         <Route path="/monster" component={Monster} />
         <Route path="/spell" component={Spell} />
         <Route path="/generators" component={Generators} />
-        <Route path="/character" component={Character} />
+        <Route path="/advcharacter" component={AdvCharacter} />
+        <Route path="/guidedcharacter" component={Guided} />
+        <Route path="/npc" component={NPC} />
+        <Route path="/sheet" component={Sheet} />
             
     </div>
   </Router>

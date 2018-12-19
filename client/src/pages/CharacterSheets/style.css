@@ -1,0 +1,9 @@
+.Sheet{
+    background-image: url("../../assets/images/createBG.jpg");
+    background-size: cover;
+    background-attachment: fixed;   
+    text-align: center;
+    overflow: hidden;
+    width: 100%;
+    min-height: 100vh;
+}

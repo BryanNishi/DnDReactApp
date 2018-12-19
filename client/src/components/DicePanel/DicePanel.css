@@ -110,7 +110,7 @@ form {
 .btn:hover {
     text-shadow: 0rem 0rem 1rem white;
     opacity: 0.9;
-    box-shadow: 1px 1px 2rem 0.1rem #666;
+    box-shadow: 1px 1px 2rem 0.1rem #666 !important;
 }
 
 .create-btn {
@@ -130,6 +130,8 @@ form {
 .diceRoll {
     padding: 0rem 1rem;
     margin: -0.5rem 0rem;
+    background: transparent !important;
+    box-shadow: none !important;
 }
 
 .close{
@@ -143,4 +145,5 @@ form {
 /* Char Sheet */
 img {
     width: 100%;
+    
 }
