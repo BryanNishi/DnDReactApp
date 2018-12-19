@@ -1,10 +1,14 @@
 import React from "react";
-import "./style.css";
+
+import NavBar from '../../components/NavBar'
 
 const Character = () => (
-    <div id="character">
+    
+    <div>
+    <NavBar />
+        
 
-</div>
+    </div>
 );
 
 export default Character;

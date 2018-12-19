@@ -1,0 +1,50 @@
+@font-face {
+    font-family: moria;
+    src: url(../../assets/fonts/Moria.TTF);
+}
+
+@font-face {
+    font-family: magic;
+    src: url(../../assets/fonts/MagicMedieval.ttf);
+}
+
+@font-face {
+    font-family: dragon;
+    src: url(../../assets/fonts/Dragon.ttf);
+}
+
+/* Body styling */
+.spellBody {
+    background-image: url(../../assets/images/loreBG.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100%;
+    bottom: 0;
+    top:0; 
+    left: 0;
+    right: 0;
+    position: absolute;  
+    color: white;  
+}
+
+#spellSubmit{
+    margin: 1rem;
+
+}
+
+.scroll{
+    background-image: url(../../assets/images/scrollBackground.jpg);
+    background-size: cover;  
+    background-repeat: no-repeat;
+    background-attachment: scroll;  
+    width: 65rem;
+    padding: 5rem 8rem 2rem 13rem;
+    color: black;
+    font-family: magic;
+    border-radius: 10px;
+    font-size: 2rem;
+    margin: auto;
+    height: 22rem;
+    overflow-y: auto;
+    
+}
