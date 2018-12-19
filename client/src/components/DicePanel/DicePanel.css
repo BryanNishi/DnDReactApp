@@ -63,14 +63,18 @@ label {
     text-align: center;
     background-color: white;
     padding: 0.25rem;
+    color: black;    
 }
 
 #rolls {
     font-family: dragon;
-    font-size: 2rem;
+    font-size: 3rem;
     text-align: center;
     background-color: white;
     padding: 0.25rem;
+    color: black;
+    font-weight: bold;
+    opacity: 10;
 }
 
 .creator {

@@ -39,7 +39,7 @@ class NavBar extends Component {
                                 <a className="nav-link" href="/monster">Monster Manual</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/Spells">Spells</a>
+                                <a className="nav-link" href="/spell">Spells</a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="/Generators">Generators</a>
@@ -50,19 +50,25 @@ class NavBar extends Component {
                             </li>
 
                             <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                <a className="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false">
                                     Extras
                     </a>
                                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+<<<<<<< HEAD
+                                    
+                                    <a className="dropdown-item" href="/">Character Sheets</a>
+                                    
+=======
                                     {/* <a className="dropdown-item" href="dice.html">Dice Roller</a> */}
                                     <a className="dropdown-item" href="/sheet">Character Sheets</a>
                                     {/* <a className="dropdown-item" href="#">Something else here</a> */}
+>>>>>>> html
                                 </div>
                             </li>
 
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Search</a>
+                                <a className="nav-link" href="/">Search</a>
                             </li>
 
 

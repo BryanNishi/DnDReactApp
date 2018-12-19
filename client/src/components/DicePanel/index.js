@@ -20,7 +20,7 @@ class DicePanel extends Component {
         $(".diceRoll").on("click", function () {
             var multi = $("#multi").val();
 
-            for (let i = 0; i < multi; i++) {
+            for(let i = 0; i < multi; i++) {
                 var num = parseInt(this.value);
                 var result = Math.floor((Math.random() * num) + 1);
                 $("#rolls").append("D" + this.value + "= " + result + "<br/>")
@@ -87,9 +87,9 @@ class DicePanel extends Component {
                 </div>
                 <div className="row">
                     <div className="col-sm">
-                        <label for="multi">Multiplier:</label>
-                        <select className="form-control" id="multi">
-                            <option value="1" selected="selected">1</option>
+                        <label>Multiplier:</label>
+                        <select className="form-control" id="multi" >
+                            <option value="1" defaultValue>1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
