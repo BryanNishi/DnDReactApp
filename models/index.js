@@ -1,3 +1,7 @@
 module.exports = {
-  Book: require("./book")
-};
+  DMnote: require("./DMnotes"),
+  DungeonGen: require("./Dungeon"),
+  InnGen: require("./Inn"),
+  LandGen: require("./Land"),
+  TreasureGen: require("./Treasure")
+  };

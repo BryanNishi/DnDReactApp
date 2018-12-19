@@ -1,21 +1,50 @@
 const mongoose = require("mongoose");
 const db = require("../models");
 
-// This file empties the Books collection and inserts the books below
+// This file empties the Inn collection and inserts the names below
 
 mongoose.connect(
   process.env.MONGODB_URI ||
   "mongodb://localhost/dndapp"
 );
 
-const bookSeed = [
-  
+const innAdjSeed = [
+  {
+    first: "Happy"
+  },
+  {
+    first: "Sad"
+  },
+  {
+    first: "Old"
+  },
+  {
+    first: "New"
+  },
+  {
+    first: "Jousting"
+  },
+  {
+    first: "Salty"
+  },
+  {
+    first: "Crusty"
+  },
+  {
+    first: "Fighting"
+  },
+  {
+    first: "Kneeling"
+  },
+  {
+    first: "Sticky"
+  },
 
 ];
 
-db.Book
+db.InnAdj
   .remove({})
-  .then(() => db.Book.collection.insertMany(bookSeed))
+  .then(() => db.InnAdj.collection.insertMany(innAdjSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);
