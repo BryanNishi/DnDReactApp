@@ -23,8 +23,8 @@
 
 .jumbotron{
     opacity: 0.9;
-    width: 75%;
     margin: 5%;
+    padding: 1%;
     background-color: #ccc;
 }
 
@@ -34,4 +34,5 @@
 
 p{
     font-size: 1.5rem;
+    margin: 0;
 }

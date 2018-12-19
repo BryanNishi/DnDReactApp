@@ -9,6 +9,7 @@ import AdvCharacter from "./pages/AdvCharacter";
 import Guided from "./pages/BasicCharacter";
 import NPC from "./pages/NPC";
 import Sheet from "./pages/CharacterSheets";
+import Character from "./pages/Character";
 
 const App = () => (
   <Router>
@@ -23,7 +24,8 @@ const App = () => (
         <Route path="/guidedcharacter" component={Guided} />
         <Route path="/npc" component={NPC} />
         <Route path="/sheet" component={Sheet} />
-            
+        <Route path="/character" component={Character} />
+        
     </div>
   </Router>
 );
