@@ -9,11 +9,17 @@
 }
 body, html {height: 100%; }
 
-html, body, .monsterBody {
+.monsterBody {
     background-image: url(../../assets/images/monsterBG.jpg);
     background-size: cover;
     background-attachment: fixed;
-    height: 100%;    
+    height: 100%;
+    bottom: 0;
+    top:0; 
+    left: 0;
+    right: 0;
+    position: absolute;  
+    color: white;    
 }
 
 /* Navbar Styling */
