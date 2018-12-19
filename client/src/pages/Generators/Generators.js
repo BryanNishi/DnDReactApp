@@ -17,11 +17,11 @@ const Generators = () => (
                                 <p>Quick Character Generator</p>
                             </Button>
                         
-                            <Button className="btn">
+                            <Button className="btn"  href="/guidedcharacter">
                                 <p>Guided Character Generator</p>
                             </Button>
                        
-                            <Button className="btn" href="/character">
+                            <Button className="btn" href="/advcharacter">
                                 <p>Advanced Character Generator</p>
                             </Button>
                             <Button className="btn">
@@ -36,7 +36,7 @@ const Generators = () => (
                         <Button className="btn">
                             <p>Quick NPC Generator</p>
                         </Button>
-                        <Button className="btn">
+                        <Button className="btn" href="/npc">
                             <p>NPC Generator</p>
                         </Button>
                         <Button className="btn">

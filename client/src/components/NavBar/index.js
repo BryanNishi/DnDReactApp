@@ -56,7 +56,7 @@ class NavBar extends Component {
                     </a>
                                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                                     {/* <a className="dropdown-item" href="dice.html">Dice Roller</a> */}
-                                    <a className="dropdown-item" href="#">Character Sheets</a>
+                                    <a className="dropdown-item" href="/sheet">Character Sheets</a>
                                     {/* <a className="dropdown-item" href="#">Something else here</a> */}
                                 </div>
                             </li>

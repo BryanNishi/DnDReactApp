@@ -3,12 +3,12 @@ import "./style.css";
 import NavBar from '../../components/NavBar'
 import AdvCC from '../../components/AdvCC'
 
-const Character = () => (
-    <div id="character">
+const AdvCharacter = () => (
+    <div className="character">
     <NavBar />
     <AdvCC />
 
 </div>
 );
 
-export default Character;
+export default AdvCharacter;
