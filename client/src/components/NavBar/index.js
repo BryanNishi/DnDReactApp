@@ -39,7 +39,7 @@ class NavBar extends Component {
                                 <a className="nav-link" href="/monster">Monster Manual</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/spell">Spells</a>
+                                <a className="nav-link" href="/spell">Spell Book</a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="/Generators">Generators</a>
