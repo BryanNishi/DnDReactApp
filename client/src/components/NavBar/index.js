@@ -39,7 +39,7 @@ class NavBar extends Component {
                                 <a className="nav-link" href="/monster">Monster Manual</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/spell">Spells</a>
+                                <a className="nav-link" href="/spell">Spell Book</a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="/Generators">Generators</a>
@@ -55,15 +55,9 @@ class NavBar extends Component {
                                     Extras
                     </a>
                                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-<<<<<<< HEAD
-                                    
-                                    <a className="dropdown-item" href="/">Character Sheets</a>
-                                    
-=======
                                     {/* <a className="dropdown-item" href="dice.html">Dice Roller</a> */}
                                     <a className="dropdown-item" href="/sheet">Character Sheets</a>
                                     {/* <a className="dropdown-item" href="#">Something else here</a> */}
->>>>>>> html
                                 </div>
                             </li>
 
