@@ -4,11 +4,12 @@ var Schema = mongoose.Schema;
 
 //Create new Schema
 var innSchema = new Schema({
- 
-  first: { type: String, required: true }
+  adj: String,
+  noun: String,
+  type: String,
 });
 
 // Creates model
-var InnAdj = mongoose.model("InnAdj", innSchema);
+var Inn = mongoose.model("Inn", innSchema);
 
-module.exports = InnAdj;
+module.exports = Inn;

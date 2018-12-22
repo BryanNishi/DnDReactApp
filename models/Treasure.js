@@ -9,6 +9,6 @@ var TreasureSchema = new Schema({
 });
 
 // Creates model
-var TreasureGen = mongoose.model("Note", TreasureSchema);
+var TreasureGen = mongoose.model("Treasure", TreasureSchema);
 
 module.exports = TreasureGen;

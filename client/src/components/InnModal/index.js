@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
+import API from "../../utils/API";
 import './InnModal.css';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
-class InnModal extends React.Component {
+class InnModal extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -18,6 +19,17 @@ class InnModal extends React.Component {
     });
   }
 
+  generate = event => {
+    event.preventDefault();
+   {
+        API.loadInn()
+            .then(res => this.loadInn({inns: res.data}))
+            .catch(err => console.log(err));
+    }
+    console.log(this.state)
+};
+
+ 
   render() {
     return (
       <div>
@@ -26,8 +38,10 @@ class InnModal extends React.Component {
           <ModalHeader className="modalHeader" toggle={this.toggle}><h2>Inn Name Generator</h2></ModalHeader>
           <ModalBody className="modalBody" id="innGenResult">
           </ModalBody>
+         
+                    
           <ModalFooter className="modalFooter">
-            <Button className="btn" onClick={this.toggle}>Generate</Button>{' '}
+            <Button className="btn" onClick={this.generate}>Generate</Button>{' '}
           </ModalFooter>
         </Modal>
       </div>

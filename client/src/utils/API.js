@@ -14,6 +14,8 @@ export default {
   },
   getfeature: function(features) {
     return axios.get("http://dnd5eapi.co/api/features/" + features);
+  },
+  getInn: function() {
+    return axios.get("/api/inn");
   }
-  
 };

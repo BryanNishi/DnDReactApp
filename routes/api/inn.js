@@ -1,16 +1,16 @@
 const router = require("express").Router();
-const CharSheetController = require("../../controllers/CharSheetController");
+const GeneratorController = require("../../controllers/GeneratorContoller");
 
-// Matches with "/api/charsheets"
+// Matches with "/api/inn"
 router.route("/")
-  .get(CharSheetController.findAll)
-  .post(CharSheetController.create);
+  .get(GeneratorController.getInn)
 
-// Matches with "/api/charsheets/:id"
-router
-  .route("/:id")
-  .get(CharSheetController.findById)
-  .put(CharSheetController.update)
-  .delete(CharSheetController.remove);
+// Matches with "/api/land"
+// router.route("/land")
+// console.log("land")
+//   .get(GeneratorController.getLand)
+
+
+
 
 module.exports = router;

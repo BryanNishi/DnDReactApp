@@ -8,43 +8,109 @@ mongoose.connect(
   "mongodb://localhost/dndapp"
 );
 
-const innAdjSeed = [
+//**********************Inn Name Collection */
+const innSeed = [
   {
-    first: "Happy"
+    adj:[
+    "Happy",
+    "Sad",
+    "Old",
+    "New",
+    "Jousting",
+    "Salty",
+    "Crusty",
+    "Fighting",
+    "Kneeling",
+    "Sticky",
+    "Starving"
+  ] 
   },
   {
-    first: "Sad"
+    noun: [
+    "Artist",
+    "Apostle",
+    "Beast",
+    "Knight",
+    "Beggar",
+    "Fighter",
+    "Fool",
+    ]
   },
   {
-    first: "Old"
-  },
-  {
-    first: "New"
-  },
-  {
-    first: "Jousting"
-  },
-  {
-    first: "Salty"
-  },
-  {
-    first: "Crusty"
-  },
-  {
-    first: "Fighting"
-  },
-  {
-    first: "Kneeling"
-  },
-  {
-    first: "Sticky"
-  },
-
+    type: [
+      "Inn",
+      "Tavern",
+      "Pub"
+    ]
+  }
+  
+  
 ];
 
-db.InnAdj
-  .remove({})
-  .then(() => db.InnAdj.collection.insertMany(innAdjSeed))
+
+db.Inn
+  .remove({}) //clear out the collection
+  .then(() => db.Inn.collection.insertMany(innSeed)) //re-insert seed
+  .then(data => {
+    console.log(data.result.n + " records inserted!");
+    process.exit(0);
+  })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
+
+//**********************Land Name Collection */
+const landSeed = [
+ {
+  adj: [
+    "Ancient",
+    "Barren",
+    "Crusty",
+    "Carrion",
+    "Callous",
+    "Creaky",
+    "Damp",
+    "Dusty",
+    "Damned",
+    "Evergreen",
+    "Erie",
+    "Great",
+    "Grand",
+    "Hollow",
+    "Jagged",
+    "Lonley",
+    "Lost",
+    "Misty",
+    "Musty",
+    "Mossy",
+    "Retched",
+    "Rusty"
+  ]
+ },
+ {
+  noun: [
+    "Swamp",
+    "Mountains",
+    "Sea",
+    "Ocean",
+    "Forrest",
+    "Plains",
+    "Highlands",
+    "Mines",
+    "Caves",
+    "Archipeligo",
+    "Islands",
+    "River"
+  ]
+ }
+];
+
+
+
+db.Land
+  .remove({}) //clear out the collection
+  .then(() => db.Land.collection.insertMany(landSeed)) //re-insert seed
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);

@@ -9,6 +9,6 @@ var DMnoteSchema = new Schema({
 });
 
 // Creates model
-var DMnote = mongoose.model("Note", DMnoteSchema);
+var DMnote = mongoose.model("DMNote", DMnoteSchema);
 
 module.exports = DMnote;

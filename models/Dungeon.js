@@ -9,6 +9,6 @@ var DungeonSchema = new Schema({
 });
 
 // Creates model
-var DungeonGen = mongoose.model("Note", DungeonSchema);
+var DungeonGen = mongoose.model("Dungeon", DungeonSchema);
 
 module.exports = DungeonGen;

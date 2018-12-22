@@ -4,11 +4,11 @@ var Schema = mongoose.Schema;
 
 //Create new Schema
 var LandSchema = new Schema({
- 
-  body: String
+  adj: { type: String, required: true },
+  noun: { type: String, required: true }
 });
 
 // Creates model
-var LandGen = mongoose.model("Note", LandSchema);
+var Land = mongoose.model("Land", LandSchema);
 
-module.exports = LandGen;
+module.exports = Land;
