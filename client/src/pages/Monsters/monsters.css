@@ -7,7 +7,7 @@
     font-family: magic;
     src: url(../../assets/fonts/MagicMedieval.ttf);
 }
-body, html {height: 100%; }
+
 
 .monsterBody {
     background-image: url(../../assets/images/monsterBG.jpg);
@@ -52,3 +52,35 @@ h1 {
     text-align: center;
     text-shadow: 2px 2px black;
 }
+
+.actions p, .specialAbilities p, .legendaryActions p{
+    color: black;
+    text-align: left;    
+}
+
+.actions, .specialAbilities, .legendaryActions {
+    border: solid black .05rem;
+    padding: .5rem; 
+    margin-bottom: 1rem;   
+}
+
+.results{
+    color: black;
+    text-align: left;
+}
+
+.scroll{
+    background-image: url(../../assets/images/scrollBackground.jpg);
+    background-size: cover;  
+    background-repeat: no-repeat;
+    background-attachment: scroll;  
+    width: 63rem;
+    padding: 5rem 6rem 2rem 6rem;
+    color: black;
+    font-family: magic;
+    border-radius: 10px;
+    font-size: 1.5rem;    
+    height: 28rem;
+    overflow-y: auto;    
+}
+
