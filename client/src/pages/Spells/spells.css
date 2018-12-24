@@ -28,7 +28,7 @@
 }
 
 #spellSubmit{
-    margin: 1rem;
+    margin-top: 1rem;
 
 }
 
@@ -37,14 +37,18 @@
     background-size: cover;  
     background-repeat: no-repeat;
     background-attachment: scroll;  
-    width: 65rem;
-    padding: 5rem 8rem 2rem 13rem;
+    width: 58rem;
+    padding: 5rem 8rem 2rem 8rem;
     color: black;
-    font-family: magic;
+    font-family: 'Times New Roman', Times, serif;
     border-radius: 10px;
-    font-size: 2rem;
-    margin: auto;
-    height: 22rem;
+    font-size: 1.4rem;    
+    height: 28rem;
     overflow-y: auto;
     
 }
+
+.spellTable, .col-sm-4, .col-sm-8{
+    border: solid black 0.05rem;    
+}
+

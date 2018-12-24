@@ -15,20 +15,7 @@ export default {
   getfeature: function(features) {
     return axios.get("http://dnd5eapi.co/api/features/" + features);
   },
-  // Gets all character sheets
-  getCharsheet: function() {
-    return axios.get("/api/charsheet");
-  },
-  // Gets the character sheet with the given id
-  getCharsheet: function(id) {
-    return axios.get("/api/charsheet/" + id);
-  },
-  // Deletes the character sheet with the given id
-  deleteCharsheet: function(id) {
-    return axios.delete("/api/charsheet/" + id);
-  },
-  // Saves a character sheet to the database
-  saveCharsheet: function(CharSheetData) {
-    return axios.post("/api/charsheet", CharSheetData);
+  getInn: function() {
+    return axios.get("/api/inn");
   }
 };

@@ -13,17 +13,23 @@
     src: url(../../assets/fonts/Moria.TTF) format('truetype');    
   }
 
-@font-face {
-    font-family: 'magic';
-    src: url(../../assets/fonts/MagicMedieval.ttf) format('truetype');    
-  }
-
+.btn{
+    font-family: moria;
+    background-color: maroon;
+    color: white;
+    box-shadow: 1px 1px 10px black;
+    margin: 3%;
+}
 
 .jumbotron{
     opacity: 0.9;
     margin: 5%;
     padding: 1%;
     background-color: #ccc;
+}
+
+.container {
+    width: 50%;
 }
 
 p{

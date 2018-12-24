@@ -6,10 +6,8 @@ import $ from 'jquery';
 
 class Spell extends Component {
 
-    state = {
-        searchList: [],
-        searchNumber: "",
-        searchResult: [],
+    state = {               
+        spellList: [],
         casting_time: "",
         classes: "",
         components: "",
@@ -20,13 +18,14 @@ class Spell extends Component {
         range: "",
         ritual: "",
         school: "",
-        subclasses: ""
+        subclasses: "",
     }
 
     componentDidMount() {
         API.getSpell("")
-            .then(res => {
-                this.setState({ searchList: res.data.results });
+            .then(res => {                                
+
+                this.setState({ spellList: res.data.results.map(spell => spell.name) });
 
             })
             .catch(err => console.log(err));
@@ -35,19 +34,24 @@ class Spell extends Component {
     submitSearch = event => {
         event.preventDefault();
 
-        if ($("#spellSearch").val() > 0 && $("#spellSearch").val() < 320) {
+        let choice = $("#spellSearch").val();
 
-            let choice = $("#spellSearch").val().toString();
+        console.log(choice);
 
-            console.log(choice);
+        console.log(this.state.spellList.indexOf(choice));
 
-            API.getSpell(choice)
+        let spellIndex = this.state.spellList.indexOf(choice);
+
+        if (spellIndex !== -1) {
+
+
+
+            API.getSpell(spellIndex + 1)
                 .then(res => {
                     console.log(res.data);
                     let results = res.data;
 
-                    this.setState({
-                        searchResult: res.data,
+                    this.setState({                        
                         casting_time: results.casting_time,
                         classes: results.classes.map(value => value.name).join(", "),
                         components: results.components.join(", "),
@@ -64,15 +68,14 @@ class Spell extends Component {
 
                 });
 
+
         } else {
-            $("#noResults").text("No Results Found").css({ "color": "red" });
+            $("#noResults").html("No Results Found").css({ "color": "red" });
+            this.setState({ name: "" });
 
         }
+
     }
-
-
-
-
 
     render() {
         return (
@@ -80,50 +83,79 @@ class Spell extends Component {
                 <NavBar />
 
                 <h1>SpellBook</h1>
-                <form>
+                <div className="row">
+                    <div className="col-md-3">
+                        <form>
 
-                    <input list="browsers" name="browser" id="spellSearch" className="form-control" placeholder="Search Spell Library" />
+                            <input list="browsers" name="browser" id="spellSearch" className="form-control" placeholder="Search Spell Library" />
 
-                    <datalist id="browsers">
+                            <datalist id="browsers">
 
-                        {this.state.searchList.map((spell, index) => <option key={index + 1} value={index + 1}>{spell.name}</option>)}
+                                {this.state.spellList.map(spell => <option key={spell} value={spell} />)}
 
-                    </datalist>
-                    <center>
-                        <a href="#" class="btn create-btn" role="button" id="spellSubmit" onClick={this.submitSearch}>Scroogle</a>
-                    </center>
-                </form>
+                            </datalist>
+                            <center>
+                                <a className="btn create-btn" role="button" id="spellSubmit" onClick={this.submitSearch}>Scroogle</a>
+                            </center>
+                        </form>
 
-                {this.state.name ? (
-                    <div className="scroll">
-
-
-                        <strong>Name:</strong> {this.state.name}
-                        <br />
-                        <strong>Level:</strong> {this.state.level}
-                        <br />
-                        <strong>Range:</strong> {this.state.range}
-                        <br />
-                        <strong>Casting Time:</strong> {this.state.casting_time}
-                        <br />
-                        <strong>Ritual:</strong> {this.state.ritual}
-                        <br />
-                        <strong>Description:</strong> {this.state.desc}
-                        <br />
-                        <strong>Components:</strong> {this.state.components}
-                        <br />
-                        <strong>Page:</strong> {this.state.page}
-                        <br />
-                        <strong>Classes:</strong> {this.state.classes}
-                        <br />
-                        <strong>School:</strong> {this.state.school}
-                        <br />
-                        <strong>Subclasses:</strong> {this.state.subclasses}
                     </div>
 
-                ) : <h3 id="noResults">No Search Results Availible</h3>
+                    <div className="col-md-9">
+                        {this.state.name ? (
+                            <div className="scroll">
 
-                }
+
+                                <div className="row spellTable">
+                                    <div className="col-sm-4">
+
+                                        <strong>Name:</strong> {this.state.name}
+                                        <br />
+                                        <strong>Level:</strong> {this.state.level}
+                                        <br />
+                                        <strong>Range:</strong> {this.state.range}
+                                        <br />
+                                        <strong>Casting Time:</strong> {this.state.casting_time}
+                                        <br />
+                                        <strong>Ritual:</strong> {this.state.ritual}
+
+                                    </div>
+
+                                    <div className="col-sm-8">
+                                        <strong>Description:</strong> {this.state.desc}
+
+                                    </div>
+
+
+                                </div>
+
+
+                                <strong>Components:</strong> {this.state.components}
+                                <br />
+                                <strong>Page:</strong> {this.state.page}
+                                <br />
+                                <strong>Classes:</strong> {this.state.classes}
+                                <br />
+                                <strong>School:</strong> {this.state.school}
+                                <br />
+                                <strong>Subclasses:</strong> {this.state.subclasses}
+                            </div>
+
+                        ) : <div>
+                                <h3 id="noResults">No Search Results Available</h3>
+                            </div>
+
+                        }
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
 
 
 
@@ -132,9 +164,5 @@ class Spell extends Component {
         )
     }
 }
-
-
-
-
 
 export default Spell;
