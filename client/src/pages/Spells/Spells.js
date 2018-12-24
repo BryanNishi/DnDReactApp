@@ -95,7 +95,7 @@ class Spell extends Component {
 
                             </datalist>
                             <center>
-                                <a href="#" className="btn create-btn" role="button" id="spellSubmit" onClick={this.submitSearch}>Scroogle</a>
+                                <a className="btn create-btn" role="button" id="spellSubmit" onClick={this.submitSearch}>Scroogle</a>
                             </center>
                         </form>
 

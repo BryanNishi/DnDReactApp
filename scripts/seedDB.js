@@ -23,9 +23,8 @@ const innSeed = [
     "Kneeling",
     "Sticky",
     "Starving"
-  ] 
-  },
-  {
+  ],
+ 
     noun: [
     "Artist",
     "Apostle",
@@ -34,9 +33,8 @@ const innSeed = [
     "Beggar",
     "Fighter",
     "Fool",
-    ]
-  },
-  {
+    ],
+  
     type: [
       "Inn",
       "Tavern",

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Form, FormGroup, Label, Input, Row, Col, Jumbotron } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input, Row, Col } from 'reactstrap';
 
 
 
