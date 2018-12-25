@@ -3,12 +3,13 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 //Create new Schema
-var DungeonSchema = new Schema({
- 
-  body: String
+var dungeonSchema = new Schema({
+  direction: [String],
+  element: [String],
+  description:[String]
 });
 
 // Creates model
-var DungeonGen = mongoose.model("Dungeon", DungeonSchema);
+var Dungeon = mongoose.model("Dungeon", dungeonSchema);
 
-module.exports = DungeonGen;
+module.exports = Dungeon;

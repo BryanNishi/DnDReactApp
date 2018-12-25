@@ -1,4 +1,4 @@
-.generator{
+.landGenerator{
     background-image: url("../../assets/images/generatorsBG.jpg");
     background-size: cover;
     background-attachment: fixed;   
@@ -13,23 +13,21 @@
     src: url(../../assets/fonts/Moria.TTF) format('truetype');    
   }
 
-.btn{
-    font-family: moria;
-    background-color: maroon;
-    color: white;
-    box-shadow: 1px 1px 10px black;
-    margin: 3%;
-}
+@font-face {
+    font-family: 'magic';
+    src: url(../../assets/fonts/MagicMedieval.ttf) format('truetype');    
+  }
+
 
 .jumbotron{
     opacity: 0.9;
-    margin: 5%;
+    margin: 0;
     padding: 1%;
     background-color: #ccc;
-}
-
-.container {
     width: 50%;
+    display: inline-block;
+    font-family: magic;
+    font-size: 1.5rem;
 }
 
 p{

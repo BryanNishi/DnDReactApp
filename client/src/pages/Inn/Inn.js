@@ -1,22 +1,22 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-import "./inn.css";
 import NavBar from '../../components/NavBar';
 import { Jumbotron } from 'reactstrap';
+import { List, ListItem } from "../../components/List";
 import Button from "../../components/Button";
-
+import "./inn.css";
 
 
 class Inn extends Component {
     state = {
         generate: {
             href: "/inn",
-            name: "Generate Inn"
+            name: "Generate 5 Inns"
         },
-        adj: [],
-        noun: [],
-        type: [],
-
+        adjs: [],
+        nouns: [],
+        types: [],
+        innNames: []
     }
     // When the component mounts retreive all inn arrays
     componentDidMount() {
@@ -27,31 +27,55 @@ class Inn extends Component {
     // Loads all inn arrays to states
     loadInn = () => {
         API.getInn()
-
             .then(response => {
-                this.setState({ adj: response.data[0].adj });
-                this.setState({ noun: response.data[1].noun });
-                this.setState({ type: response.data[2].type });
+                this.setState({ adjs: response.data[0].adj });
+                this.setState({ nouns: response.data[0].noun });
+                this.setState({ types: response.data[0].type });
             })
             .catch(err => console.log(err));
-
     };
 
     generateHandler = (event) => {
-        console.log("trigger")
         event.preventDefault();
-        console.log("trigger")
-        console.log(this.state.adj, this.state.noun, this.state.type)
-    }
+        let generatedName = [];
+        //Generate 5 inn names
+        let i = 0;
+        for (i = 0; i < 5; i++) {
+            //pull random adjective
+            let adj = "The " + this.state.adjs[Math.floor(Math.random() * this.state.adjs.length)] + " ";
+
+            //pull random noun
+            let noun = this.state.nouns[Math.floor(Math.random() * this.state.nouns.length)] + " ";
+
+            //pull random type
+            let type = this.state.types[Math.floor(Math.random() * this.state.types.length)];
+
+            //send to array
+            generatedName.push(adj + noun + type);
+            console.log("generated", generatedName);
+            //set state to array of inn names
+            this.setState({ innNames: generatedName })
+        };
+    };
 
     render() {
         return (
             <div className="innGenerator">
                 <NavBar />
                 <h1>Inn Name Generator</h1>
-                <Jumbotron id="inn" />
+                <Jumbotron>
+                    <List>
+                        {this.state.innNames.map(inn => (
+                            <ListItem>
+                                {inn}
+                            </ListItem>
+                        ))}
+                    </List>
 
-                <Button onClick={this.generateHandler} name={this.state.generate.name} />
+
+                </Jumbotron> />
+
+                <Button clicked={this.generateHandler} name={this.state.generate.name} />
             </div>
         );
     }

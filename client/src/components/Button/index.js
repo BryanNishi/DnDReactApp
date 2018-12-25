@@ -5,7 +5,7 @@ import "./button.css";
 const button = (props) => {
     return (
         <div>
-            <Button href={props.href}>
+            <Button href={props.href} onClick={props.clicked}>
                 <p>{props.name}</p>
             </Button>
         </div>

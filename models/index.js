@@ -1,7 +1,7 @@
 module.exports = {
   DMnote: require("./DMnotes"),
-  DungeonGen: require("./Dungeon"),
+  Dungeon: require("./Dungeon"),
   Inn: require("./Inn"),
   Land: require("./Land"),
-  TreasureGen: require("./Treasure")
+  Treasure: require("./Treasure")
   };

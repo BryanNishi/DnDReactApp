@@ -17,5 +17,11 @@ export default {
   },
   getInn: function() {
     return axios.get("/api/inn");
+  },
+  getLand: function() {
+    return axios.get("/api/land");
+  },
+  getDungeon: function() {
+    return axios.get("/api/dungeon");
   }
 };

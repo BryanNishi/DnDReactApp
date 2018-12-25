@@ -1,8 +1,8 @@
 const router = require("express").Router();
 const GeneratorController = require("../../controllers/GeneratorContoller");
 
-// Matches with "/api/inn"
+// Matches with "/api/land"
 router.route("/")
-  .get(GeneratorController.getInn)
+  .get(GeneratorController.getLand)
 
 module.exports = router;

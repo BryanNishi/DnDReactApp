@@ -9,12 +9,19 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  // Gets the character sheet with the given id
-  // getLand: function (req, res) {
-  //   db.Land
-  //     .find(req.query)
-  //     .then(dbModel => res.json(dbModel))
-  //     .catch(err => res.status(422).json(err));
-  // },
+//get all land names
+  getLand: function (req, res) {
+    db.Land
+      .find(req.query)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+//get all dungeon names
+  getDungeon: function (req, res) {
+    db.Dungeon
+      .find(req.query)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
 
 };

@@ -21,9 +21,13 @@
 
 .jumbotron{
     opacity: 0.9;
-    margin: 5%;
+    margin: 0;
     padding: 1%;
     background-color: #ccc;
+    width: 50%;
+    display: inline-block;
+    font-family: magic;
+    font-size: 1.5rem;
 }
 
 p{
