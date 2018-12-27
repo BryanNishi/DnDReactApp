@@ -177,9 +177,10 @@ class Monsters extends Component {
                                     <div className="col-sm-12">
 
                                     {this.state.searchResults.damage_immunities ? <div><strong>Damage Immunities:</strong> {this.state.searchResults.damage_immunities}<br /></div> : ""}
-                                    {this.state.searchResults.damage_resistances ? <div><strong>Damage Resistances:</strong> {this.state.searchResults.damage_resistances}<br /></div> : ""}
-                                    {this.state.searchResults.languages ? <div><strong>Languages:</strong> {this.state.searchResults.languages}<br /></div> : ""}
 
+                                    {this.state.searchResults.damage_resistances ? <div><strong>Damage Resistances:</strong> {this.state.searchResults.damage_resistances}<br /></div> : ""}
+
+                                    {this.state.searchResults.languages ? <div><strong>Languages:</strong> {this.state.searchResults.languages}<br /></div> : ""}
 
                                     {this.state.searchResults.perception ? <div><strong>Perception:</strong> {this.state.searchResults.perception}<br /></div> : ""}
 
@@ -194,6 +195,15 @@ class Monsters extends Component {
                                     {this.state.searchResults.subtype ? <div><strong>Subtype:</strong> {this.state.searchResults.subtype}<br /></div> : ""}
 
                                     {this.state.searchResults.alignment ? <div><strong>Alignment:</strong> {this.state.searchResults.alignment}</div> : ""}
+
+                                    {this.state.searchResults.special_abilities ? (
+                                    <span>
+                                        <h3>Special Abilities</h3>
+                                        <div className="specialAbilities"></div>
+
+                                    </span>
+                                ) : ""}
+
                                     </div>
 
                                 </div>
