@@ -52,7 +52,7 @@ class Dungeon extends Component {
             let description = this.state.descriptions[Math.floor(Math.random() * this.state.descriptions.length)] + " ";
 
             //send to array
-            generatedName.push("You head " + direction +"in to a " + element + "and it is " + description);
+            generatedName.push("You head " + direction +"into a " + element + "and it is " + description);
             console.log("generated", generatedName);
             //set state to array of dungeon names
             this.setState({ dungeonNames: generatedName })

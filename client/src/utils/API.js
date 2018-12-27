@@ -23,5 +23,8 @@ export default {
   },
   getDungeon: function() {
     return axios.get("/api/dungeon");
+  },
+  getTreasure: function() {
+    return axios.get("/api/treasure");
   }
 };

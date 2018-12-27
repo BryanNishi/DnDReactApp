@@ -85,7 +85,7 @@ const landSeed = [
       "Retched",
       "Rusty"
     ],
-  
+
     noun: [
       "Swamp",
       "Mountains",
@@ -129,7 +129,7 @@ const dungeonSeed = [
       "South",
       "West"
     ],
-  
+
     element: [
       "Small Store-room",
       "Large Store-room",
@@ -145,7 +145,7 @@ const dungeonSeed = [
       "Larder",
       "Dead End"
     ],
-  
+
     description: [
       "Well-Lit",
       "Poorly-Lit",
@@ -165,6 +165,83 @@ db.Dungeon
   .then(() => db.Dungeon.collection.insertMany(dungeonSeed)) //re-insert seed
   .then(data => {
     console.log(data.result.n + " Dungeon records inserted!");
+    process.exit(0);
+  })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
+
+
+//**********************Treasure Collection */
+const treasureSeed = [
+  {
+    gemstones: {
+      tenGP: [
+        "Azurite",
+
+      ],
+      fiftyGP: [
+        "Bloodstone",
+      ],
+      hundredGP: [
+        "Amber"
+      ],
+      fiveHundredGP: [
+        "Alexandrite"
+      ],
+      thousandGP: [
+        "Black Opal"
+      ],
+      fiveThousandGP: [
+        "Black Sapphire"
+      ]
+    }
+  },
+  {
+    art: {
+      twentyFiveGP: [
+        "Silver Ewer"
+      ],
+      twoFiftyGP: [
+        "Gold Ring set with Bloodstones"
+      ],
+      sevenFiftyGP: [
+        "Silver Chalice set with Moonstones"
+      ],
+      twoThousandFiveHundredGP: [
+        "Fine Gold Chain set with a Fire Opal"
+      ],
+      sevenThousandFiveHundredGP: [
+        "Jeweled Gold Crown"
+      ]
+    }
+  },
+  {
+    coins: {
+      idividual: [
+
+      ],
+
+      hoard: [
+
+      ]
+    },
+  },
+  {
+    magic_items: [
+
+    ]
+  }
+];
+
+
+
+db.Treasure
+  .remove({}) //clear out the collection
+  .then(() => db.Treasure.collection.insertMany(treasureSeed)) //re-insert seed
+  .then(data => {
+    console.log(data.result.n + " Treasure records inserted!");
     process.exit(0);
   })
   .catch(err => {

@@ -4,8 +4,24 @@ var Schema = mongoose.Schema;
 
 //Create new Schema
 var TreasureSchema = new Schema({
+  gemstones: {
+    tenGP:[String],
+    fiftyGP: [],
+    hundredGP:[],
+    fiveHundredGP: [],
+    thousandGP: [],
+    fiveThousandGP: []
+  },
+  art: {
+
+  },
+  coins: {
+
+  },
+  magic_items: {
+
+  }
  
-  body: String
 });
 
 // Creates model
