@@ -3,5 +3,6 @@ module.exports = {
   Dungeon: require("./Dungeon"),
   Inn: require("./Inn"),
   Land: require("./Land"),
-  Treasure: require("./Treasure")
+  Treasure: require("./Treasure"),
+  Name: require("./Name")
   };

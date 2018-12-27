@@ -30,5 +30,12 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+//get all names
+  getName: function (req, res) {
+    db.Name
+      .find(req.query)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
 
 };

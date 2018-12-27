@@ -26,5 +26,8 @@ export default {
   },
   getTreasure: function() {
     return axios.get("/api/treasure");
+  },
+  getName: function() {
+    return axios.get("/api/name");
   }
 };

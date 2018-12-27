@@ -9,8 +9,7 @@ mongoose.connect(
 );
 
 //**********************Inn Name Collection */
-const innSeed = [
-  {
+const innSeed = [{
     adj: [
       "Happy",
       "Sad",
@@ -40,18 +39,15 @@ const innSeed = [
       "Tavern",
       "Pub"
     ]
-  }
-
-
-];
+  }];
 
 
 db.Inn
   .remove({}) //clear out the collection
   .then(() => db.Inn.collection.insertMany(innSeed)) //re-insert seed
   .then(data => {
-    console.log(data.result.n + " /inn records inserted!");
-    process.exit(0);
+    console.log(data.result.n + " Inn records inserted!");
+    // process.exit(0);
   })
   .catch(err => {
     console.error(err);
@@ -110,7 +106,7 @@ db.Land
   .then(() => db.Land.collection.insertMany(landSeed)) //re-insert seed
   .then(data => {
     console.log(data.result.n + " Land records inserted!");
-    process.exit(0);
+    // process.exit(0);
   })
   .catch(err => {
     console.error(err);
@@ -165,7 +161,7 @@ db.Dungeon
   .then(() => db.Dungeon.collection.insertMany(dungeonSeed)) //re-insert seed
   .then(data => {
     console.log(data.result.n + " Dungeon records inserted!");
-    process.exit(0);
+    // process.exit(0);
   })
   .catch(err => {
     console.error(err);
@@ -242,6 +238,63 @@ db.Treasure
   .then(() => db.Treasure.collection.insertMany(treasureSeed)) //re-insert seed
   .then(data => {
     console.log(data.result.n + " Treasure records inserted!");
+    // process.exit(0);
+  })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
+
+
+  //**********************Name Collection */
+const nameSeed = [
+  {
+    Dragonborn:{
+      male:[String],
+      female:[String]
+    },
+    Dwarf:{
+      male:[String],
+      female:[String]
+    },
+    Elf:{
+      male:[String],
+      female:[String]
+    },
+    Gnome:{
+      male:[String],
+      female:[String]
+    },
+    Half_Elf:{
+      male:[String],
+      female:[String]
+    },
+    Half_Orc:{
+      male:[String],
+      female:[String]
+    },
+    Halfling:{
+      male:[String],
+      female:[String]
+    },
+    Human:{
+      male:[String],
+      female:[String]
+    },
+    Tiefling:{
+      male:[String],
+      female:[String]
+    }
+  }
+];
+
+
+
+db.Name
+  .remove({}) //clear out the collection
+  .then(() => db.Name.collection.insertMany(nameSeed)) //re-insert seed
+  .then(data => {
+    console.log(data.result.n + " Name records inserted!");
     process.exit(0);
   })
   .catch(err => {
