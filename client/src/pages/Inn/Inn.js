@@ -4,7 +4,7 @@ import NavBar from '../../components/NavBar';
 import { Jumbotron } from 'reactstrap';
 import { List, ListItem } from "../../components/List";
 import Button from "../../components/Button";
-import "./inn.css";
+import "./style.css";
 
 
 class Inn extends Component {

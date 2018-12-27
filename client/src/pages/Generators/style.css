@@ -18,7 +18,9 @@
     src: url(../../assets/fonts/MagicMedieval.ttf) format('truetype');    
   }
 
-
+.container {
+     width: 75% !important;
+}
 
 
 p{

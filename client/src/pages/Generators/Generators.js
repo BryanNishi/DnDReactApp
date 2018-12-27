@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import NavBar from '../../components/NavBar';
 import Button from "../../components/Button";
 import {Jumbotron, Row, Col } from 'reactstrap';
-import "./generators.css";
+import "./style.css";
 
 
 class Generators extends Component {
@@ -66,19 +66,19 @@ class Generators extends Component {
                 <h1>Random Generators</h1>
                 <Row>
                     <Col md="4">
-                        <Jumbotron>
+                        <Jumbotron className = "container">
                             <h2>Character Generators</h2>
                             {charButtons}
                         </Jumbotron>
                     </Col>
                     <Col md="4">
-                        <Jumbotron>
+                        <Jumbotron className = "container">
                             <h2>Non-Player Character Generators</h2>
                             {npcButtons}
                         </Jumbotron>
                     </Col>
                     <Col md="4">
-                        <Jumbotron>
+                        <Jumbotron className = "container">
                             <h2>World Generators</h2>
                             {worldButtons}
                         </Jumbotron>

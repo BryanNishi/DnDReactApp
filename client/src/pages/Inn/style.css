@@ -21,7 +21,7 @@
 
 .jumbotron{
     opacity: 0.9;
-    margin: 0;
+    margin: 0 !important;
     padding: 1%;
     background-color: #ccc;
     width: 50%;
