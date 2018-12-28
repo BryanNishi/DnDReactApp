@@ -222,6 +222,8 @@ class Monsters extends Component {
 
                     </div>
 
+
+
                 </div>
             </div>
 
