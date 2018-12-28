@@ -222,54 +222,6 @@ class Monsters extends Component {
 
                     </div>
 
-                    {/* {
-                        this.state.searchResults.name ? (      
-
-
-
-
-
-
-
-
-
-
-
-
-                                <h2>Actions</h2>
-                                <div className="actions"></div>
-
-                                {this.state.searchResults.legendary_actions ? (
-                                    <span>
-                                        <h3>Legendary Actions</h3>
-                                        <div className="legendaryActions"></div>
-                                    </span>
-                                ) : ""
-
-                                }
-
-
-                                {this.state.searchResults.special_abilities ? (
-                                    <span>
-                                        <h3>Special Abilities</h3>
-                                        <div className="specialAbilities"></div>
-
-                                    </span>
-                                ) : ""}
-
-
-
-
-                            
-
-
-                        ) : <div className="col-md-9">
-
-                                <h3 className="noResults">No Search Results Available</h3>
-
-                            </div>
-                    } */}
-
                 </div>
             </div>
 
