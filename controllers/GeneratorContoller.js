@@ -1,37 +1,41 @@
 const db = require("../models");
 
-// Defining methods for the booksController
+
 module.exports = {
-  findAll: function(req, res) {
-    db.Book
+  // Gets all Inn Names
+  getInn: function (req, res) {
+    db.Inn
       .find(req.query)
-      .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  findById: function(req, res) {
-    db.Book
-      .findById(req.params.id)
+//get all land names
+  getLand: function (req, res) {
+    db.Land
+      .find(req.query)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  create: function(req, res) {
-    db.Book
-      .create(req.body)
+//get all dungeon names
+  getDungeon: function (req, res) {
+    db.Dungeon
+      .find(req.query)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  update: function(req, res) {
-    db.Book
-      .findOneAndUpdate({ _id: req.params.id }, req.body)
+//get all treasure
+  getTreasure: function (req, res) {
+    db.Treasure
+      .find(req.query)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  remove: function(req, res) {
-    db.Book
-      .findById({ _id: req.params.id })
-      .then(dbModel => dbModel.remove())
+//get all names
+  getName: function (req, res) {
+    db.Name
+      .find(req.query)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
-  }
+  },
+
 };
