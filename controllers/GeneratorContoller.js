@@ -6,6 +6,12 @@ module.exports = {
   getInn: function (req, res) {
     db.Inn
       .find(req.query)
+      .then(dbModel => res.json(dbInn))
+      .catch(err => res.status(422).json(err));
+  },
+  addInn: function (req, res) {
+    db.Inn
+      .create(req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
