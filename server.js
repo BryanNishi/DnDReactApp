@@ -16,7 +16,11 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/dndapp");
+// If deployed, use the deployed database. Otherwise use the local dndapp database
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/dndapp";
+
+mongoose.connect(MONGODB_URI);
+
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
