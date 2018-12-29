@@ -31,3 +31,4 @@ export default {
     return axios.get("/api/name");
   }
 };
+

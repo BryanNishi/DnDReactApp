@@ -1,4 +1,12 @@
-body, html {height: 100%; }
+@font-face {
+    font-family: moria;
+    src: url(../../assets/fonts/Moria.TTF);
+}
+
+@font-face {
+    font-family: magic;
+    src: url(../../assets/fonts/MagicMedieval.ttf);
+}
 
 
 .about{
@@ -10,6 +18,7 @@ body, html {height: 100%; }
     top:0; 
     left: 0;
     right: 0;
-    position: absolute;   
+    position: absolute;
+    font-family: moria;  
     
 }
