@@ -15,36 +15,20 @@ export default {
   getfeature: function(features) {
     return axios.get("http://dnd5eapi.co/api/features/" + features);
   },
-  // Gets all character sheets
-  getCharsheet: function() {
-    return axios.get("/api/charsheet");
+  getInn: function() {
+    return axios.get("/api/inn");
   },
-  // Gets the character sheet with the given id
-  getCharsheet: function(id) {
-    return axios.get("/api/charsheet/" + id);
+  getLand: function() {
+    return axios.get("/api/land");
   },
-  // Deletes the character sheet with the given id
-  deleteCharsheet: function(id) {
-    return axios.delete("/api/charsheet/" + id);
+  getDungeon: function() {
+    return axios.get("/api/dungeon");
   },
-  // Saves a character sheet to the database
-  saveCharsheet: function(CharSheetData) {
-    return axios.post("/api/charsheet", CharSheetData);
+  getTreasure: function() {
+    return axios.get("/api/treasure");
   },
-    // Saves user data
-    saveUserData: function(userData) {
-      return axios.post("/api/userdata", userData);
-    },
-
-    // get user data by id
-    getUserData:function(id) {
-      return axios.get("/api/userdata/" + id);
-    },
-
-    // get all user data
-    getAllUserData:function() {
-      return axios.get("/api/userdata/");
-    }
-  
+  getName: function() {
+    return axios.get("/api/name");
+  }
 };
 

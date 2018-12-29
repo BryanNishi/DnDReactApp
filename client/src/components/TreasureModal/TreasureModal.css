@@ -1,0 +1,21 @@
+.modal-content {
+    font-family: magic;
+}
+
+.btn {
+    font-family: magic;
+    font-size: 1.5rem;
+    background-color: maroon;
+    color: white;
+    box-shadow: 1px 1px 10px black;
+    margin: 3%;
+}
+
+.modalBody {
+    background-color: #666;
+}
+
+
+.modalFooter, .modalHeader {
+    background-color: #999;
+}

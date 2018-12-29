@@ -5,33 +5,40 @@ import DM from "./pages/DM";
 import Monster from "./pages/Monsters";
 import Spell from "./pages/Spells";
 import Generators from "./pages/Generators";
+import Inn from "./pages/Inn";
+import Land from "./pages/Land";
+import Dungeon from "./pages/Dungeon";
+import Treasure from "./pages/Treasure";
+import Name from "./pages/Name";
 import AdvCharacter from "./pages/AdvCharacter";
 import Guided from "./pages/BasicCharacter";
 import NPC from "./pages/NPC";
 import Sheet from "./pages/CharacterSheets";
+import Character from "./pages/Character";
 
 
-class App extends Component {  
-
-  render() {
-    return (
-      <Router>
-        <div>
-
-          <Route exact path="/" component={About} />
-          <Route path="/dm" component={DM} />
-          <Route path="/monster" component={Monster} />
-          <Route path="/spell" component={Spell} />
-          <Route path="/generators" component={Generators} />
-          <Route path="/advcharacter" component={AdvCharacter} />
-          <Route path="/guidedcharacter" component={Guided} />
-          <Route path="/npc" component={NPC} />
-          <Route path="/sheet" component={Sheet} />          
-
-        </div>
-      </Router>
-    );
-  }
-}
+const App = () => (
+  <Router>
+    <div>
+      
+        <Route exact path="/" component={About} />
+        <Route path="/dm" component={DM} />
+        <Route path="/monster" component={Monster} />
+        <Route path="/spell" component={Spell} />
+        <Route path="/Generators" component={Generators} />
+        <Route path="/inn" component={Inn} />
+        <Route path="/land" component={Land} />
+        <Route path="/dungeon" component={Dungeon} />
+        <Route path="/treasure" component={Treasure} />
+        <Route path="/name" component={Name} />
+        <Route path="/advcharacter" component={AdvCharacter} />
+        <Route path="/guidedcharacter" component={Guided} />
+        <Route path="/npc" component={NPC} />
+        <Route path="/sheet" component={Sheet} />
+        <Route path="/character" component={Character} />
+        
+    </div>
+  </Router>
+);
 
 export default App;

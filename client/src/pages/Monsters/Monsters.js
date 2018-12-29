@@ -119,7 +119,7 @@ class Monsters extends Component {
 
                             </datalist>
                             <center>
-                                <a href="#" className="btn create-btn" role="button" id="monsterSubmit" onClick={this.submitSearch}>Monsearch</a>
+                                <a className="btn create-btn" role="button" id="monsterSubmit" onClick={this.submitSearch}>Monsearch</a>
                             </center>
                         </form>
 

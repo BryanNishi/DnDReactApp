@@ -1,0 +1,36 @@
+.innGenerator{
+    background-image: url("../../assets/images/generatorsBG.jpg");
+    background-size: cover;
+    background-attachment: fixed;   
+    text-align: center;
+    overflow: hidden;
+    width: 100%;
+    min-height: 100vh;
+}
+
+@font-face {
+    font-family: 'moria';
+    src: url(../../assets/fonts/Moria.TTF) format('truetype');    
+  }
+
+@font-face {
+    font-family: 'magic';
+    src: url(../../assets/fonts/MagicMedieval.ttf) format('truetype');    
+  }
+
+
+.jumbotron{
+    opacity: 0.9;
+    margin: 0 !important;
+    padding: 1%;
+    background-color: #ccc;
+    width: 50%;
+    display: inline-block;
+    font-family: magic;
+    font-size: 1.5rem;
+}
+
+p{
+    font-size: 1.5rem;
+    margin: 0;
+}
