@@ -14,6 +14,7 @@ if (process.env.NODE_ENV === "production") {
 }
 // Add routes, both API and view
 app.use(routes);
+app.use("/auth",routes);
 
 // Connect to the Mongo DB
 // If deployed, use the deployed database. Otherwise use the local dndapp database
