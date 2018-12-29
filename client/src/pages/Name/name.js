@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import NavBar from '../../components/NavBar';
-import { Jumbotron, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Row, Jumbotron, Form, FormGroup, Label, Input } from 'reactstrap';
 import { List, ListItem } from "../../components/List";
 import Button from "../../components/Button";
-import "./name.css";
+import "./style.css";
 
 
 
@@ -16,7 +16,8 @@ class Name extends Component {
             male: "Generate Male Names",
             female: "Generate Female Names"
         },
-        names: []
+        names: [],
+        race: "",
     };
 
 
@@ -93,8 +94,8 @@ class Name extends Component {
                 </Jumbotron>
                 <Form>
                     <FormGroup>
-                        <Label for="charRace">Race</Label>
-                        <Input type="select" name="select" id="charRace">
+                        <Label for="race">Race</Label>
+                        <Input type="select" name="select" id="race">
                             <option defaultValue>Choose a Race</option>
                             <option value="Dragonborn">Dragonborn</option>
                             <option value="Dwarf">Dwarf</option>
@@ -108,8 +109,12 @@ class Name extends Component {
                         </Input>
                     </FormGroup>
                 </Form>
-                <Button clicked={this.generateMaleHandler} name={this.state.generate.male} />
-                <Button clicked={this.generateFemaleHandler} name={this.state.generate.female} />
+                <Row className="buttons">
+                  
+                        <Button clicked={this.generateMaleHandler} name={this.state.generate.male} />
+                        <Button clicked={this.generateFemaleHandler} name={this.state.generate.female} />
+                    
+                </Row>
             </div>
 
         );

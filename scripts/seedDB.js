@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const db = require("../models");
 
-// This file empties the Inn collection and inserts the names below
+// Empties the db collections and inserts the names below
 
 mongoose.connect(
   process.env.MONGODB_URI ||
