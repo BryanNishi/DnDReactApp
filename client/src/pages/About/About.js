@@ -54,15 +54,7 @@ class About extends Component {
                 // .catch(err => console.log(err));
                 
             }
-
-
-            // if(){
-            //     console.log("Found it");
-            // } else {
-            //     console.log("Not here");
-            // } 
-
-            // this.signup(response,"google");
+           
         }
 
         return (
