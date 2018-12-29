@@ -141,7 +141,26 @@ class Monsters extends Component {
                                         <strong>Dexterity:</strong> {this.state.searchResults.dexterity}<br />
                                         <strong>Intelligence:</strong> {this.state.searchResults.intelligence}<br />
                                         <strong>Strength:</strong> {this.state.searchResults.strength}<br />
-                                        <strong>Wisdom:</strong> {this.state.searchResults.wisdom}
+                                        <strong>Wisdom:</strong> {this.state.searchResults.wisdom}<br />
+                                        {this.state.searchResults.damage_immunities ? <div><strong>Damage Immunities:</strong> {this.state.searchResults.damage_immunities}<br /></div> : ""}
+
+                                        {this.state.searchResults.damage_resistances ? <div><strong>Damage Resistances:</strong> {this.state.searchResults.damage_resistances}<br /></div> : ""}
+
+                                        {this.state.searchResults.languages ? <div><strong>Languages:</strong> {this.state.searchResults.languages}<br /></div> : ""}
+
+                                        {this.state.searchResults.perception ? <div><strong>Perception:</strong> {this.state.searchResults.perception}<br /></div> : ""}
+
+                                        {this.state.searchResults.senses ? <div><strong>Senses:</strong> {this.state.searchResults.senses}<br /></div> : ""}
+
+                                        {this.state.searchResults.size ? <div><strong>Size:</strong> {this.state.searchResults.size}<br /></div> : ""}
+
+                                        {this.state.searchResults.speed ? <div><strong>Speed:</strong> {this.state.searchResults.speed}<br /></div> : ""}
+
+                                        {this.state.searchResults.type ? <div><strong>Type:</strong> {this.state.searchResults.type}<br /></div> : ""}
+
+                                        {this.state.searchResults.subtype ? <div><strong>Subtype:</strong> {this.state.searchResults.subtype}<br /></div> : ""}
+
+                                        {this.state.searchResults.alignment ? <div><strong>Alignment:</strong> {this.state.searchResults.alignment}</div> : ""}
 
                                     </div>
 
@@ -176,33 +195,14 @@ class Monsters extends Component {
 
                                     <div className="col-sm-12">
 
-                                    {this.state.searchResults.damage_immunities ? <div><strong>Damage Immunities:</strong> {this.state.searchResults.damage_immunities}<br /></div> : ""}
 
-                                    {this.state.searchResults.damage_resistances ? <div><strong>Damage Resistances:</strong> {this.state.searchResults.damage_resistances}<br /></div> : ""}
+                                        {this.state.searchResults.special_abilities ? (
+                                            <span>
+                                                <h3>Special Abilities</h3>
+                                                <div className="specialAbilities"></div>
 
-                                    {this.state.searchResults.languages ? <div><strong>Languages:</strong> {this.state.searchResults.languages}<br /></div> : ""}
-
-                                    {this.state.searchResults.perception ? <div><strong>Perception:</strong> {this.state.searchResults.perception}<br /></div> : ""}
-
-                                    {this.state.searchResults.senses ? <div><strong>Senses:</strong> {this.state.searchResults.senses}<br /></div> : ""}
-
-                                    {this.state.searchResults.size ? <div><strong>Size:</strong> {this.state.searchResults.size}<br /></div> : ""}
-
-                                    {this.state.searchResults.speed ? <div><strong>Speed:</strong> {this.state.searchResults.speed}<br /></div> : ""}
-
-                                    {this.state.searchResults.type ? <div><strong>Type:</strong> {this.state.searchResults.type}<br /></div> : ""}
-
-                                    {this.state.searchResults.subtype ? <div><strong>Subtype:</strong> {this.state.searchResults.subtype}<br /></div> : ""}
-
-                                    {this.state.searchResults.alignment ? <div><strong>Alignment:</strong> {this.state.searchResults.alignment}</div> : ""}
-
-                                    {this.state.searchResults.special_abilities ? (
-                                    <span>
-                                        <h3>Special Abilities</h3>
-                                        <div className="specialAbilities"></div>
-
-                                    </span>
-                                ) : ""}
+                                            </span>
+                                        ) : ""}
 
                                     </div>
 

@@ -30,5 +30,21 @@ export default {
   // Saves a character sheet to the database
   saveCharsheet: function(CharSheetData) {
     return axios.post("/api/charsheet", CharSheetData);
-  }
+  },
+    // Saves user data
+    saveUserData: function(userData) {
+      return axios.post("/api/userdata", userData);
+    },
+
+    // get user data by id
+    getUserData:function(id) {
+      return axios.get("/api/userdata/" + id);
+    },
+
+    // get all user data
+    getAllUserData:function() {
+      return axios.get("/api/userdata/");
+    }
+  
 };
+
