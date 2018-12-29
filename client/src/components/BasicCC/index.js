@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./BasicCC.css";
-import { Button, Form, FormGroup, Label, Input, Row, Col, Jumbotron } from 'reactstrap';
+import { Row, Col, Jumbotron } from 'reactstrap';
 
 
 

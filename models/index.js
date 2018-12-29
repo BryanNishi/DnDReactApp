@@ -1,4 +1,8 @@
 module.exports = {
-  Book: require("./book"),
-  userData: require("./userdata")
-};
+  DMnote: require("./DMnotes"),
+  Dungeon: require("./Dungeon"),
+  Inn: require("./Inn"),
+  Land: require("./Land"),
+  Treasure: require("./Treasure"),
+  Name: require("./Name")
+  };

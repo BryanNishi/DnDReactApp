@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Form, FormGroup, Label, Input, Row, Col, Jumbotron } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input, Row, Col } from 'reactstrap';
 
 
 
@@ -19,7 +19,7 @@ class AdvCC extends Component {
                             </FormGroup>
                         </Col>
                         <Col md="1">
-                            <Button className="btn" id="charNameRandom">Random Name<i className="fas fa-random"></i></Button>
+                            <Button className="btn" id="charNameRandom">Random Name</Button>
                         </Col>
                         <Col md="5">
                             <FormGroup>

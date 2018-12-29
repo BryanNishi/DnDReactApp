@@ -23,13 +23,13 @@ class About extends Component {
     }
 
     componentDidMount(){
-        API.getAllUserData()
-        .then(res => {
-            res.map(userData => this.setState({ userData : userData.googleId }))
-        })
-        .catch(err => console.log(err));
+        // API.getAllUserData()
+        // .then(res => {
+        //     res.map(userData => this.setState({ userData : userData.googleId }))
+        // })
+        // .catch(err => console.log(err));
 
-        console.log(this.state.userdata);
+        // console.log(this.state.userdata);
 
     }
 
@@ -46,12 +46,12 @@ class About extends Component {
                 //logged in
             } else {
 
-                API.saveUserData({
-                    googleId: response.profileObj.googleId,
-                    name: response.profileObj.name
-                })
-                .then(res => console.log(res))
-                .catch(err => console.log(err));
+                // API.saveUserData({
+                //     googleId: response.profileObj.googleId,
+                //     name: response.profileObj.name
+                // })
+                // .then(res => console.log(res))
+                // .catch(err => console.log(err));
                 
             }
 
