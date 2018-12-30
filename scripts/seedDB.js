@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const db = require("../models");
 
 // Empties the db collections and inserts the names below
+//To SEED Heroku/mLab, run in the root folder: '$ heroku run node scripts/seedDB.js'
 
 mongoose.connect(
   process.env.MONGODB_URI ||
