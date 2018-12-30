@@ -1,14 +1,130 @@
 import React, { Component } from "react";
-import NavBar from '../../components/NavBar';
-import { Form, FormGroup, Label, Input, Row, Col } from 'reactstrap';
+import NavBar from '../../components/NavBar'
+import { Form, Row, Col, FormGroup, Label, Input } from 'reactstrap';
+import FormInput from '../../components/FormInput';
 import Button from '../../components/Button';
 import "./style.css";
 
 class AdvCharacter extends Component {
     state = {
-
+        inputFields: [
+            { label: "Character Name", id: "characterName" },
+            { label: "Player Name", id: "playerName" },
+            { label: "Age", id: "CharacterAge" },
+            { label: "Gender", id: "CharacterGender" },
+            { label: "Height", id: "CharacterHeight" },
+            { label: "Weight", id: "CharacterWeight" },
+            { label: "Hair Color", id: "CharacterHairColor" },
+            { label: "Eye Color", id: "CharacterEyeColor" },
+            { label: "Skin Color", id: "CharacterSkinColor" },
+        ],
+        Classes: [
+            { classLabel: "Barbarian" },
+            { classLabel: "Bard" },
+            { classLabel: "Cleric" },
+            { classLabel: "Druid" },
+            { classLabel: "Fighter" },
+            { classLabel: "Monk" },
+            { classLabel: "Paladin" },
+            { classLabel: "Ranger" },
+            { classLabel: "Rogue" },
+            { classLabel: "Scorcerer" },
+            { classLabel: "Warlock" },
+            { classLabel: "Wizard" },
+        ],
+        levels: [
+            { level: "1" },
+            { level: "2" },
+            { level: "3" },
+            { level: "4" },
+            { level: "5" },
+            { level: "6" },
+            { level: "7" },
+            { level: "8" },
+            { level: "9" },
+            { level: "10" },
+            { level: "11" },
+            { level: "12" },
+            { level: "13" },
+            { level: "14" },
+            { level: "15" },
+            { level: "16" },
+            { level: "17" },
+            { level: "18" },
+            { level: "19" },
+            { level: "20" },
+        ],
+        races: [
+            { race: "Dragonborn" },
+            { race: "Dwarf" },
+            { race: "Elf" },
+            { race: "Gnome" },
+            { race: "Half-Elf"},
+            { race: "Half-Orc" },
+            { race: "Halfling" },
+            { race: "Human" },
+            { race: "Tiefling" },
+        ],
     }
     render() {
+
+        let basicFields = (
+            <div>
+                {this.state.inputFields.map(basic => {
+                    return <FormInput
+                        label={basic.label}
+                        id={basic.id} />
+                })}
+            </div>
+        );
+
+        let charClass = (
+            <div>
+                <FormGroup>
+                    <Label>Class</Label>
+                    <Input type="select" id="charClassName">
+                        {this.state.Classes.map(charClass => {
+                            return <option value={charClass.classLabel}>
+                                {charClass.classLabel}
+                            </option>
+                        })}
+
+                    </Input>
+                </FormGroup>
+            </div>
+        );
+
+        let charLvl = (
+            <div>
+                <FormGroup>
+                    <Label>Level</Label>
+                    <Input type="select" id="charLevel">
+                        {this.state.levels.map(charLvl => {
+                            return <option value={charLvl.level}>
+                                {charLvl.level}
+                            </option>
+                        })}
+
+                    </Input>
+                </FormGroup>
+            </div>
+        );
+
+        let charRace = (
+            <div>
+                <FormGroup>
+                    <Label>Race</Label>
+                    <Input type="select" id="charRace">
+                        {this.state.races.map(charRace => {
+                            return <option value={charRace.race}>
+                                {charRace.race}
+                            </option>
+                        })}
+
+                    </Input>
+                </FormGroup>
+            </div>
+        );
 
         return (
             <div className="character">
@@ -17,123 +133,19 @@ class AdvCharacter extends Component {
 
                 <Form>
                     <Row>
-                        <Col md="6">
-                            <FormGroup>
-                                <Label>Character Name</Label>
-                                <Input id="characterName" />
-                            </FormGroup>
-                        </Col>
-                        <Col md="1">
-                            <Button className="btn" id="charNameRandom">Random Name</Button>
-                        </Col>
-                        <Col md="5">
-                            <FormGroup>
-                                <Label for="playerName">Player Name</Label>
-                                <Input className="form-control" id="playerName" />
-                            </FormGroup>
-                        </Col>
+                        {basicFields}
                     </Row>
                     <Row>
-                        <FormGroup>
-                            <Label for="characterAge">Age</Label>
-                            <Input className="form-control" id="characterAge" />
-                        </FormGroup>
-                        <FormGroup>
-                            <Label for="characterGender">Gender</Label>
-                            <Input className="form-control" id="characterGender" />
-                        </FormGroup>
-                        <FormGroup>
-                            <Label for="characterHeight">Height</Label>
-                            <Input className="form-control" id="characterHeight" />
-                        </FormGroup>
-                        <FormGroup>
-                            <Label for="characterWeight">Weight</Label>
-                            <Input className="form-control" id="characterWeight" />
-                        </FormGroup>
-                        <FormGroup>
-                            <Label for="characterHair">Hair Color</Label>
-                            <Input className="form-control" id="characterHair" />
-                        </FormGroup>
-                        <FormGroup>
-                            <Label for="characterEye">Eye Color</Label>
-                            <Input className="form-control" id="characterEye" />
-                        </FormGroup>
-                        <FormGroup>
-                            <Label for="characterSkin">Skin Color</Label>
-                            <Input className="form-control" id="characterSkin" />
-                        </FormGroup>
-                    </Row>
-                    <Row>
-                        <Col>
-                            <FormGroup>
-                                <Label for="charclassName">Class</Label>
-                                <Input type="select" name="select" id="charclassName">
-                                    <option Selected>Choose a className</option>
-                                    <option value="Barbarian">Barbarian</option>
-                                    <option value="Bard">Bard</option>
-                                    <option value="Cleric">Cleric</option>
-                                    <option value="Druid">Druid</option>
-                                    <option value="Fighter">Fighter</option>
-                                    <option value="Monk">Monk</option>
-                                    <option value="Paladin">Paladin</option>
-                                    <option value="Ranger">Ranger</option>
-                                    <option value="Rogue">Rogue</option>
-                                    <option value="Scorcerer">Scorcerer</option>
-                                    <option value="Warlock">Warlock</option>
-                                    <option value="Wizard">Wizard</option>
-                                </Input>
-                            </FormGroup>
-                        </Col>
-                        <Col>
-                            <Label for="charLevel">Level</Label>
-                            <Input type="select" name="select" id="charLevel">
-                                <option value="1" Selected="Selected">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                                <option value="12">12</option>
-                                <option value="13">13</option>
-                                <option value="14">14</option>
-                                <option value="15">15</option>
-                                <option value="16">16</option>
-                                <option value="17">17</option>
-                                <option value="18">18</option>
-                                <option value="19">19</option>
-                                <option value="20">20</option>
-                            </Input>
-                        </Col>
-                        <Col>
-                            <FormGroup>
-                                <Label for="charRace">Race</Label>
-                                <Input type="select" name="select" id="charRace">
-
-                                    <option Selected>Choose a Race</option>
-                                    <option value="Dragonborn">Dragonborn</option>
-                                    <option value="Dwarf">Dwarf</option>
-                                    <option value="Elf">Elf</option>
-                                    <option value="Gnome">Gnome</option>
-                                    <option value="Half-Elf">Half-Elf</option>
-                                    <option value="Half-Orc">Half-Orc</option>
-                                    <option value="Halfling">Halfling</option>
-                                    <option value="Human">Human</option>
-                                    <option value="Tiefling">Tiefling</option>
-                                </Input>
-                            </FormGroup>
-                        </Col>
-                        <Col>
+                        {charClass}
+                        {charLvl}
+                        {charRace}
+                        
                             <FormGroup>
                                 <Label for="charSubRace">Subrace</Label>
-                                <Input type="select" name="select" id="charSubRace">
+                                <Input type="select" id="charSubRace">
                                 </Input>
                             </FormGroup>
-                        </Col>
+                        
                     </Row>
                     <Row>
                         <div id="abilityScores">
@@ -185,7 +197,7 @@ class AdvCharacter extends Component {
 
             </div>
 
-            
+
         )
     }
 };
