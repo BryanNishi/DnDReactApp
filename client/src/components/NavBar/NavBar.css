@@ -15,9 +15,10 @@
 .navbar {
     font-family: moria;
     text-align: center;
-    font-size: 1.3rem; 
-       
+    font-size: 1.3rem;        
 }
+
+
 
 .sl-btns {
     margin: 0.25rem;
@@ -47,3 +48,10 @@
    
 }
 
+.dicePanel:hover{
+    cursor: pointer;
+}
+
+#nav-d20{
+    width: 50%;
+}

@@ -14,8 +14,8 @@
 }
 
 /* Body styling */
-.spellBody {
-    background-image: url(../../assets/images/loreBG.jpg);
+.classesBody {
+    background-image: url(../../assets/images/createBG.jpg);
     background-size: cover;
     background-attachment: fixed;
     height: 100%;
@@ -23,13 +23,7 @@
     top:0; 
     left: 0;
     right: 0;
-    position: absolute;  
-    color: white;  
-}
-
-#spellSubmit{
-    margin-top: 1rem;
-
+    position: absolute;     
 }
 
 .scroll{
@@ -48,18 +42,19 @@
     
 }
 
-.spellTable, .col-sm-4, .col-sm-8{
+.classesTable, .col-sm-4, .col-sm-8{
     border: solid black 0.05rem;    
 }
 
-#spellSubmit {
+#classesSubmit {
     background-color: maroon;
     color: white;
     box-shadow: 2px 2px 10px black;
     margin: 3%;
 }
 
-#spellSubmit:hover {
+#classesSubmit:hover {
     background-color: white;
     color: maroon;
 }
+

@@ -1,61 +1,53 @@
 import React, { Component } from "react";
 import "./style.css";
 import NavBar from '../../components/NavBar'
-import ReactDOM from 'react-dom';
 import GoogleLogin from 'react-google-login';
-import PostData from "../../utils/PostData";
-import API from "../../utils/API";
+
 
 
 
 class About extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            redirect: false,
-            userdata: []
-        }
-        this.signup = this.signup.bind(this)
+    constructor() {
+        super();
+        this.state = { isAuthenticated: false, user: null, token: '' };
     }
 
-    signup(res,type){
-            
-    }
+    logout = () => {
+        this.setState({ isAuthenticated: false, token: '', user: null })
+    };
 
-    componentDidMount(){
-        // API.getAllUserData()
-        // .then(res => {
-        //     res.map(userData => this.setState({ userData : userData.googleId }))
-        // })
-        // .catch(err => console.log(err));
+    onFailure = (error) => {
+        alert(error);
+    };
+    
+    googleResponse = (response) => {
+        //console.log(response)
 
-        // console.log(this.state.userdata);
+        var id_token = response.getAuthResponse().id_token;
 
-    }
+        console.log(id_token);
+        // const tokenBlob = new Blob([JSON.stringify({access_token: response.accessToken}, null, 2)], {type : 'application/json'});
+        // const options = {
+        //     method: 'POST',
+        //     body: tokenBlob,
+        //     mode: 'cors',
+        //     cache: 'default'
+        // };        
+
+        // fetch('http://localhost:4000/api/v1/auth/google', options).then(r => {
+        //     const token = r.headers.get('x-auth-token');
+        //     r.json().then(user => {
+        //         if (token) {
+        //             this.setState({isAuthenticated: true, user, token})
+        //         }
+        //     });
+        // })        
+    };
 
 
-    render() {   
-        
 
-        const responseGoogle = response => {
-            console.log(response);
+    render() {
 
-            this.state.userdata.indexOf(response.profileObj.googleId) !== -1 ? console.log("Found it") : console.log("Not here");
-
-            if(this.state.userdata.indexOf(response.profileObj.googleId) !== -1){
-                //logged in
-            } else {
-
-                // API.saveUserData({
-                //     googleId: response.profileObj.googleId,
-                //     name: response.profileObj.name
-                // })
-                // .then(res => console.log(res))
-                // .catch(err => console.log(err));
-                
-            }
-           
-        }
 
         return (
 
@@ -71,12 +63,17 @@ class About extends Component {
                 </ul>
                 <p>NOTICE: This is a student project and is NOT to be distributed! Website contains unlicened
             copyrighted works.</p>
-                <GoogleLogin
-                    clientId="381456997178-m1bg7p4b72h3osnijolv96bbrtbvrfl9.apps.googleusercontent.com"
-                    buttonText="Login"
-                    onSuccess={responseGoogle}
-                    onFailure={responseGoogle}
-                />
+                <center>
+
+                    <GoogleLogin
+                        clientId="381456997178-m1bg7p4b72h3osnijolv96bbrtbvrfl9.apps.googleusercontent.com"
+                        buttonText="Login"
+                        onSuccess={this.googleResponse}
+                        onFailure={this.onFailure}
+                    />
+
+                </center>
+
             </div>
         )
     }

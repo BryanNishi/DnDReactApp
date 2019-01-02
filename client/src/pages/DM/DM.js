@@ -1,7 +1,7 @@
 import React from 'react';
 import './DM.css';
 import DM_ScreenPDF from '../../assets/images/dmScreen.pdf'
-import NavBar from '../../components/NavBar'
+import NavBar from '../../components/NavBar';
 
 
 const DM = () => (
@@ -11,7 +11,7 @@ const DM = () => (
             <div className="col-sm-2 DM-Notes">
                 <div className="fixed-Notes">
                     <h2>DM's Notes</h2>
-                    <textarea rows="15" cols="30">Type Notes Here</textarea>
+                    <textarea rows="15" cols="30" placeholder={"Type Notes Here"}></textarea>
 
                 </div>
             </div>

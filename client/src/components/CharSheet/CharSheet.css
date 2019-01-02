@@ -8,6 +8,10 @@
   src: url(../../assets/fonts/MagicMedieval.ttf) format('truetype');
 }
 
+body{
+  background-image: url("../../assets/images/createBG.jpg")
+}
+
 .Char_Sheet {
   margin-left: 18%;
 }
