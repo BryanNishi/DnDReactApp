@@ -18,6 +18,30 @@ class Feature extends Component {
         })
         .catch(err => console.log(err));
 
+        document.addEventListener('keypress', (event) => {
+            let buttonClicked = event.which || event.keyCode;
+
+            if (buttonClicked === 13) {
+                event.preventDefault();
+                let choice = $("#featureSearch").val();
+    
+                this.featureSearch(choice);
+    
+            }
+        });
+
+    }
+
+    handle = event => {
+        let buttonClicked = event.which || event.keyCode;        
+
+        if (buttonClicked === 13) {
+            event.preventDefault();
+            let choice = $("#featureSearch").val();
+
+            this.featureSearch(choice);
+
+        }
     }
        
 
@@ -26,6 +50,11 @@ class Feature extends Component {
 
         let choice = $("#featureSearch").val();
 
+        this.featureSearch(choice);
+
+    }
+
+    featureSearch = choice => {
         console.log(choice);
 
         console.log(this.state.featureList.indexOf(choice));
@@ -66,7 +95,7 @@ class Feature extends Component {
                     <div className="col-md-3">
                         <form>
 
-                            <input list="browsers" name="browser" id="featureSearch" className="form-control" placeholder="Search Feature Library" />
+                            <input list="browsers" name="browser" id="featureSearch" className="form-control" placeholder="Search Feature Library" onKeyPress={this.handle} />
 
                             <datalist id="browsers">
 
@@ -97,7 +126,7 @@ class Feature extends Component {
 
                                     <div className="col-sm-8">
                                         <strong>Description:</strong>
-                                        {this.state.searchResults.desc.map(desc => <span> {desc} <br/> </span>)}
+                                        {this.state.searchResults.desc.map((desc,index) => <span key={index}> {desc} <br/> </span>)}
 
                                     </div>
 

@@ -52,7 +52,7 @@ class NavBar extends Component {
 
                             <li className="nav-item dicePanel">
                                 <a className="nav-link">
-                                <img src={D20} id="nav-d20"/>
+                                <img src={D20} id="nav-d20" alt="d20"/>
                                 Dice</a>
                             </li>                      
 

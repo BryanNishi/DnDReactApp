@@ -19,6 +19,30 @@ class Classes extends Component {
             })
             .catch(err => console.log(err));
 
+            document.addEventListener('keypress', (event) => {
+                let buttonClicked = event.which || event.keyCode;
+    
+                if (buttonClicked === 13) {
+                    event.preventDefault();
+                    let choice = $("#classSearch").val();
+        
+                    this.classSearch(choice);
+        
+                }
+            });
+
+    }
+
+    handle = event => {
+        let buttonClicked = event.which || event.keyCode;        
+
+        if (buttonClicked === 13) {
+            event.preventDefault();
+            let choice = $("#classSearch").val();
+
+           this.classSearch(choice);
+
+        }
     }
 
 
@@ -27,6 +51,11 @@ class Classes extends Component {
 
         let choice = $("#classSearch").val();
 
+        this.classSearch(choice);       
+
+    }
+
+    classSearch = choice => {
         console.log(choice);
 
         console.log(this.state.classList.indexOf(choice));
@@ -76,7 +105,7 @@ class Classes extends Component {
                     <div className="col-md-3">
                         <form>
 
-                            <input list="browsers" name="browser" id="classSearch" className="form-control" placeholder="Search Class Library" />
+                            <input list="browsers" name="browser" id="classSearch" className="form-control" placeholder="Search Class Library" onKeyPress={this.handle} />
 
                             <datalist id="browsers">
 

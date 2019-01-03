@@ -15,7 +15,7 @@ const DM = () => (
 
                 </div>
             </div>
-            <div class="col-sm-10">
+            <div className="col-sm-10">
                 <div className="dmScreen">
                     <h1>DM Screen</h1>
                     <iframe src={DM_ScreenPDF} width="1200" height="500" className="DM_Screen" title="DM Screen" />
