@@ -6,7 +6,7 @@ import $ from 'jquery';
 
 class Spell extends Component {
 
-    state = {               
+    state = {
         spellList: [],
         casting_time: "",
         classes: "",
@@ -18,24 +18,57 @@ class Spell extends Component {
         range: "",
         ritual: "",
         school: "",
-        subclasses: "",
+        subclasses: ""
     }
 
     componentDidMount() {
         API.getSpell("")
-            .then(res => {                                
+            .then(res => {
 
                 this.setState({ spellList: res.data.results.map(spell => spell.name) });
 
             })
             .catch(err => console.log(err));
+            
+
+            document.addEventListener('keypress', (event) => {
+                let buttonClicked = event.which || event.keyCode;
+
+                if (buttonClicked === 13) {
+                    event.preventDefault();
+                    let choice = $("#spellSearch").val();
+        
+                    this.spellSearch(choice);
+        
+                }
+            });
     }
+
+    handle = event => {
+        let buttonClicked = event.which || event.keyCode;        
+
+        if (buttonClicked === 13) {
+            event.preventDefault();
+            let choice = $("#spellSearch").val();
+
+            this.spellSearch(choice);
+
+        }
+
+
+    }
+
 
     submitSearch = event => {
         event.preventDefault();
 
         let choice = $("#spellSearch").val();
 
+        this.spellSearch(choice);        
+
+    }
+
+    spellSearch = choice => {
         console.log(choice);
 
         console.log(this.state.spellList.indexOf(choice));
@@ -51,7 +84,7 @@ class Spell extends Component {
                     console.log(res.data);
                     let results = res.data;
 
-                    this.setState({                        
+                    this.setState({
                         casting_time: results.casting_time,
                         classes: results.classes.map(value => value.name).join(", "),
                         components: results.components.join(", "),
@@ -78,6 +111,7 @@ class Spell extends Component {
     }
 
     render() {
+
         return (
             <div className="spellBody">
                 <NavBar />
@@ -87,9 +121,9 @@ class Spell extends Component {
                     <div className="col-md-3">
                         <form>
 
-                            <input list="browsers" name="browser" id="spellSearch" className="form-control" placeholder="Search Spell Library" />
+                            <input list="browsers" name="browser" id="spellSearch" className="form-control" placeholder="Search Spell Library" onKeyPress={this.handle} />
 
-                            <datalist id="browsers">
+                            <datalist id="browsers" >
 
                                 {this.state.spellList.map(spell => <option key={spell} value={spell} />)}
 

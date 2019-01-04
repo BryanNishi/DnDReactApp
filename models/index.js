@@ -4,5 +4,6 @@ module.exports = {
   Inn: require("./Inn"),
   Land: require("./Land"),
   Treasure: require("./Treasure"),
-  Name: require("./Name")
+  Name: require("./Name"),
+  User: require("./User")
   };

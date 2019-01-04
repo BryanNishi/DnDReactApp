@@ -3,6 +3,7 @@ import './NavBar.css';
 import d20 from '../../assets/images/dice-d20.png'
 import $ from 'jquery';
 import DicePanel from "../DicePanel"
+import D20 from "../../assets/images/d20.png";
 
 
 class NavBar extends Component {
@@ -43,27 +44,17 @@ class NavBar extends Component {
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="/Generators">Generators</a>
+                            </li>                            
+
+                            <li className="nav-item">
+                                <a className="nav-link" href="/sheet">Character Sheets</a>
                             </li>
 
                             <li className="nav-item dicePanel">
-                                <a className="nav-link">Dice</a>
-                            </li>
-
-                            <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                    Extras
-                    </a>
-                                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    {/* <a className="dropdown-item" href="dice.html">Dice Roller</a> */}
-                                    <a className="dropdown-item" href="/sheet">Character Sheets</a>
-                                    {/* <a className="dropdown-item" href="#">Something else here</a> */}
-                                </div>
-                            </li>
-
-                            <li className="nav-item">
-                                <a className="nav-link" href="/">Search</a>
-                            </li>
+                                <a className="nav-link">
+                                <img src={D20} id="nav-d20" alt="d20"/>
+                                Dice</a>
+                            </li>                      
 
 
 

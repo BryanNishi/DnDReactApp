@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import About from "./pages/About";
 import DM from "./pages/DM";
@@ -15,6 +15,8 @@ import Guided from "./pages/BasicCharacter";
 import NPC from "./pages/NPC";
 import Sheet from "./pages/CharacterSheets";
 import Character from "./pages/Character";
+import Features from "./pages/Features";
+import Classes from "./pages/Classes";
 
 
 const App = () => (
@@ -36,6 +38,8 @@ const App = () => (
         <Route path="/npc" component={NPC} />
         <Route path="/sheet" component={Sheet} />
         <Route path="/character" component={Character} />
+        <Route path="/features" component={Features} />
+        <Route path="/classes" component={Classes} />
         
     </div>
   </Router>
