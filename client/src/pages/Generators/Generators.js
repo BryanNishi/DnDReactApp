@@ -12,7 +12,10 @@ class Generators extends Component {
             { href: "/character", name: "Quick Character Generator" },
             { href: "/guidedcharacter", name: "Guided Character Generator" },
             { href: "/advcharacter", name: "Advanced Character Generator" },
-            { href: "/name", name: "Character Name Generator" }
+            { href: "/name", name: "Character Name Generator" },
+            { href: "/features", name: "Class Features"},
+            { href: "/classes", name: "Class Search"}
+        
         ],
         npcGenerators: [
             { href: "/character", name: "Quick NPC Generator" },

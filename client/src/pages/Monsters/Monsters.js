@@ -5,8 +5,6 @@ import API from '../../utils/API';
 import $ from 'jquery';
 
 
-
-
 class Monsters extends Component {
 
     state = {
@@ -22,6 +20,32 @@ class Monsters extends Component {
 
             })
             .catch(err => console.log(err));
+
+            document.addEventListener('keypress', (event) => {
+                let buttonClicked = event.which || event.keyCode;
+
+                if (buttonClicked === 13) {
+                    event.preventDefault();
+                    let choice = $("#monsterSearch").val();
+        
+                    this.monsterSearch(choice);
+        
+                }
+            });
+    }
+
+    handle = event => {
+        let buttonClicked = event.which || event.keyCode;        
+
+        if (buttonClicked === 13) {
+            event.preventDefault();
+            let choice = $("#monsterSearch").val();
+
+            this.monsterSearch(choice);
+
+        }
+
+
     }
 
     submitSearch = event => {
@@ -29,6 +53,11 @@ class Monsters extends Component {
 
         let choice = $("#monsterSearch").val();
 
+        this.monsterSearch(choice);
+        
+    }
+
+    monsterSearch = choice => {
         let monsterIndex = this.state.searchList.indexOf(choice);
 
         if (monsterIndex !== -1) {
@@ -112,7 +141,7 @@ class Monsters extends Component {
                     <div className="col-md-3">
 
                         <form>
-                            <input list="browsers" name="browser" id="monsterSearch" className="form-control" placeholder="Search Monster Library" />
+                            <input list="browsers" name="browser" id="monsterSearch" className="form-control" placeholder="Search Monster Library" onKeyPress={this.handle} />
                             <datalist id="browsers">
 
                                 {this.state.searchList.map(monster => <option key={monster} value={monster} />)}
