@@ -1,0 +1,20 @@
+.Input {
+    width: 40%;
+    box-sizing: border-box;
+    margin: 0 1%;
+    display: inline-block;
+}
+
+.Label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.InputElement {
+    outline: none;
+    border: 1px solid #ccc;
+    padding: 6px 10px;
+    display: block;
+    width: 100%;
+    font-family: magic;
+}
