@@ -1,23 +1,5 @@
 import axios from "axios";
 
-//REMINDER: parameters are index #s
-
-function determineEnv() {
-  if (window.location.hostname === 'localhost') {
-    return 'DEV';
-  } else if (window.location.hostname === 'http://stark-spire-22309.herokuapp.com/') {
-    return 'PROD';
-  }
-}
-
-function determineBackendHost() {
-  if (determineEnv() === 'DEV') {
-    return 'http://localhost:3001';
-  } else if (determineEnv() === 'PROD') {
-    return 'http://stark-spire-22309.herokuapp.com/';
-  }
-}
-
 export default {
   getMonster: function(monsters) {
     return axios.get("http://dnd5eapi.co/api/monsters/" + monsters);
@@ -54,7 +36,7 @@ export default {
   },  
   postUser: function(data){
   return axios.post(`api/user`,data);
-  //${determineBackendHost()}/
+ 
   } 
 
 };
