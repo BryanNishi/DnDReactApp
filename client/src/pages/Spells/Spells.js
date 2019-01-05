@@ -42,21 +42,35 @@ class Spell extends Component {
         
                 }
             });
-    }
+    }    
 
-    handle = event => {
-        let buttonClicked = event.which || event.keyCode;        
+    selectSpell = event => {        
+        console.log(event.target.value);
 
-        if (buttonClicked === 13) {
-            event.preventDefault();
-            let choice = $("#spellSearch").val();
+        var choice = event.target.value;
 
-            this.spellSearch(choice);
+        let spellIndex = this.state.spellList.indexOf(choice);
 
+        if(spellIndex !== -1){
+            this.spellSearch(event.target.value);            
+            
         }
+        
+    }  
+    
+    // handle = event => {
+    //     let buttonClicked = event.which || event.keyCode;        
+
+    //     if (buttonClicked === 13) {
+    //         event.preventDefault();
+    //         let choice = $("#spellSearch").val();
+
+    //         this.spellSearch(choice);
+
+    //     }
 
 
-    }
+    // }
 
 
     submitSearch = event => {
@@ -121,7 +135,7 @@ class Spell extends Component {
                     <div className="col-md-3">
                         <form>
 
-                            <input list="browsers" name="browser" id="spellSearch" className="form-control" placeholder="Search Spell Library" onKeyPress={this.handle} />
+                            <input list="browsers" name="browser" id="spellSearch" className="form-control" placeholder="Search Spell Library" onSelect={this.selectSpell.bind(this)} />
 
                             <datalist id="browsers" >
 
