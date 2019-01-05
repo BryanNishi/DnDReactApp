@@ -46,7 +46,7 @@ class Classes extends Component {
     // }
 
     selectClass = event => {
-        console.log(event.target.value);
+        console.log(event.target.value);       
 
         var choice = event.target.value;
 
