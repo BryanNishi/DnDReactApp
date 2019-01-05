@@ -75,12 +75,12 @@ class About extends Component {
             copyrighted works.</p>
                 <center>
 
-                    <GoogleLogin
+                    {/* <GoogleLogin
                         clientId="381456997178-m1bg7p4b72h3osnijolv96bbrtbvrfl9.apps.googleusercontent.com"
                         buttonText="Login"
                         onSuccess={this.googleResponse}
                         onFailure={this.onFailure}
-                    />
+                    /> */}
 
                 </center>
 
