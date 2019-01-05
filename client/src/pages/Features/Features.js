@@ -32,15 +32,28 @@ class Feature extends Component {
 
     }
 
-    handle = event => {
-        let buttonClicked = event.which || event.keyCode;        
+    // handle = event => {
+    //     let buttonClicked = event.which || event.keyCode;        
 
-        if (buttonClicked === 13) {
-            event.preventDefault();
-            let choice = $("#featureSearch").val();
+    //     if (buttonClicked === 13) {
+    //         event.preventDefault();
+    //         let choice = $("#featureSearch").val();
 
-            this.featureSearch(choice);
+    //         this.featureSearch(choice);
 
+    //     }
+    // }
+
+    selectFeature = event => {
+        console.log(event.target.value);
+
+        var choice = event.target.value;
+
+        let featureIndex = this.state.featureList.indexOf(choice);
+
+        if(featureIndex !== -1){
+                        
+            this.featureSearch(event.target.value); 
         }
     }
        
@@ -95,7 +108,7 @@ class Feature extends Component {
                     <div className="col-md-3">
                         <form>
 
-                            <input list="browsers" name="browser" id="featureSearch" className="form-control" placeholder="Search Feature Library" onKeyPress={this.handle} />
+                            <input list="browsers" name="browser" id="featureSearch" className="form-control" placeholder="Search Feature Library" onSelect={this.selectFeature.bind(this)} />
 
                             <datalist id="browsers">
 
