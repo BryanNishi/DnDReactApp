@@ -32,6 +32,17 @@ class Monsters extends Component {
         
                 }
             });
+
+            $.ajax({
+                url: "http://dnd5eapi.co/api/monsters/",
+                method: "GET",
+                dataType: "json",                
+                headers: {"Content-Type" : "application/x-www-form-urlencoded"}
+              }).then(res => {
+                  console.log("fired");
+                  console.log(res)
+                
+                })
     }
 
     selectMonster = event => {
