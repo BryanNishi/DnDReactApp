@@ -8,6 +8,11 @@
     src: url(../../assets/fonts/MagicMedieval.ttf);
 }
 
+@font-face {
+    font-family: chancery;
+    src: url(../../assets/fonts/Chancery.TTF);
+}
+
 
 .about{
     background-image: url("../../assets/images/tavern.jpg");
