@@ -4,6 +4,7 @@ import NavBar from '../../components/NavBar'
 import Button from '../../components/Button';
 import Input from '../../components/Input/input';
 import AbilityRoll from '../../components/AbilityRoll';
+import Equipment from '../../components/Equipment';
 import "./style.css";
 
 class AdvCharacter extends Component {
@@ -196,15 +197,15 @@ class AdvCharacter extends Component {
                 elementConfig: {
                     options: [
                         { value: "random", displayValue: "Alignment (Leave Blank for Random)" },
-                        { value: "Chaotic Good", displayValue: "Acolyte" },
-                        { value: "Chaotic Evil", displayValue: "Charlatan" },
-                        { value: "Chaotic Neutral", displayValue: "Criminal" },
-                        { value: "Lawful Good", displayValue: "Entertainer" },
-                        { value: "Lawful Evil", displayValue: "Folk Hero" },
+                        { value: "Chaotic Good", displayValue: "Chaotic Good" },
+                        { value: "Chaotic Evil", displayValue: "Chaotic Evil" },
+                        { value: "Chaotic Neutral", displayValue: "Chaotic Neutral" },
+                        { value: "Lawful Good", displayValue: "Lawful Good" },
+                        { value: "Lawful Evil", displayValue: "Lawful Evil" },
                         { value: "Lawful Neutral", displayValue: "Gladiator" },
-                        { value: "Neutral Good", displayValue: "Guild Artisan/Merchant" },
-                        { value: "Neutral Evil", displayValue: "Hermit" },
-                        { value: "True Neutral", displayValue: "Knight" }
+                        { value: "Neutral Good", displayValue: "Lawful Neutral" },
+                        { value: "Neutral Evil", displayValue: "Neutral Evil" },
+                        { value: "True Neutral", displayValue: "True Neutral" }
 
                     ]
                 },
@@ -217,7 +218,7 @@ class AdvCharacter extends Component {
             str: {
                 elementType: 'select',
                 elementConfig: {
-                 
+
                     options: [
                         { value: "test", displayValue: "test" },
 
@@ -228,7 +229,6 @@ class AdvCharacter extends Component {
         },
         button: {
             name: "Generate Character Sheet",
-            roll: "Roll Ability Scores"
         }
     }
 
@@ -248,7 +248,9 @@ class AdvCharacter extends Component {
         this.setState({ characterOptions: updatedCharacterOptions });
     };
 
+
     render() {
+
         const characterOptionsArray = [];
         for (let key in this.state.characterOptions) {
             characterOptionsArray.push({
@@ -271,20 +273,15 @@ class AdvCharacter extends Component {
             </form>
         );
 
-        let roll = (
-            <div>
-                <Button name={this.state.button.roll} />
 
-                <AbilityRoll />
-            </div>
-        );
 
         return (
             <div className="character">
                 <NavBar />
                 <h1>Advanced Character Creator</h1>
                 {form}
-                {roll}
+                <AbilityRoll />
+                <Equipment />
                 <Button name={this.state.button.name} />
             </div>
 
