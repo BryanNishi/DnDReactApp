@@ -2,14 +2,17 @@ import React, { Component } from "react";
 import "./style.css";
 import NavBar from '../../components/NavBar'
 import GoogleLogin from 'react-google-login';
-
+import API from '../../utils/API';
 
 
 
 class About extends Component {
     constructor() {
         super();
-        this.state = { isAuthenticated: false, user: null, token: '' };
+        this.state = {
+            isAuthenticated: false,
+            user: null, token: ''
+        };
     }
 
     logout = () => {
@@ -17,31 +20,38 @@ class About extends Component {
     };
 
     onFailure = (error) => {
-        alert(error);
+        alert("Error! Unable to find your account!");
     };
-    
+
     googleResponse = (response) => {
-        //console.log(response)
+        
 
-        var id_token = response.getAuthResponse().id_token;
+        let userData = {
+            googleId : response.profileObj.googleId,
+            name: response.profileObj.name
+        }
 
-        console.log(id_token);
-        // const tokenBlob = new Blob([JSON.stringify({access_token: response.accessToken}, null, 2)], {type : 'application/json'});
-        // const options = {
-        //     method: 'POST',
-        //     body: tokenBlob,
-        //     mode: 'cors',
-        //     cache: 'default'
-        // };        
 
-        // fetch('http://localhost:4000/api/v1/auth/google', options).then(r => {
-        //     const token = r.headers.get('x-auth-token');
-        //     r.json().then(user => {
-        //         if (token) {
-        //             this.setState({isAuthenticated: true, user, token})
-        //         }
-        //     });
-        // })        
+        API.getUser()
+            .then(res => {
+               
+                let userInDB = false;
+                
+                for (let i = 0; i < res.data.length; i++) {
+                    if (res.data[i].googleId === userData.googleId) {
+                        console.log("User Found");                        
+                        userInDB = true;
+                    } 
+                }
+
+                if(!userInDB) {
+                    API.postUser(userData)
+                        .then(res => console.log(res))
+                        .catch(err => console.log(err))
+
+                }
+            })
+            .catch(err => console.log(err))
     };
 
 
