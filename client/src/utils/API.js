@@ -53,7 +53,8 @@ export default {
     return axios.get("/api/user")
   },  
   postUser: function(data){
-  return axios.post(`${determineBackendHost()}/api/user`,data)
+  return axios.post(`api/user`,data);
+  //${determineBackendHost()}/
   } 
 
 };
