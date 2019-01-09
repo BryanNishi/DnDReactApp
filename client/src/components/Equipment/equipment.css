@@ -1,0 +1,33 @@
+@font-face {
+    font-family: chancery;
+    src: url(../../assets/fonts/Chancery.TTF);
+}
+
+.container {
+    margin: 1% !important;
+}
+
+Label {
+    color: black;
+}
+
+.form-group {
+    margin: 0 3%;
+}
+
+.form-control {
+    width: 7.5rem;
+    display: flex;
+    justify-content: center;
+    padding: 0 1px;
+}
+
+.rollResults {
+    display: flex;
+    justify-content: center;
+    font-family: chancery;
+}
+#equipmentList{
+    display: flex;
+    justify-content: center;
+}
