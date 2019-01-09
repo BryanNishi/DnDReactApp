@@ -6,6 +6,7 @@ const treasureRoutes = require("./treasure");
 const nameRoutes = require("./name");
 const userRoutes = require("./user")
 
+
 //Inn Route
 router.use("/inn", innRoutes);
 //Land Route
@@ -18,5 +19,6 @@ router.use("/treasure", treasureRoutes);
 router.use("/name", nameRoutes);
 //User Route
 router.use("/user", userRoutes);
+
 
 module.exports = router;

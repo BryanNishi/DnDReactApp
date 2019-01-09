@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import NavBar from '../../components/NavBar';
 import "./monsters.css"
 import API from '../../utils/API';
+//import { Row, Jumbotron, Form, FormGroup, Label, Input } from 'reactstrap';
 import $ from 'jquery';
 
 
@@ -9,40 +10,25 @@ class Monsters extends Component {
 
     state = {
         searchList: [],
+        monsterArray: [],
         searchResults: []
     }
+
+
 
     componentDidMount() {
         API.getMonster("")
             .then(res => {
-                this.setState({ searchList: res.data.results.map(monster => monster.name) });
-
-
-            })
-            .catch(err => console.log(err));
-
-            document.addEventListener('keypress', (event) => {
-                let buttonClicked = event.which || event.keyCode;
-
-                if (buttonClicked === 13) {
-                    event.preventDefault();
-                    let choice = $("#monsterSearch").val();
-        
-                    this.monsterSearch(choice);
-        
-                }
-            });
-
-            $.ajax({
-                url: "http://dnd5eapi.co/api/monsters/",
-                method: "GET",
-                dataType: "json",                
-                headers: {"Content-Type" : "application/x-www-form-urlencoded"}
-              }).then(res => {
-                  console.log("fired");
-                  console.log(res)
+                this.setState({ 
+                    searchList: res.data.results.map(monster => monster.name)                    
                 
-                })
+                });
+
+                
+            })
+            .catch(err => console.log(err));       
+
+            
     }
 
     selectMonster = event => {
@@ -85,7 +71,10 @@ class Monsters extends Component {
     monsterSearch = choice => {
         let monsterIndex = this.state.searchList.indexOf(choice);
 
+        console.log(monsterIndex);
+
         if (monsterIndex !== -1) {
+
 
             API.getMonster(monsterIndex + 1)
                 .then(res => {
@@ -279,6 +268,10 @@ class Monsters extends Component {
 
 
                 </div>
+
+                
+
+
             </div>
 
 
