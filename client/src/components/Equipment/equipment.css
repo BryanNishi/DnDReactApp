@@ -27,3 +27,7 @@ Label {
     justify-content: center;
     font-family: chancery;
 }
+#equipmentList{
+    display: flex;
+    justify-content: center;
+}

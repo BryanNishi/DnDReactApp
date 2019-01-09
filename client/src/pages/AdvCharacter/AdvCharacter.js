@@ -1,14 +1,21 @@
 import React, { Component } from "react";
 import NavBar from '../../components/NavBar'
-// import { Form, Row, FormGroup, Label } from 'reactstrap';
+import { Jumbotron } from 'reactstrap';
 import Button from '../../components/Button';
 import Input from '../../components/Input/input';
-import AbilityRoll from '../../components/AbilityRoll';
-import Equipment from '../../components/Equipment';
+import $ from 'jquery';
+
 import "./style.css";
+import AbilityRoll from "../../components/AbilityRoll";
 
 class AdvCharacter extends Component {
     state = {
+        buttons: {
+            name: "Roll Ability Scores",
+        },
+        button: {
+            name: "Generate Character Sheet",
+        },
         characterOptions: {
             characterName: {
                 elementType: 'input',
@@ -102,7 +109,7 @@ class AdvCharacter extends Component {
                 elementType: 'select',
                 elementConfig: {
                     options: [
-                        { value: "random", displayValue: "Race (Leave Blank for Random)" },
+                        { value: "random", displayValue: "Race" },
                         { value: "Dragonborn", displayValue: "Dragonborn (10 Draconic Ancestries)", subrace: ["Black", "Blue", "Brass", "Bronze", "Copper", "Gold", "Green", "Red", "Silver", "White"] },
                         { value: "Dwarf", displayValue: "Dwarf (2 subraces)", subrace: ["Hill Dwarf", "Mountain Dwarf"] },
                         { value: "Elf", displayValue: "Elf (3 subraces)", subrace: ["High Elf", "Wood Elf", "Dark Elf"] },
@@ -121,7 +128,7 @@ class AdvCharacter extends Component {
                 elementType: 'select',
                 elementConfig: {
                     options: [
-                        { value: "random", displayValue: "Class (Leave Blank for Random)" },
+                        { value: "random", displayValue: "Class" },
                         { value: "Barbarian", displayValue: "Barbarian" },
                         { value: "Bard", displayValue: "Bard" },
                         { value: "Cleric", displayValue: "Cleric" },
@@ -142,7 +149,7 @@ class AdvCharacter extends Component {
                 elementType: 'select',
                 elementConfig: {
                     options: [
-                        { value: "random", displayValue: "Level (Leave Blank for Random)" },
+                        { value: "random", displayValue: "Level" },
                         { value: 1, displayValue: "1 - (0 Exp)" },
                         { value: 2, displayValue: "2 - (300 Exp)" },
                         { value: 3, displayValue: "3 - (900 Exp)" },
@@ -171,7 +178,7 @@ class AdvCharacter extends Component {
                 elementType: 'select',
                 elementConfig: {
                     options: [
-                        { value: "random", displayValue: "Background (Leave Blank for Random)" },
+                        { value: "random", displayValue: "Background" },
                         { value: "Acolyte", displayValue: "Acolyte" },
                         { value: "Charlatan", displayValue: "Charlatan" },
                         { value: "Criminal", displayValue: "Criminal" },
@@ -196,17 +203,16 @@ class AdvCharacter extends Component {
                 elementType: 'select',
                 elementConfig: {
                     options: [
-                        { value: "random", displayValue: "Alignment (Leave Blank for Random)" },
+                        { value: "random", displayValue: "Alignment" },
                         { value: "Chaotic Good", displayValue: "Chaotic Good" },
                         { value: "Chaotic Evil", displayValue: "Chaotic Evil" },
                         { value: "Chaotic Neutral", displayValue: "Chaotic Neutral" },
                         { value: "Lawful Good", displayValue: "Lawful Good" },
                         { value: "Lawful Evil", displayValue: "Lawful Evil" },
-                        { value: "Lawful Neutral", displayValue: "Gladiator" },
-                        { value: "Neutral Good", displayValue: "Lawful Neutral" },
+                        { value: "Lawful Neutral", displayValue: "Lawful Neutral" },
+                        { value: "Neutral Good", displayValue: "Neutral Good" },
                         { value: "Neutral Evil", displayValue: "Neutral Evil" },
                         { value: "True Neutral", displayValue: "True Neutral" }
-
                     ]
                 },
                 value: ''
@@ -214,22 +220,149 @@ class AdvCharacter extends Component {
 
 
         },
-        abilityRolls: {
-            str: {
+
+        equipmentOptions: {
+            mainWeapon: {
                 elementType: 'select',
                 elementConfig: {
-
                     options: [
-                        { value: "test", displayValue: "test" },
-
+                        { displayValue: "Main Weapon" },
+                        { displayValue: "----Simple Melee----" },
+                        { value: "Club", displayValue: "Club" },
+                        { value: "Dagger", displayValue: "Dagger" },
+                        { value: "Greatclub", displayValue: "Greatclub" },
+                        { value: "Handaxe", displayValue: "Handaxe" },
+                        { value: "Javelin", displayValue: "Javelin" },
+                        { value: "Light Hammer", displayValue: "Light Hammer" },
+                        { value: "Mace", displayValue: "Mace" },
+                        { value: "Quarterstaff", displayValue: "Quarterstaff" },
+                        { value: "Sickle", displayValue: "Sickle" },
+                        { value: "Spear", displayValue: "Spear" },
+                        { value: "Unarmed", displayValue: "Unarmed" },
+                        { displayValue: "----Simple Ranged----" },
+                        { value: "Light Crossbow", displayValue: "Light Crossbow" },
+                        { value: "Dart", displayValue: "Dart" },
+                        { value: "Shortbow", displayValue: "Shortbow" },
+                        { value: "Sling", displayValue: "Sling" },
+                        { displayValue: "----Martial Melee----" },
+                        { value: "Battleaxe", displayValue: "Battleaxe" },
+                        { value: "Flail", displayValue: "Flail" },
+                        { value: "Glaive", displayValue: "Glaive" },
+                        { value: "Greataxe", displayValue: "Greataxe" },
+                        { value: "Greatsword", displayValue: "Greatsword" },
+                        { value: "Halberd", displayValue: "Halberd" },
+                        { value: "Lance", displayValue: "Lance" },
+                        { value: "Longsword", displayValue: "Longsword" },
+                        { value: "Maul", displayValue: "Maul" },
+                        { value: "Morningstar", displayValue: "Morningstar" },
+                        { value: "Pike", displayValue: "Pike" },
+                        { value: "Rapier", displayValue: "Rapier" },
+                        { value: "Scimitar", displayValue: "Scimitar" },
+                        { value: "Short Sword", displayValue: "Short Sword" },
+                        { value: "Trident", displayValue: "Trident" },
+                        { value: "War Pick", displayValue: "War Pick" },
+                        { value: "Warhammer", displayValue: "Warhammer" },
+                        { value: "Whip", displayValue: "Whip" },
+                        { displayValue: "----Martial Ranged----" },
+                        { value: "Blowgun", displayValue: "Blowgun" },
+                        { value: "Hand Crossbow", displayValue: "Hand Crossbow" },
+                        { value: "Heavy Crossbow", displayValue: "Heavy Crossbow" },
+                        { value: "Longbow", displayValue: "Longbow" },
+                        { value: "Net", displayValue: "Net" },
                     ]
                 },
                 value: ''
-            }
+            },
+            secondWeapon: {
+                elementType: 'select',
+                elementConfig: {
+                    options: [
+                        { displayValue: "Secondary Weapon" },
+                        { displayValue: "----Simple Melee----" },
+                        { value: "Club", displayValue: "Club" },
+                        { value: "Dagger", displayValue: "Dagger" },
+                        { value: "Greatclub", displayValue: "Greatclub" },
+                        { value: "Handaxe", displayValue: "Handaxe" },
+                        { value: "Javelin", displayValue: "Javelin" },
+                        { value: "Light Hammer", displayValue: "Light Hammer" },
+                        { value: "Mace", displayValue: "Mace" },
+                        { value: "Quarterstaff", displayValue: "Quarterstaff" },
+                        { value: "Sickle", displayValue: "Sickle" },
+                        { value: "Spear", displayValue: "Spear" },
+                        { value: "Unarmed", displayValue: "Unarmed" },
+                        { displayValue: "----Simple Ranged----" },
+                        { value: "Light Crossbow", displayValue: "Light Crossbow" },
+                        { value: "Dart", displayValue: "Dart" },
+                        { value: "Shortbow", displayValue: "Shortbow" },
+                        { value: "Sling", displayValue: "Sling" },
+                        { displayValue: "----Martial Melee----" },
+                        { value: "Battleaxe", displayValue: "Battleaxe" },
+                        { value: "Flail", displayValue: "Flail" },
+                        { value: "Glaive", displayValue: "Glaive" },
+                        { value: "Greataxe", displayValue: "Greataxe" },
+                        { value: "Greatsword", displayValue: "Greatsword" },
+                        { value: "Halberd", displayValue: "Halberd" },
+                        { value: "Lance", displayValue: "Lance" },
+                        { value: "Longsword", displayValue: "Longsword" },
+                        { value: "Maul", displayValue: "Maul" },
+                        { value: "Morningstar", displayValue: "Morningstar" },
+                        { value: "Pike", displayValue: "Pike" },
+                        { value: "Rapier", displayValue: "Rapier" },
+                        { value: "Scimitar", displayValue: "Scimitar" },
+                        { value: "Short Sword", displayValue: "Short Sword" },
+                        { value: "Trident", displayValue: "Trident" },
+                        { value: "War Pick", displayValue: "War Pick" },
+                        { value: "Warhammer", displayValue: "Warhammer" },
+                        { value: "Whip", displayValue: "Whip" },
+                        { displayValue: "----Martial Ranged----" },
+                        { value: "Blowgun", displayValue: "Blowgun" },
+                        { value: "Hand Crossbow", displayValue: "Hand Crossbow" },
+                        { value: "Heavy Crossbow", displayValue: "Heavy Crossbow" },
+                        { value: "Longbow", displayValue: "Longbow" },
+                        { value: "Net", displayValue: "Net" },
+                    ]
+                },
+                value: ''
+            },
+            armor: {
+
+                elementType: 'select',
+                elementConfig: {
+                    options: [
+                        { value: "random", displayValue: "Armor" },
+                        { displayValue: "----Light Armor----" },
+                        { value: "Padded", displayValue: "Padded" },
+                        { value: "Leather", displayValue: "Leather" },
+                        { value: "Padded Leather", displayValue: "Padded Leather" },
+                        { displayValue: "----Medium Armor----" },
+                        { value: "Hide", displayValue: "Hide" },
+                        { value: "Chain Shirt", displayValue: "Chain Shirt" },
+                        { value: "Scale Mail", displayValue: "Scale Mail" },
+                        { value: "Breastplate", displayValue: "Breastplate" },
+                        { value: "Half Plate", displayValue: "Half Plate" },
+                        { displayValue: "----Heavy Armor----" },
+                        { value: "Ring Mail", displayValue: "Ring Mail" },
+                        { value: "Chain Shirt", displayValue: "Chain Shirt" },
+                        { value: "Chain Mail", displayValue: "Chain Mail" },
+                        { value: "Splint", displayValue: "Splint" },
+                        { value: "Plate", displayValue: "Plate" }
+                    ],
+                    value: ''
+                }
+            },
+            shield: {
+                elementType: 'select',
+                elementConfig: {
+                    options: [
+                        { displayValue: "Shield?" },
+                        { value: "True", displayValue: "Yes" },
+                        { value: "False", displayValue: "No" },
+                    ],
+                    value: ''
+                }
+            },
         },
-        button: {
-            name: "Generate Character Sheet",
-        }
+        rolls: []
     }
 
     inputChangedHandler = (event, inputIdentifier) => {
@@ -248,9 +381,49 @@ class AdvCharacter extends Component {
         this.setState({ characterOptions: updatedCharacterOptions });
     };
 
+    equipmentChangedHandler = (event, inputIdentifier) => {
+
+        //create clone of state for mutating values
+        const updatedequipmentOptions = {
+            ...this.state.equipmentOptions
+        }
+        //clone the values insinde base elements
+        const updatedFormElement = {
+            ...updatedequipmentOptions[inputIdentifier]
+        };
+        updatedFormElement.value = event.target.value;
+        updatedequipmentOptions[inputIdentifier] = updatedFormElement;
+        this.setState({ equipmentOptions: updatedequipmentOptions });
+    };
+    // **************************************************onClick for "generate character sheet"***************************
+    createHandler = (event) => {
+        event.preventDefault();
+        const optionsData = {};
+        for (let formElementIdentifier in this.state.characterOptions) {
+            optionsData[formElementIdentifier] = this.state.characterOptions[formElementIdentifier].value;
+        }
+        const equipmentData = {};
+        for (let formElementIdentifier in this.state.equipmentOptions) {
+            equipmentData[formElementIdentifier] = this.state.equipmentOptions[formElementIdentifier].value;
+        }
+        const charSheet = {
+            charSheetData: optionsData, equipmentData
+        }
+        console.log(charSheet);
+    }
+
+    abilityRollHandler = (event) => {
+        event.preventDefault();
+        console.log("trigger");
+    }
+
+    componentDidMount() {
+
+
+    };
 
     render() {
-
+        //*****************main character options creation*************************************** */
         const characterOptionsArray = [];
         for (let key in this.state.characterOptions) {
             characterOptionsArray.push({
@@ -273,16 +446,47 @@ class AdvCharacter extends Component {
             </form>
         );
 
+        //*****************equipment options creation********************************************* */
+        const equipmentOptionsArray = [];
+        for (let key in this.state.equipmentOptions) {
+            equipmentOptionsArray.push({
+                id: key,
+                config: this.state.equipmentOptions[key]
+            });
+        }
+
+        let equipmentForm = (
+            <form>
+
+                {equipmentOptionsArray.map(formElement => (
+                    <Input
+                        key={formElement.id}
+                        elementType={formElement.config.elementType}
+                        elementConfig={formElement.config.elementConfig}
+                        value={formElement.config.value}
+                        changed={(event) => this.equipmentChangedHandler(event, formElement.id)} />
+                ))}
+            </form>
+        );
+
+        let abilityRoll = (
+            <Jumbotron>
+                <Button name={this.state.buttons.name} clicked={this.abilityRollHandler}></Button>
+                <AbilityRoll />
+
+
+            </Jumbotron>
+        )
 
 
         return (
             <div className="character">
                 <NavBar />
-                <h1>Advanced Character Creator</h1>
+                <h1>Character Generator</h1>
                 {form}
-                <AbilityRoll />
-                <Equipment />
-                <Button name={this.state.button.name} />
+                {abilityRoll}
+                {equipmentForm}
+                <Button name={this.state.button.name} clicked={this.createHandler} />
             </div>
 
 

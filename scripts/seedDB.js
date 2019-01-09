@@ -195,25 +195,7 @@ const treasureSeed = [
       ]
     }
   },
-  {
-    art: {
-      twentyFiveGP: [
-        "Silver Ewer"
-      ],
-      twoFiftyGP: [
-        "Gold Ring set with Bloodstones"
-      ],
-      sevenFiftyGP: [
-        "Silver Chalice set with Moonstones"
-      ],
-      twoThousandFiveHundredGP: [
-        "Fine Gold Chain set with a Fire Opal"
-      ],
-      sevenThousandFiveHundredGP: [
-        "Jeweled Gold Crown"
-      ]
-    }
-  },
+  
   {
     coins: {
       idividual: [
@@ -225,11 +207,7 @@ const treasureSeed = [
       ]
     },
   },
-  {
-    magic_items: [
-
-    ]
-  }
+  
 ];
 
 
