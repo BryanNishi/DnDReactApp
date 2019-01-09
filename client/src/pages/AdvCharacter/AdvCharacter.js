@@ -368,6 +368,11 @@ class AdvCharacter extends Component {
                 elementConfig: {
                     options: [
                         { displayValue: "Strength" },
+                        { value: "", displayValue: "" },
+                        { value: "", displayValue: "" },
+                        { value: "", displayValue: "" },
+                        { value: "", displayValue: "" },
+                        { value: "", displayValue: "" },
                         { value: "", displayValue: "" }
                     ],
                     value: ''
@@ -378,6 +383,11 @@ class AdvCharacter extends Component {
                 elementConfig: {
                     options: [
                         { displayValue: "Dexterity" },
+                        { value: "", displayValue: "" },
+                        { value: "", displayValue: "" },
+                        { value: "", displayValue: "" },
+                        { value: "", displayValue: "" },
+                        { value: "", displayValue: "" },
                         { value: "", displayValue: "" }
                     ],
                     value: ''
@@ -388,6 +398,11 @@ class AdvCharacter extends Component {
                 elementConfig: {
                     options: [
                         { displayValue: "Constitution" },
+                        { value: "", displayValue: "" },
+                        { value: "", displayValue: "" },
+                        { value: "", displayValue: "" },
+                        { value: "", displayValue: "" },
+                        { value: "", displayValue: "" },
                         { value: "", displayValue: "" }
                     ],
                     value: ''
@@ -398,6 +413,11 @@ class AdvCharacter extends Component {
                 elementConfig: {
                     options: [
                         { displayValue: "Intelligence" },
+                        { value: "", displayValue: "" },
+                        { value: "", displayValue: "" },
+                        { value: "", displayValue: "" },
+                        { value: "", displayValue: "" },
+                        { value: "", displayValue: "" },
                         { value: "", displayValue: "" }
                     ],
                     value: ''
@@ -408,6 +428,11 @@ class AdvCharacter extends Component {
                 elementConfig: {
                     options: [
                         { displayValue: "Wisdom" },
+                        { value: "", displayValue: "" },
+                        { value: "", displayValue: "" },
+                        { value: "", displayValue: "" },
+                        { value: "", displayValue: "" },
+                        { value: "", displayValue: "" },
                         { value: "", displayValue: "" }
                     ],
                     value: ''
@@ -418,6 +443,11 @@ class AdvCharacter extends Component {
                 elementConfig: {
                     options: [
                         { displayValue: "Charisma" },
+                        { value: "", displayValue: "" },
+                        { value: "", displayValue: "" },
+                        { value: "", displayValue: "" },
+                        { value: "", displayValue: "" },
+                        { value: "", displayValue: "" },
                         { value: "", displayValue: "" }
                     ],
                     value: ''
@@ -477,16 +507,32 @@ class AdvCharacter extends Component {
         let rolls = [];
         let rollDisplay = []
         let rollOptions = [];
-
+        let abilitiesArray = [];
         for (let i = 0; i < 6; i++) {
             let result = Math.floor((Math.random() * 18) + 1);
             rolls.push(result);
             rollDisplay.push(result + ", ");
 
             let a = '{ value: ' + result + ', displayValue: ' + result + ' }';
-            rollOptions.push(a);      
+            rollOptions.push(a);  
+
+         //on state change it will rerender with new options, need to dynamically generate options for a selection
+         
+        for (let key in this.state.abilities) {
+            
+            abilitiesArray.push({
+                id: key,
+                config: this.state.abilities[key]
+            
+                 
+            });
+        }
+    
         }
 
+        console.log("AbilArr ", abilitiesArray)
+        
+        
         console.log("Roll Options", rollOptions);
         console.log("Rolls", rolls);
     
