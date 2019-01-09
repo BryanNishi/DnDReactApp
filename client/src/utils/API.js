@@ -2,11 +2,13 @@ import axios from "axios";
 
 export default {
   getMonster: function (monsters) {
-    return axios.get("http://dnd5eapi.co/api/monsters/" + monsters, {
-      dataType: "json",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" }
-    });
+    return axios.get("http://dnd5eapi.co/api/monsters/" + monsters);
   },
+
+  getNextPage: function(next){
+    return axios.get(next);
+  },
+
   getSpell: function (spells) {
     return axios.get("http://dnd5eapi.co/api/spells/" + spells);
   },

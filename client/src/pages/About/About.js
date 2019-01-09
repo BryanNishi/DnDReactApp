@@ -17,11 +17,7 @@ class About extends Component {
 
     logout = () => {
         this.setState({ isAuthenticated: false, token: '', user: null })
-    };
-
-    onFailure = (error) => {
-        alert("Error! Unable to find your account!");
-    };
+    };    
 
     googleResponse = (response) => {
         
@@ -75,12 +71,12 @@ class About extends Component {
             copyrighted works.</p>
                 <center>
 
-                    {/* <GoogleLogin
+                    <GoogleLogin
                         clientId="381456997178-m1bg7p4b72h3osnijolv96bbrtbvrfl9.apps.googleusercontent.com"
                         buttonText="Login"
                         onSuccess={this.googleResponse}
-                        onFailure={this.onFailure}
-                    /> */}
+                        onFailure={this.googleResponse}
+                    />
 
                 </center>
 
