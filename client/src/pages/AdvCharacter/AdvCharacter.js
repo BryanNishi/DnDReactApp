@@ -4,9 +4,8 @@ import { Jumbotron } from 'reactstrap';
 import Button from '../../components/Button';
 import Input from '../../components/Input/input';
 import $ from 'jquery';
-
 import "./style.css";
-import AbilityRoll from "../../components/AbilityRoll";
+
 
 class AdvCharacter extends Component {
     state = {
@@ -220,7 +219,7 @@ class AdvCharacter extends Component {
 
 
         },
-
+        // ***************************************************equipment states******************
         equipmentOptions: {
             mainWeapon: {
                 elementType: 'select',
@@ -362,9 +361,72 @@ class AdvCharacter extends Component {
                 }
             },
         },
+        // *********************************************abilities states****************************
+        abilities: {
+            strength: {
+                elementType: 'select',
+                elementConfig: {
+                    options: [
+                        { displayValue: "Strength" },
+                        { value: "", displayValue: "" }
+                    ],
+                    value: ''
+                }
+            },
+            dexterity: {
+                elementType: 'select',
+                elementConfig: {
+                    options: [
+                        { displayValue: "Dexterity" },
+                        { value: "", displayValue: "" }
+                    ],
+                    value: ''
+                }
+            },
+            constitution: {
+                elementType: 'select',
+                elementConfig: {
+                    options: [
+                        { displayValue: "Constitution" },
+                        { value: "", displayValue: "" }
+                    ],
+                    value: ''
+                }
+            },
+            intelligence: {
+                elementType: 'select',
+                elementConfig: {
+                    options: [
+                        { displayValue: "Intelligence" },
+                        { value: "", displayValue: "" }
+                    ],
+                    value: ''
+                }
+            },
+            wisdom: {
+                elementType: 'select',
+                elementConfig: {
+                    options: [
+                        { displayValue: "Wisdom" },
+                        { value: "", displayValue: "" }
+                    ],
+                    value: ''
+                }
+            },
+            charisma: {
+                elementType: 'select',
+                elementConfig: {
+                    options: [
+                        { displayValue: "Charisma" },
+                        { value: "", displayValue: "" }
+                    ],
+                    value: ''
+                }
+            },
+        },
         rolls: []
     }
-
+    // *******************************************************************event handlers**********************************
     inputChangedHandler = (event, inputIdentifier) => {
         // console.log(event.target.value);
 
@@ -382,7 +444,6 @@ class AdvCharacter extends Component {
     };
 
     equipmentChangedHandler = (event, inputIdentifier) => {
-
         //create clone of state for mutating values
         const updatedequipmentOptions = {
             ...this.state.equipmentOptions
@@ -395,6 +456,49 @@ class AdvCharacter extends Component {
         updatedequipmentOptions[inputIdentifier] = updatedFormElement;
         this.setState({ equipmentOptions: updatedequipmentOptions });
     };
+
+    abilityChangedHandler = (event, inputIdentifier) => {
+
+        //create clone of state for mutating values
+        const updatedeAbilities = {
+            ...this.state.abilities
+        }
+        //clone the values insinde base elements
+        const updatedAbilityElement = {
+            ...updatedeAbilities[inputIdentifier]
+        };
+        updatedAbilityElement.value = event.target.value;
+        updatedeAbilities[inputIdentifier] = updatedAbilityElement;
+        this.setState({ abilities: updatedeAbilities });
+    };
+
+    abilityRollHandler = (event) => {
+        event.preventDefault();
+        let rolls = [];
+        let rollDisplay = []
+        let rollOptions = [];
+
+        for (let i = 0; i < 6; i++) {
+            let result = Math.floor((Math.random() * 18) + 1);
+            rolls.push(result);
+            rollDisplay.push(result + ", ");
+
+            let a = '{ value: ' + result + ', displayValue: ' + result + ' }';
+            rollOptions.push(a);      
+        }
+
+        console.log("Roll Options", rollOptions);
+        console.log("Rolls", rolls);
+    
+        $(".rollResults").html(rollDisplay);
+    };
+
+    componentDidUpdate() {
+
+
+
+    };
+
     // **************************************************onClick for "generate character sheet"***************************
     createHandler = (event) => {
         event.preventDefault();
@@ -406,24 +510,21 @@ class AdvCharacter extends Component {
         for (let formElementIdentifier in this.state.equipmentOptions) {
             equipmentData[formElementIdentifier] = this.state.equipmentOptions[formElementIdentifier].value;
         }
+        const abilitiesData = {};
+        for (let formElementIdentifier in this.state.abilities) {
+            abilitiesData[formElementIdentifier] = this.state.abilities[formElementIdentifier].value;
+        }
+
         const charSheet = {
-            charSheetData: optionsData, equipmentData
+            charSheetData: optionsData, equipmentData, abilitiesData
         }
         console.log(charSheet);
     }
 
-    abilityRollHandler = (event) => {
-        event.preventDefault();
-        console.log("trigger");
-    }
 
-    componentDidMount() {
-
-
-    };
 
     render() {
-        //*****************main character options creation*************************************** */
+        //************************************************main character options creation*************************************** */
         const characterOptionsArray = [];
         for (let key in this.state.characterOptions) {
             characterOptionsArray.push({
@@ -469,11 +570,29 @@ class AdvCharacter extends Component {
             </form>
         );
 
+        // *******************************Ability Roller**********************************************
+        const abilitiesArray = [];
+        for (let key in this.state.abilities) {
+            abilitiesArray.push({
+                id: key,
+                config: this.state.abilities[key]
+            });
+        }
+
         let abilityRoll = (
             <Jumbotron>
                 <Button name={this.state.buttons.name} clicked={this.abilityRollHandler}></Button>
-                <AbilityRoll />
-
+                <p className="rollResults"></p>
+                <form>
+                    {abilitiesArray.map(formElement => (
+                        <Input
+                            key={formElement.id}
+                            elementType={formElement.config.elementType}
+                            elementConfig={formElement.config.elementConfig}
+                            value={formElement.config.value}
+                            changed={(event) => this.abilityChangedHandler(event, formElement.id)} />
+                    ))}
+                </form>
 
             </Jumbotron>
         )
