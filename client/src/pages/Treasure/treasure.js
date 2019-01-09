@@ -10,13 +10,13 @@ import "./treasure.css";
 class Treasure extends Component {
     state = {
         generate: {
-            href: "/treasure",
             name: "Generate Treasure"
         },
-        directions: [],
-        elements: [],
-        descriptions: [],
-        treasureNames: []
+        gems: [],
+        cp: [],
+        sp: [],
+        gp: [],
+        treasureFound: []
     }
     // When the component mounts retreive all treasure arrays
     componentDidMount() {
@@ -38,35 +38,37 @@ class Treasure extends Component {
 
     generateHandler = (event) => {
         event.preventDefault();
-        let generatedName = [];
+        let generatedTreasure = [];
         //Generate 5 treasure names
-        let i = 0;
-        for (i = 0; i < 5; i++) {
-            //pull random direction
-            let direction = this.state.directions[Math.floor(Math.random() * this.state.directions.length)] + " ";
+       
+            //generate random gem total
+            let gems = Math.floor((Math.random() * 10) + 2);
 
-            //pull random element
-            let element = this.state.elements[Math.floor(Math.random() * this.state.elements.length)] + " ";
+            let gemWorth = Math.floor((Math.random() * 500) + 2);
+            //generate random cp
+            let cp = Math.floor((Math.random() * 100) + 2);
+            //generate random sp
+            let sp = Math.floor((Math.random() * 100) + 2);
+            //generate random gp
+            let gp = Math.floor((Math.random() * 100) + 2);
 
-            //pull random description
-            let description = this.state.descriptions[Math.floor(Math.random() * this.state.descriptions.length)] + " ";
 
             //send to array
-            generatedName.push("You head " + direction +"into a " + element + "and it is " + description);
-            console.log("generated", generatedName);
+            generatedTreasure.push("You find " + cp + " Copper Pieces, " + sp + " Silver Pieces, " + gp + " Gold Pieces, and " + gems + " Gems worth " + gemWorth + " gp each." );
+            console.log("generated", generatedTreasure);
             //set state to array of treasure names
-            this.setState({ treasureNames: generatedName })
-        };
+            this.setState({ treasureFound: generatedTreasure })
+        
     };
 
     render() {
         return (
             <div className="treasureGenerator">
                 <NavBar />
-                <h1>Treasure Name Generator</h1>
+                <h1>Treasure Generator</h1>
                 <Jumbotron>
                     <List>
-                        {this.state.treasureNames.map(treasure => (
+                        {this.state.treasureFound.map(treasure => (
                             <ListItem>
                                 {treasure}
                             </ListItem>

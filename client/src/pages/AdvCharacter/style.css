@@ -11,3 +11,24 @@
 Input{
     width: 75%;
 }
+
+#diceRoll{
+    background-color: maroon;
+    color: white;
+}
+
+#diceRoll:hover{
+    background-color: white;
+    color: maroon;
+}
+
+.rollResults{
+    display: flex;
+    justify-content: center;
+    font-family: chancery;
+}
+
+#abilityScores {
+    display: flex;
+    justify-content: center;
+}

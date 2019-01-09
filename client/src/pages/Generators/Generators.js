@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import NavBar from '../../components/NavBar';
 import Button from "../../components/Button";
-import {Jumbotron, Row, Col } from 'reactstrap';
+import { Jumbotron, Row, Col } from 'reactstrap';
 import "./style.css";
 
 
@@ -10,17 +10,16 @@ class Generators extends Component {
     state = {
         charGenerators: [
             { href: "/character", name: "Quick Character Generator" },
-            { href: "/guidedcharacter", name: "Guided Character Generator" },
-            { href: "/advcharacter", name: "Advanced Character Generator" },
-            { href: "/name", name: "Character Name Generator" },
-            { href: "/features", name: "Class Features"},
-            { href: "/classes", name: "Class Search"}
-        
+            { href: "/advcharacter", name: "Character Generator" },
+            { href: "/name", name: "Name Generator" },
+            { href: "/features", name: "Class Features" },
+            { href: "/classes", name: "Class Search" }
+
         ],
         npcGenerators: [
             { href: "/character", name: "Quick NPC Generator" },
             { href: "/npc", name: "NPC Generator" },
-            { href: "/name", name: "NPC Name Generator" }
+            { href: "/name", name: "Name Generator" }
         ],
         worldGenerators: [
             { href: "/land", name: "Land Name Generator" },
@@ -69,19 +68,19 @@ class Generators extends Component {
                 <h1>Random Generators</h1>
                 <Row>
                     <Col md="4">
-                        <Jumbotron className = "container">
+                        <Jumbotron className="container">
                             <h2>Character Generators</h2>
                             {charButtons}
                         </Jumbotron>
                     </Col>
                     <Col md="4">
-                        <Jumbotron className = "container">
+                        <Jumbotron className="container">
                             <h2>Non-Player Character Generators</h2>
                             {npcButtons}
                         </Jumbotron>
                     </Col>
                     <Col md="4">
-                        <Jumbotron className = "container">
+                        <Jumbotron className="container">
                             <h2>World Generators</h2>
                             {worldButtons}
                         </Jumbotron>
