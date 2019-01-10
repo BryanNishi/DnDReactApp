@@ -454,7 +454,8 @@ class AdvCharacter extends Component {
                 }
             },
         },
-        rolls: []
+        rollState: [],
+        abilitiesArray:[],
     }
     // *******************************************************************event handlers**********************************
     inputChangedHandler = (event, inputIdentifier) => {
@@ -507,42 +508,33 @@ class AdvCharacter extends Component {
         let rolls = [];
         let rollDisplay = []
         let rollOptions = [];
-        let abilitiesArray = [];
+    
         for (let i = 0; i < 6; i++) {
             let result = Math.floor((Math.random() * 18) + 1);
             rolls.push(result);
             rollDisplay.push(result + ", ");
 
             let a = '{ value: ' + result + ', displayValue: ' + result + ' }';
-            rollOptions.push(a);  
+            rollOptions.push(a);
 
-         //on state change it will rerender with new options, need to dynamically generate options for a selection
-         
-        for (let key in this.state.abilities) {
-            
-            abilitiesArray.push({
-                id: key,
-                config: this.state.abilities[key]
-            
-                 
-            });
+            //on state change it will rerender with new options, need to dynamically generate options for a selection. resend new values to component in Render()
+        
         }
-    
-        }
+        this.setState({ rollState: rollOptions })
+        
 
-        console.log("AbilArr ", abilitiesArray)
-        
-        
+
         console.log("Roll Options", rollOptions);
-        console.log("Rolls", rolls);
-    
+        
+        // console.log("Rolls", rolls);
+
         $(".rollResults").html(rollDisplay);
     };
 
     componentDidUpdate() {
-
-
-
+        console.log("Roll state", this.state.rollState);
+        
+        
     };
 
     // **************************************************onClick for "generate character sheet"***************************
