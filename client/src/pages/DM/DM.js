@@ -3,7 +3,9 @@ import './DM.css';
 import DM_ScreenPDF from '../../assets/images/dmScreen.pdf';
 import NavBar from '../../components/NavBar';
 
-class DM extends Component {
+
+class DM extends Component {   
+
     render() {
         return (
             <div className="DM-Page">
@@ -23,10 +25,10 @@ class DM extends Component {
                         </div>
                     </div>
 
-                </div>            
+                </div>         
 
-        
-                
+
+
 
             </div>
         );
