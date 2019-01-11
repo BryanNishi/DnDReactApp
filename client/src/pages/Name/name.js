@@ -50,22 +50,22 @@ class Name extends Component {
     generateMaleHandler = (event) => {
         event.preventDefault();
 
-        let race = this.state.race;   
+        let race = this.state.race;
 
         race !== "" ? this.setState({ fiveRandomNames: this.getRandomNames(this.state.names[0][race].male, 5) }) : console.log("No Race Selected");
-     
+
     };
 
     generateFemaleHandler = (event) => {
         event.preventDefault();
 
-        let race = this.state.race;   
+        let race = this.state.race;
 
         race !== "" ? this.setState({ fiveRandomNames: this.getRandomNames(this.state.names[0][race].female, 5) }) : console.log("No Race Selected");
 
     };
 
-     getRandomNames = (arr, n) => {
+    getRandomNames = (arr, n) => {
         let result = new Array(n),
             len = arr.length,
             taken = new Array(len);
@@ -75,8 +75,8 @@ class Name extends Component {
             let x = Math.floor(Math.random() * len);
             result[n] = arr[x in taken ? taken[x] : x];
             taken[x] = --len in taken ? taken[len] : len;
-        }                                    
-        return result;        
+        }
+        return result;
     }
 
 
@@ -87,15 +87,20 @@ class Name extends Component {
                 <NavBar />
                 <h1>Character Name Generator</h1>
 
+
                 <Jumbotron>
-                    <List>
-                        {this.state.fiveRandomNames.map(name => (
+                <h2>Names Results Here</h2>
+                {this.state.fiveRandomNames.map(name => (
+                    
+                        <List>
                             <ListItem key={name}>
                                 {name}
                             </ListItem>
-                        ))} 
-                    </List>
+                        </List>                    
+                ))}
                 </Jumbotron>
+
+
                 <Form>
                     <FormGroup>
                         <Label for="race">Race</Label>
