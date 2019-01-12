@@ -18,6 +18,9 @@
     background-image: url(../../assets/images/screenBG.jpg);
     background-size: cover;
     background-attachment: fixed;
+    overflow: hidden;
+    width: 100%;
+    min-height: 100vh;
 }
 
 /* Navbar Styling */
@@ -236,4 +239,25 @@ p{
 .diceRoll {
     padding: 0rem 1rem;
     margin: -0.5rem 0rem;
+}
+
+.target {
+    width: 50%;
+    min-height: 200px;
+    border: 1px solid grey;
+  }
+
+  .item-container {
+    width: 40%;
+  }
+
+  .item {
+    padding: 10px;
+    border: 1px solid grey;
+    margin-bottom: 20px;
+    color: white;
+  }
+
+.newCharacterInput{
+    margin-top: 2rem; 
 }
