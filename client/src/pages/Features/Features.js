@@ -3,20 +3,21 @@ import NavBar from '../../components/NavBar';
 import "./features.css";
 import API from '../../utils/API';
 import $ from 'jquery';
+import { Button, Form, FormGroup, Label, Input, Row, Col, Jumbotron } from 'reactstrap';
 
 class Feature extends Component {
 
-    state = {               
+    state = {
         featureList: [],
-        searchResults: []        
+        searchResults: []
     }
 
     componentDidMount() {
         API.getfeature("")
-        .then(res => {
-            this.setState({ featureList: res.data.results.map(feature => feature.name) })
-        })
-        .catch(err => console.log(err));
+            .then(res => {
+                this.setState({ featureList: res.data.results.map(feature => feature.name) })
+            })
+            .catch(err => console.log(err));
 
         document.addEventListener('keypress', (event) => {
             let buttonClicked = event.which || event.keyCode;
@@ -24,9 +25,9 @@ class Feature extends Component {
             if (buttonClicked === 13) {
                 event.preventDefault();
                 let choice = $("#featureSearch").val();
-    
+
                 this.featureSearch(choice);
-    
+
             }
         });
 
@@ -51,12 +52,12 @@ class Feature extends Component {
 
         let featureIndex = this.state.featureList.indexOf(choice);
 
-        if(featureIndex !== -1){
-                        
-            this.featureSearch(event.target.value); 
+        if (featureIndex !== -1) {
+
+            this.featureSearch(event.target.value);
         }
     }
-       
+
 
     submitSearch = event => {
         event.preventDefault();
@@ -81,7 +82,7 @@ class Feature extends Component {
             API.getfeature(featureIndex + 1)
                 .then(res => {
 
-                    this.setState({                        
+                    this.setState({
                         searchResults: res.data
                     });
 
@@ -102,8 +103,37 @@ class Feature extends Component {
         return (
             <div className="featureBody">
                 <NavBar />
-
                 <h1>Feature Search</h1>
+                <p className="disclaimer">To access Class Search download and active <a href="https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en" target="_blank">this Google Extention</a> then <a href="http://stark-spire-22309.herokuapp.com/features">click here</a>.</p>
+
+                {/* <Form>
+
+                    <Row>
+                        <Row>
+                            <Col md="3">
+                                <FormGroup>
+
+                                    <Input list="browsers" name="browser" id="featureSearch" className="form-control" placeholder="Search Feature Library" onSelect={this.selectFeature.bind(this)} />
+
+                                    <datalist id="browsers">
+
+                                        {this.state.featureList.map((feature, index) => <option key={index} value={feature} />)}
+
+                                    </datalist>
+
+                                    <Button onClick={this.submitSearch} >Search</Button>
+
+                                </FormGroup>
+                            </Col>
+
+                            <Col md="9">
+                            </Col>
+
+
+                        </Row>
+                    </Row>
+                </Form> */}
+
                 <div className="row">
                     <div className="col-md-3">
                         <form>
@@ -112,7 +142,7 @@ class Feature extends Component {
 
                             <datalist id="browsers">
 
-                                {this.state.featureList.map((feature,index) => <option key={index} value={feature} />)}
+                                {this.state.featureList.map((feature, index) => <option key={index} value={feature} />)}
 
                             </datalist>
                             <center>
@@ -131,21 +161,21 @@ class Feature extends Component {
                                     <div className="col-sm-4">
 
                                         <strong>Name:</strong> {this.state.searchResults.name}<br />
-                                        <strong>Level:</strong> {this.state.searchResults.level ? this.state.searchResults.level : "N/A" }<br />
+                                        <strong>Level:</strong> {this.state.searchResults.level ? this.state.searchResults.level : "N/A"}<br />
 
-                                        
+
 
                                     </div>
 
                                     <div className="col-sm-8">
                                         <strong>Description:</strong>
-                                        {this.state.searchResults.desc.map((desc,index) => <span key={index}> {desc} <br/> </span>)}
+                                        {this.state.searchResults.desc.map((desc, index) => <span key={index}> {desc} <br /> </span>)}
 
                                     </div>
 
 
                                 </div>
-                                
+
                             </div>
 
                         ) : <div>

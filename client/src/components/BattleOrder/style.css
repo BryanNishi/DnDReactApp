@@ -1,0 +1,29 @@
+.target {
+    width: 100px;
+    min-height: 200px;
+    border: 1px solid grey;
+  }
+
+  .characterDeadOrKO{
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  .hp, .ac{
+    height: 2rem;
+    width: 4rem;
+  }
+
+  .name {
+    height: 2rem;
+    width: 12rem;
+  }
+
+  .notes {
+    height: 2rem;
+    width: 18rem;
+  }
+
+  .intiativeStats > span {
+    margin-left: 1rem;
+  }
