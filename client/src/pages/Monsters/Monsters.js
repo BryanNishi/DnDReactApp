@@ -149,6 +149,7 @@ class Monsters extends Component {
             <div className="monsterBody">
                 <NavBar />
                 <h1>Monster Manual</h1>
+                <p className="disclaimer">To access Class Search download and active <a href="https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en" target="_blank">this Google Extention</a> then <a href="http://stark-spire-22309.herokuapp.com/monster">click here</a>.</p>
 
                 <div className="row">
 
