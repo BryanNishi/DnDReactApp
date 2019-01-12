@@ -4,9 +4,8 @@ import { Jumbotron } from 'reactstrap';
 import Button from '../../components/Button';
 import Input from '../../components/Input/input';
 import $ from 'jquery';
-
 import "./style.css";
-import AbilityRoll from "../../components/AbilityRoll";
+
 
 class AdvCharacter extends Component {
     state = {
@@ -220,55 +219,55 @@ class AdvCharacter extends Component {
 
 
         },
-
+        // ***************************************************equipment states******************
         equipmentOptions: {
             mainWeapon: {
                 elementType: 'select',
                 elementConfig: {
                     options: [
-                        { displayValue: "Main Weapon" },
-                        { displayValue: "----Simple Melee----" },
-                        { value: "Club", displayValue: "Club" },
-                        { value: "Dagger", displayValue: "Dagger" },
-                        { value: "Greatclub", displayValue: "Greatclub" },
-                        { value: "Handaxe", displayValue: "Handaxe" },
-                        { value: "Javelin", displayValue: "Javelin" },
-                        { value: "Light Hammer", displayValue: "Light Hammer" },
-                        { value: "Mace", displayValue: "Mace" },
-                        { value: "Quarterstaff", displayValue: "Quarterstaff" },
-                        { value: "Sickle", displayValue: "Sickle" },
-                        { value: "Spear", displayValue: "Spear" },
-                        { value: "Unarmed", displayValue: "Unarmed" },
-                        { displayValue: "----Simple Ranged----" },
-                        { value: "Light Crossbow", displayValue: "Light Crossbow" },
-                        { value: "Dart", displayValue: "Dart" },
-                        { value: "Shortbow", displayValue: "Shortbow" },
-                        { value: "Sling", displayValue: "Sling" },
-                        { displayValue: "----Martial Melee----" },
-                        { value: "Battleaxe", displayValue: "Battleaxe" },
-                        { value: "Flail", displayValue: "Flail" },
-                        { value: "Glaive", displayValue: "Glaive" },
-                        { value: "Greataxe", displayValue: "Greataxe" },
-                        { value: "Greatsword", displayValue: "Greatsword" },
-                        { value: "Halberd", displayValue: "Halberd" },
-                        { value: "Lance", displayValue: "Lance" },
-                        { value: "Longsword", displayValue: "Longsword" },
-                        { value: "Maul", displayValue: "Maul" },
-                        { value: "Morningstar", displayValue: "Morningstar" },
-                        { value: "Pike", displayValue: "Pike" },
-                        { value: "Rapier", displayValue: "Rapier" },
-                        { value: "Scimitar", displayValue: "Scimitar" },
-                        { value: "Short Sword", displayValue: "Short Sword" },
-                        { value: "Trident", displayValue: "Trident" },
-                        { value: "War Pick", displayValue: "War Pick" },
-                        { value: "Warhammer", displayValue: "Warhammer" },
-                        { value: "Whip", displayValue: "Whip" },
-                        { displayValue: "----Martial Ranged----" },
-                        { value: "Blowgun", displayValue: "Blowgun" },
-                        { value: "Hand Crossbow", displayValue: "Hand Crossbow" },
-                        { value: "Heavy Crossbow", displayValue: "Heavy Crossbow" },
-                        { value: "Longbow", displayValue: "Longbow" },
-                        { value: "Net", displayValue: "Net" },
+                        { id: 1, displayValue: "Main Weapon" },
+                        { id: 2, displayValue: "----Simple Melee----" },
+                        { id: 3, value: "Club", displayValue: "Club" },
+                        { id: 4, value: "Dagger", displayValue: "Dagger" },
+                        { id: 5, value: "Greatclub", displayValue: "Greatclub" },
+                        { id: 6, value: "Handaxe", displayValue: "Handaxe" },
+                        { id: 7, value: "Javelin", displayValue: "Javelin" },
+                        { id: 8, value: "Light Hammer", displayValue: "Light Hammer" },
+                        { id: 9, value: "Mace", displayValue: "Mace" },
+                        { id: 10, value: "Quarterstaff", displayValue: "Quarterstaff" },
+                        { id: 11, value: "Sickle", displayValue: "Sickle" },
+                        { id: 12, value: "Spear", displayValue: "Spear" },
+                        { id: 13, value: "Unarmed", displayValue: "Unarmed" },
+                        { id: 14, displayValue: "----Simple Ranged----" },
+                        { id: 15, value: "Light Crossbow", displayValue: "Light Crossbow" },
+                        { id: 16, value: "Dart", displayValue: "Dart" },
+                        { id: 17, value: "Shortbow", displayValue: "Shortbow" },
+                        { id: 18, value: "Sling", displayValue: "Sling" },
+                        { id: 19, displayValue: "----Martial Melee----" },
+                        { id: 20, value: "Battleaxe", displayValue: "Battleaxe" },
+                        { id: 21, value: "Flail", displayValue: "Flail" },
+                        { id: 22, value: "Glaive", displayValue: "Glaive" },
+                        { id: 23, value: "Greataxe", displayValue: "Greataxe" },
+                        { id: 24, value: "Greatsword", displayValue: "Greatsword" },
+                        { id: 25, value: "Halberd", displayValue: "Halberd" },
+                        { id: 26, value: "Lance", displayValue: "Lance" },
+                        { id: 27, value: "Longsword", displayValue: "Longsword" },
+                        { id: 28, value: "Maul", displayValue: "Maul" },
+                        { id: 29, value: "Morningstar", displayValue: "Morningstar" },
+                        { id: 30, value: "Pike", displayValue: "Pike" },
+                        { id: 31, value: "Rapier", displayValue: "Rapier" },
+                        { id: 32, value: "Scimitar", displayValue: "Scimitar" },
+                        { id: 33, value: "Short Sword", displayValue: "Short Sword" },
+                        { id: 34, value: "Trident", displayValue: "Trident" },
+                        { id: 35, value: "War Pick", displayValue: "War Pick" },
+                        { id: 36, value: "Warhammer", displayValue: "Warhammer" },
+                        { id: 37, value: "Whip", displayValue: "Whip" },
+                        { id: 38, displayValue: "----Martial Ranged----" },
+                        { id: 39, value: "Blowgun", displayValue: "Blowgun" },
+                        { id: 40, value: "Hand Crossbow", displayValue: "Hand Crossbow" },
+                        { id: 41, value: "Heavy Crossbow", displayValue: "Heavy Crossbow" },
+                        { id: 42, value: "Longbow", displayValue: "Longbow" },
+                        { id: 43, value: "Net", displayValue: "Net" },
                     ]
                 },
                 value: ''
@@ -362,9 +361,75 @@ class AdvCharacter extends Component {
                 }
             },
         },
-        rolls: []
-    }
+        // *********************************************abilities states****************************
+        abilities: {
+            strength: {
+                elementType: 'select',
+                elementConfig: {
+                    options: [
+                      
 
+
+                    ],
+                    value: ''
+                }
+            },
+            dexterity: {
+                elementType: 'select',
+                elementConfig: {
+                    options: [
+                      
+
+                    ],
+                    value: ''
+                }
+            },
+            constitution: {
+                elementType: 'select',
+                elementConfig: {
+                    options: [
+                        
+
+                    ],
+                    value: ''
+                }
+            },
+            intelligence: {
+                elementType: 'select',
+                elementConfig: {
+                    options: [
+                      
+
+                    ],
+                    value: ''
+                }
+            },
+            wisdom: {
+                elementType: 'select',
+                elementConfig: {
+                    options: [
+                       
+
+                    ],
+                    value: ''
+                }
+            },
+            charisma: {
+                elementType: 'select',
+                elementConfig: {
+                    options: [
+                   
+
+                    ],
+                    value: ''
+                }
+            },
+        },
+        rollState: [],
+        abilitiesArray: [],
+
+    }
+    // *******************************************************************event handlers**********************************
     inputChangedHandler = (event, inputIdentifier) => {
         // console.log(event.target.value);
 
@@ -382,7 +447,6 @@ class AdvCharacter extends Component {
     };
 
     equipmentChangedHandler = (event, inputIdentifier) => {
-
         //create clone of state for mutating values
         const updatedequipmentOptions = {
             ...this.state.equipmentOptions
@@ -395,6 +459,56 @@ class AdvCharacter extends Component {
         updatedequipmentOptions[inputIdentifier] = updatedFormElement;
         this.setState({ equipmentOptions: updatedequipmentOptions });
     };
+
+    abilityChangedHandler = (event, inputIdentifier) => {
+
+        //create clone of state for mutating values
+        const updatedeAbilities = {
+            ...this.state.abilities
+        }
+        //clone the values insinde base elements
+        const updatedAbilityElement = {
+            ...updatedeAbilities[inputIdentifier]
+        };
+        updatedAbilityElement.value = event.target.value;
+        updatedeAbilities[inputIdentifier] = updatedAbilityElement;
+        this.setState({ abilities: updatedeAbilities });
+    };
+
+    abilityRollHandler = (event) => {
+        event.preventDefault();
+        let rollDisplay = []
+        let rollOptions = [];
+        //generate 6 random 3d6 rolls
+        for (let i = 0; i < 6; i++) {
+            let result = Math.floor((Math.random() * 16) + 3);
+
+            //results for UI
+            rollDisplay.push(result + ", ");
+
+            //create options styled array for slect form
+            let a = { value: result, displayValue: result };
+            rollOptions.push(a);
+        }
+        $(".rollResults").html(rollDisplay);
+
+
+        let updatedAbilities = Object.assign({}, this.state.abilities);    //creating copy of object
+        updatedAbilities.strength.elementConfig.options = rollOptions;                        //updating value
+        updatedAbilities.dexterity.elementConfig.options = rollOptions;                        //updating value
+        updatedAbilities.constitution.elementConfig.options = rollOptions;                        //updating value
+        updatedAbilities.intelligence.elementConfig.options = rollOptions;                        //updating value
+        updatedAbilities.wisdom.elementConfig.options = rollOptions;                        //updating value
+        updatedAbilities.charisma.elementConfig.options = rollOptions;                        //updating value
+        this.setState({ updatedAbilities });
+        console.log(updatedAbilities)
+    };
+
+    componentDidUpdate() {
+
+
+    };
+
     // **************************************************onClick for "generate character sheet"***************************
     createHandler = (event) => {
         event.preventDefault();
@@ -406,24 +520,21 @@ class AdvCharacter extends Component {
         for (let formElementIdentifier in this.state.equipmentOptions) {
             equipmentData[formElementIdentifier] = this.state.equipmentOptions[formElementIdentifier].value;
         }
+        const abilitiesData = {};
+        for (let formElementIdentifier in this.state.abilities) {
+            abilitiesData[formElementIdentifier] = this.state.abilities[formElementIdentifier].value;
+        }
+
         const charSheet = {
-            charSheetData: optionsData, equipmentData
+            charSheetData: optionsData, equipmentData, abilitiesData
         }
         console.log(charSheet);
     }
 
-    abilityRollHandler = (event) => {
-        event.preventDefault();
-        console.log("trigger");
-    }
 
-    componentDidMount() {
-
-
-    };
 
     render() {
-        //*****************main character options creation*************************************** */
+        //************************************************main character options creation*************************************** */
         const characterOptionsArray = [];
         for (let key in this.state.characterOptions) {
             characterOptionsArray.push({
@@ -469,11 +580,29 @@ class AdvCharacter extends Component {
             </form>
         );
 
+        // *******************************Ability Roller**********************************************
+        const abilitiesArray = [];
+        for (let key in this.state.abilities) {
+            abilitiesArray.push({
+                id: key,
+                config: this.state.abilities[key]
+            });
+        }
+
         let abilityRoll = (
             <Jumbotron>
                 <Button name={this.state.buttons.name} clicked={this.abilityRollHandler}></Button>
-                <AbilityRoll />
-
+                <p className="rollResults"></p>
+                <form>
+                    {abilitiesArray.map(formElement => (
+                        <Input
+                            key={formElement.id}
+                            elementType={formElement.config.elementType}
+                            elementConfig={formElement.config.elementConfig}
+                            value={formElement.config.value}
+                            changed={(event) => this.abilityChangedHandler(event, formElement.id)} />
+                    ))}
+                </form>
 
             </Jumbotron>
         )
