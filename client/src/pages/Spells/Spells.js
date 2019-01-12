@@ -126,11 +126,15 @@ class Spell extends Component {
 
     render() {
 
+
         return (
             <div className="spellBody">
+
                 <NavBar />
 
                 <h1>SpellBook</h1>
+                <p className="disclaimer">To access Class Search download and active <a href="https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en" target="_blank">this Google Extention</a> then <a href="http://stark-spire-22309.herokuapp.com/spell">click here</a>.</p>
+                
                 <div className="row">
                     <div className="col-md-3">
                         <form>
@@ -189,7 +193,7 @@ class Spell extends Component {
                                 <strong>Subclasses:</strong> {this.state.subclasses}
                             </div>
 
-                        ) : <div>
+                        ) : <div className="col-md-9">
                                 <h3 id="noResults">No Search Results Available</h3>
                             </div>
 
