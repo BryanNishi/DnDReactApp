@@ -104,10 +104,10 @@ p{
     padding: 1.5rem;
 }
 
-.fixed-Notes{
+/* .fixed-Notes{
     position: fixed;
     z-index: 9;
-}
+} */
 
 #rollTotal {
     font-family: dragon;
