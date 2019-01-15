@@ -9,8 +9,7 @@ class CharSheet extends Component {
     render() {
         return (
             <div>
-                <h1>Character Sheets</h1>
-                <iframe src={CharSheetPDF} width="1000" height="500" className="Char_Sheet" title="Character Sheet" />
+                <iframe src={CharSheetPDF} width="1200" height="600" className="charSheet" title="Character Sheet" />
             </div>
         );
     }

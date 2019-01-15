@@ -12,6 +12,8 @@ body{
   background-image: url("../../assets/images/createBG.jpg")
 }
 
-.Char_Sheet {
-  margin-left: 18%;
+.charSheet{
+  margin: auto;
+  display: flex;
+  justify-content: center;
 }
