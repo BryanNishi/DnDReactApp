@@ -1,59 +1,35 @@
 import React from "react";
 import ReactToPrint from "react-to-print";
-
+import ExportData from '../../components/ExportData';
 
 class ComponentToPrint extends React.Component {
+    constructor(props){
+        super(props);
+    }
     render() {
-        // console.log("options", props.optionsData)
-        // console.log("abilities", props.abilitiesData)
-        // console.log("equipment", props.equipmentData)
+       
         return (
-            <table className="characterDisplay">
-                <thead>
-                    <th >Character Info</th>
-                    <th >Abilities</th>
-                    <th >Equipment</th>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>data 1</td>
-                        <td>data 2</td>
-                        <td>data 3</td>
-                    </tr>
-                    <tr>
-                        <td>data 1</td>
-                        <td>data 2</td>
-                        <td>data 3</td>
-                    </tr>
-                    <tr>
-                        <td>data 1</td>
-                        <td>data 2</td>
-                        <td>data 3</td>
-                    </tr>
-                </tbody>
-            </table>
-        );
+            <ExportData {...this.props.dataToPrint}/>
+        )
     }
 }
 
-class PrintSheet extends React.Component {
+class Example extends React.Component {
+    constructor(props){
+        super(props);
+    }
     render() {
-
+   
         return (
-            <jumbotron>
+            <div>
                 <ReactToPrint
-                    trigger={() => <a href="#">Print Character Sheet</a>}
-                    content={() => this.componentRef}
+                    trigger={() => <a href="#">Print this out!</a>}
+                    content={() => this.props}
                 />
-                <ComponentToPrint ref={el => (this.componentRef = el)}
-                    // optionsData={props.optionsData}
-                    // abilitiesData={props.abilitiesData}
-                    // equipmentData={props.equipmentData}
-                     />
-            </jumbotron>
+                <ComponentToPrint ref={el => (this.props = el)} dataToPrint={this.props} />
+            </div>
         );
     }
 }
 
-
-export default PrintSheet;
+export default Example;

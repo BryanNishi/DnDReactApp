@@ -3,7 +3,8 @@ import NavBar from '../../components/NavBar'
 import { Jumbotron } from 'reactstrap';
 import Button from '../../components/Button';
 import Input from '../../components/Input/input';
-import PrintSheet from '../../components/Print';
+import ExportData from '../../components/ExportData';
+import Example from '../../components/Print';
 import $ from 'jquery';
 import "./style.css";
 
@@ -628,20 +629,14 @@ class AdvCharacter extends Component {
                 id: key,
                 values: this.state.charSheetData[key]
             });
-
         }
 
+
+
         let characterSheet = (
-            <Jumbotron>
-
-                <PrintSheet
-
-                    optionsData={characterSheetArray[0]}
-                    equipmentData={characterSheetArray[1]}
-                    abilitiesData={characterSheetArray[2]}
-                />
-
-
+            <Jumbotron ref="componentRef">
+              
+                 < Example {...characterSheetArray} />
             </Jumbotron>
         )
 
@@ -653,6 +648,7 @@ class AdvCharacter extends Component {
                 {abilityRoll}
                 {equipmentForm}
                 <Button name={this.state.button.name} clicked={this.createHandler} />
+              
                 {characterSheet}
             </div>
 
