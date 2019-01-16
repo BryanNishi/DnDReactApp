@@ -8,11 +8,11 @@ class ComponentToPrint extends React.Component {
         // console.log("abilities", props.abilitiesData)
         // console.log("equipment", props.equipmentData)
         return (
-            <table>
+            <table className="characterDisplay">
                 <thead>
-                    <th ></th>
-                    <th ></th>
-                    <th ></th>
+                    <th >Character Info</th>
+                    <th >Abilities</th>
+                    <th >Equipment</th>
                 </thead>
                 <tbody>
                     <tr>
