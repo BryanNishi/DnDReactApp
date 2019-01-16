@@ -260,4 +260,17 @@ p{
 
 .newCharacterInput{
     margin-top: 2rem; 
+     
+}
+
+.buttonCol{
+    padding-left: 2.5rem;    
+}
+
+Col{
+    border: none;
+}
+
+.newCharacterButton{
+    margin-left: 5rem; 
 }

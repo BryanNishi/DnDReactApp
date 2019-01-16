@@ -3,7 +3,7 @@ import NavBar from '../../components/NavBar';
 import "./features.css";
 import API from '../../utils/API';
 import $ from 'jquery';
-import { Button, Form, FormGroup, Label, Input, Row, Col, Jumbotron } from 'reactstrap';
+//import { Button, Form, FormGroup, Label, Input, Row, Col, Jumbotron } from 'reactstrap';
 
 class Feature extends Component {
 
