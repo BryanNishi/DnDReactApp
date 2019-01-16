@@ -5,7 +5,7 @@ import NavBar from '../../components/NavBar';
 import Card from '../../components/BattleOrder/Card';
 import HTML5Backend from 'react-dnd-html5-backend'
 import { DragDropContext } from 'react-dnd';
-import { Button, FormGroup, Input, Row } from 'reactstrap';
+import { Button, FormGroup, Input, Row, Col, Container } from 'reactstrap';
 const update = require('immutability-helper');
 
 
@@ -132,28 +132,50 @@ class DM extends Component {
 
                 <h1>Battle Order</h1>
 
-                <FormGroup className="newCharacterInput">
-                    <Row>
-                        
+                <Container>
+                    <FormGroup className="newCharacterInput">
+                        <Row>
+                            <Col>
+                                <Input type="input" name="inputName" id="characterName" placeholder="Character Name" onChange={this.addCharacterName.bind(this)} />
 
-                        <Input type="input" name="inputName" id="characterName" className="newCharacterInput" placeholder="Character Name" onChange={this.addCharacterName.bind(this)} />
-                        <Input type="input" name="inputAC" id="characterAC" placeholder="Armor Class" onChange={this.addCharacterAC.bind(this)} />
-                        <Input type="input" name="selectHP" id="characterHP" placeholder="Hit Points" onChange={this.addCharacterHP.bind(this)} />
-                        <Input type="input" name="inputIntiative" id="characterIntiative" placeholder="Intiative" onChange={this.addCharacterIntiative.bind(this)} />
-                        
-                    </Row>
-                </FormGroup>
+                            </Col>
+
+                            <Col sm="3">
+                                <Input type="input" name="inputAC" id="characterAC" placeholder="Armor Class" onChange={this.addCharacterAC.bind(this)} />
+                            </Col>
+
+                            <Col sm="3">
+                                <Input type="input" name="selectHP" id="characterHP" placeholder="Hit Points" onChange={this.addCharacterHP.bind(this)} />
+
+                            </Col>
+
+                            <Col sm="3">
+                                <Input type="input" name="inputIntiative" id="characterIntiative" placeholder="Intiative" onChange={this.addCharacterIntiative.bind(this)} />
+
+                            </Col>
+                        </Row>
+                    </FormGroup>
 
 
 
-                <FormGroup>
-                    <Row>
-                        <Button onClick={this.addCharacter} className="newCharacterButton">
-                            Add Character
-                </Button>
-                    </Row>
+                    <FormGroup>
+                        <Row>
+                            
 
-                </FormGroup>
+                            <Col md="12" md={{ size: 6, offset: 4 }}>
+
+                                <Button onClick={this.addCharacter} className="newCharacterButton">
+                                    Add Character
+                                </Button>
+
+                            </Col>
+
+                            
+
+                        </Row>
+
+                    </FormGroup>
+                </Container>
 
                 <div className="card-container">
                     {this.state.cards.map((card, i) => (
