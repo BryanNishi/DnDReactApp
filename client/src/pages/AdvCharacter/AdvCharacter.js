@@ -3,6 +3,8 @@ import NavBar from '../../components/NavBar'
 import { Jumbotron } from 'reactstrap';
 import Button from '../../components/Button';
 import Input from '../../components/Input/input';
+import ExportData from '../../components/ExportData';
+import Example from '../../components/Print';
 import $ from 'jquery';
 import "./style.css";
 
@@ -367,7 +369,7 @@ class AdvCharacter extends Component {
                 elementType: 'select',
                 elementConfig: {
                     options: [
-                      
+                        { displayValue: "Strength" },
 
 
                     ],
@@ -378,7 +380,7 @@ class AdvCharacter extends Component {
                 elementType: 'select',
                 elementConfig: {
                     options: [
-                      
+                        { displayValue: "Dexterity" },
 
                     ],
                     value: ''
@@ -388,7 +390,7 @@ class AdvCharacter extends Component {
                 elementType: 'select',
                 elementConfig: {
                     options: [
-                        
+                        { displayValue: "Constitution" },
 
                     ],
                     value: ''
@@ -398,7 +400,7 @@ class AdvCharacter extends Component {
                 elementType: 'select',
                 elementConfig: {
                     options: [
-                      
+                        { displayValue: "Intelligence" },
 
                     ],
                     value: ''
@@ -408,7 +410,7 @@ class AdvCharacter extends Component {
                 elementType: 'select',
                 elementConfig: {
                     options: [
-                       
+                        { displayValue: "Wisdom" },
 
                     ],
                     value: ''
@@ -418,7 +420,7 @@ class AdvCharacter extends Component {
                 elementType: 'select',
                 elementConfig: {
                     options: [
-                   
+                        { displayValue: "Charisma" },
 
                     ],
                     value: ''
@@ -427,6 +429,7 @@ class AdvCharacter extends Component {
         },
         rollState: [],
         abilitiesArray: [],
+        charSheetData: [],
 
     }
     // *******************************************************************event handlers**********************************
@@ -478,35 +481,48 @@ class AdvCharacter extends Component {
     abilityRollHandler = (event) => {
         event.preventDefault();
         let rollDisplay = []
-        let rollOptions = [];
+        let newStr = [{ displayValue: "Strength" }];
+        let newDex = [{ displayValue: "Dexterity" }];
+        let newCon = [{ displayValue: "Constitution" }];
+        let newInt = [{ displayValue: "Intelligence" }];
+        let newWis = [{ displayValue: "Wisdom" }];
+        let newCha = [{ displayValue: "Charisma" }];
+        let updatedAbilities = [];
         //generate 6 random 3d6 rolls
         for (let i = 0; i < 6; i++) {
             let result = Math.floor((Math.random() * 16) + 3);
 
-            //results for UI
+            //results for UI only
             rollDisplay.push(result + ", ");
 
             //create options styled array for slect form
             let a = { value: result, displayValue: result };
-            rollOptions.push(a);
+
+
+            newStr.push(a);
+            newDex.push(a);
+            newCon.push(a);
+            newInt.push(a);
+            newWis.push(a);
+            newCha.push(a);
         }
         $(".rollResults").html(rollDisplay);
 
 
-        let updatedAbilities = Object.assign({}, this.state.abilities);    //creating copy of object
-        updatedAbilities.strength.elementConfig.options = rollOptions;                        //updating value
-        updatedAbilities.dexterity.elementConfig.options = rollOptions;                        //updating value
-        updatedAbilities.constitution.elementConfig.options = rollOptions;                        //updating value
-        updatedAbilities.intelligence.elementConfig.options = rollOptions;                        //updating value
-        updatedAbilities.wisdom.elementConfig.options = rollOptions;                        //updating value
-        updatedAbilities.charisma.elementConfig.options = rollOptions;                        //updating value
+        updatedAbilities = Object.assign({}, this.state.abilities);    //creating copy of object
+        updatedAbilities.strength.elementConfig.options = newStr;                        //updating value
+        updatedAbilities.dexterity.elementConfig.options = newDex;                        //updating value
+        updatedAbilities.constitution.elementConfig.options = newCon;                        //updating value
+        updatedAbilities.intelligence.elementConfig.options = newInt;                        //updating value
+        updatedAbilities.wisdom.elementConfig.options = newWis;                        //updating value
+        updatedAbilities.charisma.elementConfig.options = newCha;                        //updating value
         this.setState({ updatedAbilities });
-        console.log(updatedAbilities)
+
     };
 
     componentDidUpdate() {
 
-
+        console.log("charsheet data", this.state.charSheetData);
     };
 
     // **************************************************onClick for "generate character sheet"***************************
@@ -526,9 +542,9 @@ class AdvCharacter extends Component {
         }
 
         const charSheet = {
-            charSheetData: optionsData, equipmentData, abilitiesData
+            optionsData, equipmentData, abilitiesData
         }
-        console.log(charSheet);
+        this.setState({ charSheetData: charSheet });
     }
 
 
@@ -606,7 +622,23 @@ class AdvCharacter extends Component {
 
             </Jumbotron>
         )
+        // *******************************character Sheet Generation***************
+        const characterSheetArray = [];
+        for (let key in this.state.charSheetData) {
+            characterSheetArray.push({
+                id: key,
+                values: this.state.charSheetData[key]
+            });
+        }
 
+
+
+        let characterSheet = (
+            <Jumbotron ref="componentRef" className="contain">
+              
+                 < Example {...characterSheetArray} />
+            </Jumbotron>
+        )
 
         return (
             <div className="character">
@@ -616,6 +648,8 @@ class AdvCharacter extends Component {
                 {abilityRoll}
                 {equipmentForm}
                 <Button name={this.state.button.name} clicked={this.createHandler} />
+              
+                {characterSheet}
             </div>
 
 

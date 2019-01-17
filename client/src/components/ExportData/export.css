@@ -1,0 +1,31 @@
+.contain {
+    width: 95% !important;
+}
+
+.characterDisplay {
+    width: 100%;
+}
+
+@font-face {
+    font-family: 'moria';
+    src: url(../../assets/fonts/Moria.TTF) format('truetype');    
+  }
+
+td {
+    font-size: 1.5rem;
+   padding: 1px 0px;
+}
+
+th{
+    font-family: moria;
+    font-size: 1.2rem;
+}
+
+tr{
+    width: 100%;
+}
+
+h5 {
+    font-size: 0.7rem;
+    font-family: moria;
+}
