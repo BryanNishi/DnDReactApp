@@ -114,7 +114,7 @@ class Classes extends Component {
                 <NavBar />
 
                 <h1>Class Search</h1>
-                <p className="disclaimer">To access Class Search download and active <a href="https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en" target="_blank">this Google Extention</a> then <a href="http://stark-spire-22309.herokuapp.com/classes">click here</a>.</p>
+                <p className="disclaimer">To access Class Search download and active <a href="https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en" target="_blank" rel="noopener noreferrer">this Google Extention</a> then <a href="http://stark-spire-22309.herokuapp.com/classes">click here</a>.</p>
                 <div className="row">
                     <div className="col-md-3">
                         <form>
