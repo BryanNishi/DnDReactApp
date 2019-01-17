@@ -634,7 +634,7 @@ class AdvCharacter extends Component {
 
 
         let characterSheet = (
-            <Jumbotron ref="componentRef">
+            <Jumbotron ref="componentRef" className="contain">
               
                  < Example {...characterSheetArray} />
             </Jumbotron>

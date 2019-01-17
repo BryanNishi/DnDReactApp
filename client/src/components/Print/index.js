@@ -23,7 +23,7 @@ class Example extends React.Component {
         return (
             <div>
                 <ReactToPrint
-                    trigger={() => <a href="#">Print this out!</a>}
+                    trigger={() => <a href="#">Print Character Sheet</a>}
                     content={() => this.props}
                 />
                 <ComponentToPrint ref={el => (this.props = el)} dataToPrint={this.props} />
