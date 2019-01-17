@@ -13,13 +13,9 @@
     background-image: url(../../assets/images/monsterBG.jpg);
     background-size: cover;
     background-attachment: fixed;
-    height: 100%;
-    bottom: 0;
-    top:0; 
-    left: 0;
-    right: 0;
-    position: absolute;  
-    color: white;    
+    overflow: hidden;
+    width: 100%;
+    min-height: 100vh;   
 }
 
 /* Navbar Styling */
