@@ -67,7 +67,7 @@ class Dungeon extends Component {
                 <Jumbotron>
                     <List>
                         {this.state.dungeonNames.map(dungeon => (
-                            <ListItem>
+                            <ListItem key={dungeon}>
                                 {dungeon}
                             </ListItem>
                         ))}

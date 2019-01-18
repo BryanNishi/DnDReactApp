@@ -69,7 +69,7 @@ class Treasure extends Component {
                 <Jumbotron>
                     <List>
                         {this.state.treasureFound.map(treasure => (
-                            <ListItem>
+                            <ListItem key={treasure}>
                                 {treasure}
                             </ListItem>
                         ))}

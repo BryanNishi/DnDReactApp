@@ -66,7 +66,7 @@ class Inn extends Component {
                 <Jumbotron>
                     <List>
                         {this.state.innNames.map(inn => (
-                            <ListItem>
+                            <ListItem key={inn}>
                                 {inn}
                             </ListItem>
                         ))}
