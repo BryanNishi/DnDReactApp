@@ -28,3 +28,10 @@
     color: white;    
 }
 
+.features{
+    text-align: center;
+    list-style-type: none;
+    font-family: magic;
+    font-size: 1.7rem;
+    text-shadow: 2px 2px 1px black;
+}
