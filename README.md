@@ -1,3 +1,14 @@
+Dungeon Master's DataBase
+
+[Click Here to Load the Page](https://stark-spire-22309.herokuapp.com/)
+
+* Run a game and track initative with the DM Screen!
+* Lookup monster stats, spells, classes and class features!
+* Create your character, NPCs and your own world with the Generators!
+* Roll any dice combo with the dice roller!
+* Print out finished character sheets
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
