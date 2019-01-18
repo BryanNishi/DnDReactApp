@@ -3,7 +3,6 @@ import NavBar from '../../components/NavBar'
 import { Jumbotron } from 'reactstrap';
 import Button from '../../components/Button';
 import Input from '../../components/Input/input';
-import ExportData from '../../components/ExportData';
 import Example from '../../components/Print';
 import $ from 'jquery';
 import "./style.css";
@@ -110,16 +109,16 @@ class AdvCharacter extends Component {
                 elementType: 'select',
                 elementConfig: {
                     options: [
-                        { value: "random", displayValue: "Race" },
-                        { value: "Dragonborn", displayValue: "Dragonborn (10 Draconic Ancestries)", subrace: ["Black", "Blue", "Brass", "Bronze", "Copper", "Gold", "Green", "Red", "Silver", "White"] },
-                        { value: "Dwarf", displayValue: "Dwarf (2 subraces)", subrace: ["Hill Dwarf", "Mountain Dwarf"] },
-                        { value: "Elf", displayValue: "Elf (3 subraces)", subrace: ["High Elf", "Wood Elf", "Dark Elf"] },
-                        { value: "Gnome", displayValue: "Gnome (2 subraces)", subrace: ["Forrest", "Rock"] },
-                        { value: "Half-Elf", displayValue: "Half-Elf", subrace: "" },
-                        { value: "Half-Orc", displayValue: "Half-Orc", subrace: "" },
-                        { value: "Halfling", displayValue: "Halfling (2 subraces)", subrace: ["Lightfoot", "Stout"] },
-                        { value: "Human", displayValue: "Human", subrace: "" },
-                        { value: "Tiefling", displayValue: "Tiefling", subrace: "" }
+                        { displayValue: "Race" },
+                        { value: "Dragonborn", displayValue: "Dragonborn (10 Draconic Ancestries)", subrace: ["Black", "Blue", "Brass", "Bronze", "Copper", "Gold", "Green", "Red", "Silver", "White"], raceStats:{strength: "+2", wisdom: "+1"}},
+                        { value: "Dwarf", displayValue: "Dwarf (2 subraces)", subrace: ["Hill Dwarf", "Mountain Dwarf"], raceStats:[] },
+                        { value: "Elf", displayValue: "Elf (3 subraces)", subrace: ["High Elf", "Wood Elf", "Dark Elf"], raceStats:[] },
+                        { value: "Gnome", displayValue: "Gnome (2 subraces)", subrace: ["Forrest", "Rock"], raceStats:[] },
+                        { value: "Half-Elf", displayValue: "Half-Elf", subrace: "", raceStats:[] },
+                        { value: "Half-Orc", displayValue: "Half-Orc", subrace: "", raceStats:[] },
+                        { value: "Halfling", displayValue: "Halfling (2 subraces)", subrace: ["Lightfoot", "Stout"], raceStats:[] },
+                        { value: "Human", displayValue: "Human", subrace: "", raceStats:[] },
+                        { value: "Tiefling", displayValue: "Tiefling", subrace: "", raceStats:[] }
                     ]
 
                 },
@@ -129,19 +128,19 @@ class AdvCharacter extends Component {
                 elementType: 'select',
                 elementConfig: {
                     options: [
-                        { value: "random", displayValue: "Class" },
-                        { value: "Barbarian", displayValue: "Barbarian" },
-                        { value: "Bard", displayValue: "Bard" },
-                        { value: "Cleric", displayValue: "Cleric" },
-                        { value: "Druid", displayValue: "Druid" },
-                        { value: "Fighter", displayValue: "Fighter" },
-                        { value: "Monk", displayValue: "Monk" },
-                        { value: "Paladin", displayValue: "Paladin" },
-                        { value: "Ranger", displayValue: "Ranger" },
-                        { value: "Rogue", displayValue: "Rogue" },
-                        { value: "Scorcerer", displayValue: "Scorcerer" },
-                        { value: "Warlock", displayValue: "Warlock" },
-                        { value: "Wizard", displayValue: "Wizard" },
+                        { displayValue: "Class" },
+                        { value: "Barbarian", displayValue: "Barbarian", hitDie: "d12" },
+                        { value: "Bard", displayValue: "Bard", hitDie: "d8" },
+                        { value: "Cleric", displayValue: "Cleric", hitDie: "d8" },
+                        { value: "Druid", displayValue: "Druid", hitDie: "d8" },
+                        { value: "Fighter", displayValue: "Fighter", hitDie: "d10" },
+                        { value: "Monk", displayValue: "Monk", hitDie: "d8" },
+                        { value: "Paladin", displayValue: "Paladin", hitDie: "d10" },
+                        { value: "Ranger", displayValue: "Ranger", hitDie: "d10" },
+                        { value: "Rogue", displayValue: "Rogue", hitDie: "d8" },
+                        { value: "Scorcerer", displayValue: "Scorcerer", hitDie: "d6" },
+                        { value: "Warlock", displayValue: "Warlock", hitDie: "d8" },
+                        { value: "Wizard", displayValue: "Wizard", hitDie: "d6" },
                     ]
                 },
                 value: ''
@@ -635,8 +634,8 @@ class AdvCharacter extends Component {
 
         let characterSheet = (
             <Jumbotron ref="componentRef" className="contain">
-              
-                 < Example {...characterSheetArray} />
+
+                < Example {...characterSheetArray} />
             </Jumbotron>
         )
 
@@ -648,7 +647,7 @@ class AdvCharacter extends Component {
                 {abilityRoll}
                 {equipmentForm}
                 <Button name={this.state.button.name} clicked={this.createHandler} />
-              
+
                 {characterSheet}
             </div>
 
