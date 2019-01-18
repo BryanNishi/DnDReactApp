@@ -63,7 +63,7 @@ class Land extends Component {
                 <Jumbotron>
                     <List>
                         {this.state.landNames.map(land => (
-                            <ListItem>
+                            <ListItem key={land}>
                                 {land}
                             </ListItem>
                         ))}

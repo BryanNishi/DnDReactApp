@@ -3,10 +3,22 @@ import "./export.css";
 
 
 const ExportData = (props) => {
+let options=props[0];
+let equipment=props[1];
+let abilites=props[2];
+    console.log("NEW options", options);
+    console.log("NEW Equipment", equipment);
+    console.log("NEW abilites", abilites);
 
-    console.log("NEW options", props[0]);
-    console.log("NEW Equipment", props[1]);
-    console.log("NEW abilites", props[2]);
+//     switch (props[0].values.race) {
+//         case ('Dragonborn'):
+//         props.raceStats = {}
+//         break;
+//         default:
+//         props.raceStats = {}
+
+// }
+
 
     return (
 
@@ -29,34 +41,34 @@ const ExportData = (props) => {
                 </th>
                 <br></br>
                 <tr>
-                    <td> <h5><u>Strength:</u></h5>{props[0] ? props[2].values.strength : ""}</td>
-                    <td> <h5><u>Dexterity:</u></h5>{props[0] ? props[2].values.dexterity : ""}</td>
-                    <td> <h5><u>Constitution:</u></h5>{props[0] ? props[2].values.constitution : ""}</td>
-                    <td> <h5><u>Intelligence:</u></h5>{props[0] ? props[2].values.intelligence : ""}</td>
-                    <td> <h5><u>Wisdom:</u></h5>{props[0] ? props[2].values.wisdom : ""}</td>
-                    <td> <h5><u>Charisma:</u></h5>{props[0] ? props[2].values.charisma : ""}</td>
+                    <td> <h5><u>Strength:</u></h5>{props[2] ? props[2].values.strength : ""}</td>
+                    <td> <h5><u>Dexterity:</u></h5>{props[2] ? props[2].values.dexterity : ""}</td>
+                    <td> <h5><u>Constitution:</u></h5>{props[2] ? props[2].values.constitution : ""}</td>
+                    <td> <h5><u>Intelligence:</u></h5>{props[2] ? props[2].values.intelligence : ""}</td>
+                    <td> <h5><u>Wisdom:</u></h5>{props[2] ? props[2].values.wisdom : ""}</td>
+                    <td> <h5><u>Charisma:</u></h5>{props[2] ? props[2].values.charisma : ""}</td>
                 </tr>
                 <br></br>
                 <tr>
-                    <td> <h5><u>Str Modifier:</u></h5>{props[0] ? props[2].values.strength : ""}</td>
-                    <td> <h5><u>Dex Modifier:</u></h5>{props[0] ? props[2].values.dexterity : ""}</td>
-                    <td> <h5><u>Con Modifier:</u></h5>{props[0] ? props[2].values.constitution : ""}</td>
-                    <td> <h5><u>Int Modifier:</u></h5>{props[0] ? props[2].values.intelligence : ""}</td>
-                    <td> <h5><u>Wis Modifier:</u></h5>{props[0] ? props[2].values.wisdom : ""}</td>
-                    <td> <h5><u>Cha Modifier:</u></h5>{props[0] ? props[2].values.charisma : ""}</td>
+                    <td> <h5><u>Str Modifier:</u></h5>{props[2] ? props[2].values.strength : ""}</td>
+                    <td> <h5><u>Dex Modifier:</u></h5>{props[2] ? props[2].values.dexterity : ""}</td>
+                    <td> <h5><u>Con Modifier:</u></h5>{props[2] ? props[2].values.constitution : ""}</td>
+                    <td> <h5><u>Int Modifier:</u></h5>{props[2] ? props[2].values.intelligence : ""}</td>
+                    <td> <h5><u>Wis Modifier:</u></h5>{props[2] ? props[2].values.wisdom : ""}</td>
+                    <td> <h5><u>Cha Modifier:</u></h5>{props[2] ? props[2].values.charisma : ""}</td>
                 </tr>
                 <br></br>
                 <tr>
-                    <td> <h5><u>AC:</u></h5>{props[0] ? props[2].values.strength : ""}</td>
-                    <td> <h5><u>Initative:</u></h5>{props[0] ? props[2].values.dexterity : ""}</td>
-                    <td> <h5><u>Speed:</u></h5>{props[0] ? props[2].values.constitution : ""}</td>
-                    <td> <h5><u>Hit Points:</u></h5>{props[0] ? props[2].values.intelligence : ""}</td>
-                    <td> <h5><u>Perception:</u></h5>{props[0] ? props[2].values.intelligence : ""}</td>
+                    <td> <h5><u>AC:</u></h5>{props[2] ? props[2].values.strength : ""}</td>
+                    <td> <h5><u>Initative:</u></h5>{props[2] ? props[2].values.dexterity : ""}</td>
+                    <td> <h5><u>Speed:</u></h5>{props[2] ? props[2].values.constitution : ""}</td>
+                    <td> <h5><u>Hit Points:</u></h5>{props[2] ? props[2].values.intelligence : ""}</td>
+                    <td> <h5><u>Perception:</u></h5>{props[2] ? props[2].values.intelligence : ""}</td>
                 </tr>
                 <br></br>
                 <tr>
-                    <td> <h5><u>Saving Throws:</u></h5>{props[0] ? props[2].values.wisdom : ""}</td>
-                    <td> <h5><u>Skills:</u></h5>{props[0] ? props[2].values.charisma : ""}</td>
+                    <td> <h5><u>Saving Throws:</u></h5>{props[2] ? props[2].values.wisdom : ""}</td>
+                    <td> <h5><u>Skills:</u></h5>{props[2] ? props[2].values.charisma : ""}</td>
                 </tr>
                 <br></br>
                 <tr></tr>
@@ -89,10 +101,10 @@ const ExportData = (props) => {
                 </th>
                 <br></br>
                 <tr>
-                    <td> <h5><u>Main Weapon:</u></h5>{props[0] ? props[0].values.race : ""}</td>
-                    <td> <h5><u>Second Weapon:</u></h5>{props[0] ? props[0].values.classes : ""}</td>
-                    <td> <h5><u>Armor:</u></h5>{props[0] ? props[0].values.level : ""}</td>
-                    <td> <h5><u>Shield:</u></h5>{props[0] ? props[0].values.background : ""}</td>
+                    <td> <h5><u>Main Weapon:</u></h5>{props[1] ? props[1].values.mainWeapon : ""}</td>
+                    <td> <h5><u>Second Weapon:</u></h5>{props[1] ? props[1].values.secondWeapon : ""}</td>
+                    <td> <h5><u>Armor:</u></h5>{props[1] ? props[1].values.armor : ""}</td>
+                    <td> <h5><u>Shield:</u></h5>{props[1] ? props[1].values.shield : ""}</td>
                 </tr>
                 <br></br>
             </tbody>

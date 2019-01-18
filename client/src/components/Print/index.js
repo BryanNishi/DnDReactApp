@@ -3,9 +3,9 @@ import ReactToPrint from "react-to-print";
 import ExportData from '../../components/ExportData';
 
 class ComponentToPrint extends React.Component {
-    constructor(props){
-        super(props);
-    }
+    // constructor(props){
+    //     super(props);
+    // }
     render() {
        
         return (
@@ -15,15 +15,15 @@ class ComponentToPrint extends React.Component {
 }
 
 class Example extends React.Component {
-    constructor(props){
-        super(props);
-    }
+    // constructor(props){
+    //     super(props);
+    // }
     render() {
    
         return (
             <div>
                 <ReactToPrint
-                    trigger={() => <a href="#">Print Character Sheet</a>}
+                    trigger={() => <a href="">Print Character Sheet</a>}
                     content={() => this.props}
                 />
                 <ComponentToPrint ref={el => (this.props = el)} dataToPrint={this.props} />

@@ -9,7 +9,6 @@ class Generators extends Component {
 
     state = {
         charGenerators: [
-            { href: "/character", name: "Quick Character Generator" },
             { href: "/advcharacter", name: "Character Generator" },
             { href: "/name", name: "Name Generator" },
             { href: "/features", name: "Class Features" },
@@ -36,6 +35,7 @@ class Generators extends Component {
             <div>
                 {this.state.charGenerators.map(char => {
                     return <Button
+                        key={char.name}
                         href={char.href}
                         name={char.name} />
                 })}
@@ -46,6 +46,7 @@ class Generators extends Component {
             <div>
                 {this.state.npcGenerators.map(npc => {
                     return <Button
+                        key={npc.name}
                         href={npc.href}
                         name={npc.name} />
                 })}
@@ -56,6 +57,7 @@ class Generators extends Component {
             <div>
                 {this.state.worldGenerators.map(world => {
                     return <Button
+                        key={world.name}
                         href={world.href}
                         name={world.name} />
                 })}
