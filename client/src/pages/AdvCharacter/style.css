@@ -32,3 +32,12 @@ Input{
     display: flex;
     justify-content: center;
 }
+
+.charSheet{
+  
+    justify-content: center;
+}
+
+Form {
+    margin-bottom: 1%;
+}

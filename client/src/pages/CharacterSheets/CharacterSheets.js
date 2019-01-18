@@ -6,6 +6,7 @@ import CharSheet from '../../components/CharSheet'
 const Sheet = () => (
     <div className="sheet">
     <NavBar />
+    <h1>Character Sheets</h1>
     <CharSheet />
 
 </div>
