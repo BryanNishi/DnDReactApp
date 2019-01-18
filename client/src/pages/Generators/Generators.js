@@ -9,7 +9,6 @@ class Generators extends Component {
 
     state = {
         charGenerators: [
-            { href: "/character", name: "Quick Character Generator" },
             { href: "/advcharacter", name: "Character Generator" },
             { href: "/name", name: "Name Generator" },
             { href: "/features", name: "Class Features" },
