@@ -19,16 +19,16 @@ class Monsters extends Component {
     componentDidMount() {
         API.getMonster("")
             .then(res => {
-                this.setState({ 
-                    searchList: res.data.results.map(monster => monster.name)                    
-                
+                this.setState({
+                    searchList: res.data.results.map(monster => monster.name)
+
                 });
 
-                
-            })
-            .catch(err => console.log(err));       
 
-            
+            })
+            .catch(err => console.log(err));
+
+
     }
 
     selectMonster = event => {
@@ -38,12 +38,12 @@ class Monsters extends Component {
 
         let monsterIndex = this.state.searchList.indexOf(choice);
 
-        if(monsterIndex !== -1){
-                        
-            this.monsterSearch(event.target.value); 
+        if (monsterIndex !== -1) {
+
+            this.monsterSearch(event.target.value);
         }
-        
-    } 
+
+    }
 
     // handle = event => {
     //     let buttonClicked = event.which || event.keyCode;        
@@ -65,7 +65,7 @@ class Monsters extends Component {
         let choice = $("#monsterSearch").val();
 
         this.monsterSearch(choice);
-        
+
     }
 
     monsterSearch = choice => {
@@ -149,14 +149,12 @@ class Monsters extends Component {
             <div className="monsterBody">
                 <NavBar />
                 <h1>Monster Manual</h1>
-                <p className="disclaimer">To access Class Search download and active <a href="https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en" target="_blank" rel="noopener noreferrer">this Google Extention</a> then <a href="http://stark-spire-22309.herokuapp.com/monster">click here</a>.</p>
-
                 <div className="row">
 
                     <div className="col-md-3">
 
                         <form>
-                            <input list="browsers" name="browser" id="monsterSearch" className="form-control" placeholder="Search Monster Library" onSelect={this.selectMonster.bind(this)}/>
+                            <input list="browsers" name="browser" id="monsterSearch" className="form-control" placeholder="Search Monster Library" onSelect={this.selectMonster.bind(this)} />
                             <datalist id="browsers">
 
                                 {this.state.searchList.map(monster => <option key={monster} value={monster} />)}
@@ -270,7 +268,7 @@ class Monsters extends Component {
 
                 </div>
 
-                
+
 
 
             </div>

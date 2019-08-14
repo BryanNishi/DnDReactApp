@@ -19,17 +19,17 @@ class Classes extends Component {
             })
             .catch(err => console.log(err));
 
-            document.addEventListener('keypress', (event) => {
-                let buttonClicked = event.which || event.keyCode;
-    
-                if (buttonClicked === 13) {
-                    event.preventDefault();
-                    let choice = $("#classSearch").val();
-        
-                    this.classSearch(choice);
-        
-                }
-            });
+        document.addEventListener('keypress', (event) => {
+            let buttonClicked = event.which || event.keyCode;
+
+            if (buttonClicked === 13) {
+                event.preventDefault();
+                let choice = $("#classSearch").val();
+
+                this.classSearch(choice);
+
+            }
+        });
 
     }
 
@@ -46,15 +46,15 @@ class Classes extends Component {
     // }
 
     selectClass = event => {
-        console.log(event.target.value);       
+        console.log(event.target.value);
 
         var choice = event.target.value;
 
         let classIndex = this.state.classList.indexOf(choice);
 
-        if(classIndex !== -1){
-                        
-            this.classSearch(event.target.value); 
+        if (classIndex !== -1) {
+
+            this.classSearch(event.target.value);
         }
     }
 
@@ -64,7 +64,7 @@ class Classes extends Component {
 
         let choice = $("#classSearch").val();
 
-        this.classSearch(choice);       
+        this.classSearch(choice);
 
     }
 
@@ -90,19 +90,19 @@ class Classes extends Component {
                 });
 
             API.getStartingEquipment(classIndex + 1)
-            .then(res => {
-                
-                this.setState({ startingEquipment: res.data })
-            })
-            .catch(err => console.log(err))    
+                .then(res => {
+
+                    this.setState({ startingEquipment: res.data })
+                })
+                .catch(err => console.log(err))
 
 
         } else {
             $("#noResults").html("No Results Found").css({ "color": "red" });
-            this.setState({ 
+            this.setState({
                 searchResults: [],
                 startingEquipment: []
-             });
+            });
 
         }
 
@@ -114,7 +114,6 @@ class Classes extends Component {
                 <NavBar />
 
                 <h1>Class Search</h1>
-                <p className="disclaimer">To access Class Search download and active <a href="https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en" target="_blank" rel="noopener noreferrer">this Google Extention</a> then <a href="http://stark-spire-22309.herokuapp.com/classes">click here</a>.</p>
                 <div className="row">
                     <div className="col-md-3">
                         <form>
@@ -143,12 +142,12 @@ class Classes extends Component {
 
                                         <strong>Name:</strong> {this.state.searchResults.name}<br />
                                         <strong>Hit Dice:</strong> {this.state.searchResults.hit_die}<br />
-                                        
+
                                         <strong>Proficiencies:</strong>
                                         <ul>
                                             {this.state.searchResults.proficiencies.map(proficiency => <li key={proficiency.name}>{proficiency.name}</li>)}
-                                        </ul>                                      
-                                        <strong>Skill Proficiencies:</strong><br/>
+                                        </ul>
+                                        <strong>Skill Proficiencies:</strong><br />
                                         Choose {this.state.searchResults.proficiency_choices[0].choose} of the following
                                         <ul>
                                             {this.state.searchResults.proficiency_choices[0].from.map(pro => <li key={pro.name}>{pro.name}</li>)}
@@ -160,11 +159,11 @@ class Classes extends Component {
                                     </div>
 
                                     <div className="col-sm-6">
-                                    
+
                                         {this.state.startingEquipment.starting_equipment[0] ? (<strong>Starter Pack:</strong>) : ""}
                                         <ul>
-                                        {this.state.startingEquipment.starting_equipment.map(starter => <li key={starter.item.name}>{starter.item.name} (x{starter.quantity})</li>)}
-                                        </ul>  
+                                            {this.state.startingEquipment.starting_equipment.map(starter => <li key={starter.item.name}>{starter.item.name} (x{starter.quantity})</li>)}
+                                        </ul>
 
                                         {/* <strong>Starter Pack Choices:</strong><br/>
                                         Choice 1: 
@@ -172,12 +171,12 @@ class Classes extends Component {
                                         <ul>
                                         {this.state.startingEquipment.choice_1.map(choice => <li key={choice.from[0].item.name}>{choice.from[0].item.name} (x{choice.from[0].quantity})</li>)}
                                         </ul>                                      */}
-                                        
-                                    </div>                                    
+
+                                    </div>
 
 
                                 </div>
-                                
+
 
                             </div>
 
