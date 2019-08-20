@@ -29,35 +29,35 @@ class Spell extends Component {
 
             })
             .catch(err => console.log(err));
-            
 
-            document.addEventListener('keypress', (event) => {
-                let buttonClicked = event.which || event.keyCode;
 
-                if (buttonClicked === 13) {
-                    event.preventDefault();
-                    let choice = $("#spellSearch").val();
-        
-                    this.spellSearch(choice);
-        
-                }
-            });
-    }    
+        document.addEventListener('keypress', (event) => {
+            let buttonClicked = event.which || event.keyCode;
 
-    selectSpell = event => {        
+            if (buttonClicked === 13) {
+                event.preventDefault();
+                let choice = $("#spellSearch").val();
+
+                this.spellSearch(choice);
+
+            }
+        });
+    }
+
+    selectSpell = event => {
         console.log(event.target.value);
 
         var choice = event.target.value;
 
         let spellIndex = this.state.spellList.indexOf(choice);
 
-        if(spellIndex !== -1){
-            this.spellSearch(event.target.value);            
-            
+        if (spellIndex !== -1) {
+            this.spellSearch(event.target.value);
+
         }
-        
-    }  
-    
+
+    }
+
     // handle = event => {
     //     let buttonClicked = event.which || event.keyCode;        
 
@@ -78,7 +78,7 @@ class Spell extends Component {
 
         let choice = $("#spellSearch").val();
 
-        this.spellSearch(choice);        
+        this.spellSearch(choice);
 
     }
 
@@ -133,8 +133,7 @@ class Spell extends Component {
                 <NavBar />
 
                 <h1>SpellBook</h1>
-                <p className="disclaimer">To access Class Search download and active <a href="https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en" target="_blank" rel="noopener noreferrer">this Google Extention</a> then <a href="http://stark-spire-22309.herokuapp.com/spell">click here</a>.</p>
-                
+
                 <div className="row">
                     <div className="col-md-3">
                         <form>
