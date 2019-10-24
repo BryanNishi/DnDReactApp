@@ -2,7 +2,7 @@ import axios from "axios";
 
 export default {
   getMonster: function (monsters) {
-    return axios.get("http://www.dnd5eapi.co/api/monsters/" + monsters);
+    return axios.get("https://cors-anywhere.herokuapp.com/http://www.dnd5eapi.co/api/monsters/" + monsters);
   },
 
   getNextPage: function(next){
@@ -10,16 +10,16 @@ export default {
   },
 
   getSpell: function (spells) {
-    return axios.get("http://www.dnd5eapi.co/api/spells/" + spells);
+    return axios.get("https://cors-anywhere.herokuapp.com/http://www.dnd5eapi.co/api/spells/" + spells);
   },
   getClass: function (classes) {
-    return axios.get("http://www.dnd5eapi.co/api/classes/" + classes);
+    return axios.get("https://cors-anywhere.herokuapp.com/http://www.dnd5eapi.co/api/classes/" + classes);
   },
   getStartingEquipment: function (classIndex) {
-    return axios.get("http://www.dnd5eapi.co/api/startingequipment/" + classIndex)
+    return axios.get("https://cors-anywhere.herokuapp.com/http://www.dnd5eapi.co/api/startingequipment/" + classIndex)
   },
   getfeature: function (features) {
-    return axios.get("http://www.dnd5eapi.co/api/features/" + features);
+    return axios.get("https://cors-anywhere.herokuapp.com/http://www.dnd5eapi.co/api/features/" + features);
   },
   getInn: function () {
     return axios.get("/api/inn");
